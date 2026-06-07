@@ -1,6 +1,6 @@
 # Funda Home Alert
 
-Persoonlijke Funda-monitor voor jouw koopfilter rond Alkmaar. De bot meldt nieuwe woningen op Telegram, kan op verzoek de bovenste woning ophalen, en krijgt een uitgebreide `/top10` analyse met OpenAI.
+Persoonlijke Funda-monitor voor jouw koopfilter rond Alkmaar. De bot meldt nieuwe woningen op Telegram, kan op verzoek de meest recente woning volgens Funda-datum ophalen, en krijgt een uitgebreide `/top10` analyse met OpenAI.
 
 ## Huidige Filter
 
@@ -187,7 +187,7 @@ Beschikbare commands:
 - `/start`: korte uitleg.
 - `/help` of `/actions`: alle acties tonen.
 - `/status`: laatste check en cache-status.
-- `/top`: haalt de bovenste woning uit de actuele Funda-resultaten.
+- `/top`: haalt de meest recente woning op basis van Funda-datum.
 - `/top10`: haalt alle woningen onder jouw filter op en maakt een top 10.
 - `/list`: toont de actuele woningen op de eerste Funda-pagina.
 - `/stats`: marktstats van alle huidige filterresultaten.

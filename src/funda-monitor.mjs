@@ -11,7 +11,6 @@ const DEFAULT_CONFIG = {
   firstRunNotify: false,
   maxNewListingsPerRun: 5,
   maxPhotos: 4,
-  recentSearchPages: 3,
   maxSearchPages: 8,
   maxTop10Listings: 60,
   maxAnalysisPhotos: 3,
@@ -94,7 +93,7 @@ async function runOnce(config) {
   await handleTelegramUpdates(config, state);
 
   console.log(`[check] Funda zoekresultaten ophalen: ${new Date().toLocaleString('nl-NL')}`);
-  const listingUrls = await fetchSearchListingUrls(config, { allPages: false, maxPages: config.recentSearchPages });
+  const listingUrls = await fetchSearchListingUrls(config, { allPages: true });
   state.lastCheckAt = new Date().toISOString();
   state.lastSearchCount = listingUrls.length;
 
@@ -122,19 +121,29 @@ async function runOnce(config) {
   if (newUrls.length === 0) {
     await maybeNotifyNoNewListings(config, state, { checkedCount: listingUrls.length });
     await saveState(config, state);
-    console.log(`[ok] Geen nieuwe woningen. Gezien op eerste pagina: ${listingUrls.length}.`);
+    console.log(`[ok] Geen nieuwe woningen. Gezien in huidig filterresultaat: ${listingUrls.length}.`);
     return;
   }
 
   console.log(`[new] ${newUrls.length} onbekende listing(s) gevonden, publicatiedatum controleren.`);
+
+  const candidateListings = [];
+  for (const url of newUrls) {
+    const listing = await getListingDetails(config, state, url, { refresh: true });
+    candidateListings.push(listing);
+  }
+
+  const sortedCandidates = sortByNewestListedAt(candidateListings);
+  console.log(
+    `[new] ${sortedCandidates.length} kandidaat-woning(en) gesorteerd op Funda-datum${sortedCandidates[0]?.listedDateText ? `, nieuwste: ${sortedCandidates[0].listedDateText}` : ''}.`,
+  );
 
   let autoAnalysesLeft = openaiEnabled(config) && config.openai.autoAnalyzeNewListings ? 3 : 0;
   let notifiedCount = 0;
   let oldSkippedCount = 0;
   let runLimitSkippedCount = 0;
 
-  for (const url of newUrls) {
-    const listing = await getListingDetails(config, state, url, { refresh: true });
+  for (const listing of sortedCandidates) {
     state.seenListings[listing.id] = {
       url: listing.url,
       title: listing.title,
@@ -549,7 +558,7 @@ async function sendStatus(config, state) {
     `🏠 <b>Woningen gezien:</b> ${Object.keys(state.seenListings || {}).length}`,
     `🧺 <b>Listing-cache:</b> ${Object.keys(state.listingCache || {}).length}`,
     `🧠 <b>Analyses-cache:</b> ${Object.keys(state.analyses || {}).length}`,
-    `📄 <b>Laatste check-aantal:</b> ${state.lastSearchCount || 0}`,
+    `📄 <b>Laatste totaal aantal:</b> ${state.lastSearchCount || 0}`,
     `🏆 <b>Top10-cache:</b> ${state.top10Cache?.createdAt ? 'aanwezig' : 'leeg'}`,
     `🤖 <b>OpenAI:</b> ${openaiEnabled(config) ? 'aan' : 'uit'}`,
     '',
@@ -577,16 +586,10 @@ async function sendTopListing(config, state) {
 }
 
 async function sendCurrentList(config, state) {
-  const urls = await fetchSearchListingUrls(config, { allPages: false, maxPages: config.recentSearchPages });
-  if (urls.length === 0) {
+  const listings = await getAllCurrentListings(config, state);
+  if (listings.length === 0) {
     await sendTelegramText(config, 'Geen woningen gevonden onder je filter.');
     return;
-  }
-
-  const listings = [];
-  for (const url of urls.slice(0, 10)) {
-    listings.push(await getListingDetails(config, state, url));
-    await sleep(350);
   }
 
   const market = marketSnapshot(listings);
@@ -755,14 +758,7 @@ async function getAllCurrentListings(config, state, { progress } = {}) {
 }
 
 async function getMostRecentListing(config, state) {
-  const urls = await fetchSearchListingUrls(config, { allPages: false, maxPages: config.recentSearchPages });
-  const listings = [];
-
-  for (const url of urls.slice(0, Math.max(10, config.recentSearchPages * 15))) {
-    listings.push(await getListingDetails(config, state, url));
-    await sleep(250);
-  }
-
+  const listings = await getAllCurrentListings(config, state);
   return sortByNewestListedAt(listings)[0] || null;
 }
 
@@ -1500,7 +1496,6 @@ async function loadConfig() {
   config.firstRunNotify = boolFromEnv('FIRST_RUN_NOTIFY', config.firstRunNotify);
   config.maxNewListingsPerRun = Number(process.env.MAX_NEW_LISTINGS_PER_RUN || config.maxNewListingsPerRun);
   config.maxPhotos = Number(process.env.MAX_PHOTOS || config.maxPhotos);
-  config.recentSearchPages = Number(process.env.RECENT_SEARCH_PAGES || config.recentSearchPages);
   config.maxSearchPages = Number(process.env.MAX_SEARCH_PAGES || config.maxSearchPages);
   config.maxTop10Listings = Number(process.env.MAX_TOP10_LISTINGS || config.maxTop10Listings);
   config.maxAnalysisPhotos = Number(process.env.MAX_ANALYSIS_PHOTOS || config.maxAnalysisPhotos);
