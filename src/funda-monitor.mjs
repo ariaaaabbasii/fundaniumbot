@@ -15,6 +15,9 @@ const DEFAULT_CONFIG = {
   maxTop10Listings: 60,
   maxAnalysisPhotos: 3,
   top10CacheMinutes: 120,
+  notifyNoNewListings: false,
+  noNewNotificationMinutes: 60,
+  maxNotificationListingAgeDays: 3,
   stateFile: 'data/state.json',
   userAgent: 'Mozilla/5.0 (compatible; personal-funda-home-alert/0.1; +local-personal-use)',
   telegram: {
@@ -116,22 +119,42 @@ async function runOnce(config) {
   }
 
   if (newUrls.length === 0) {
+    await maybeNotifyNoNewListings(config, state, { checkedCount: listingUrls.length });
     await saveState(config, state);
     console.log(`[ok] Geen nieuwe woningen. Gezien op eerste pagina: ${listingUrls.length}.`);
     return;
   }
 
-  const limitedNewUrls = newUrls.slice(0, config.maxNewListingsPerRun);
-  console.log(`[new] ${newUrls.length} nieuwe listing(s), ${limitedNewUrls.length} verwerken.`);
+  console.log(`[new] ${newUrls.length} onbekende listing(s) gevonden, publicatiedatum controleren.`);
 
   let autoAnalysesLeft = openaiEnabled(config) && config.openai.autoAnalyzeNewListings ? 3 : 0;
-  for (const url of limitedNewUrls) {
+  let notifiedCount = 0;
+  let oldSkippedCount = 0;
+  let runLimitSkippedCount = 0;
+
+  for (const url of newUrls) {
     const listing = await getListingDetails(config, state, url, { refresh: true });
     state.seenListings[listing.id] = {
       url: listing.url,
       title: listing.title,
       firstSeenAt: new Date().toISOString(),
+      listedAt: listing.listedAt || null,
     };
+
+    if (!isRecentEnoughForNewNotification(config, listing)) {
+      oldSkippedCount += 1;
+      state.seenListings[listing.id].notificationSkipped = 'older-than-new-threshold';
+      console.log(
+        `[skip] ${listing.id} niet gemeld: Funda-datum ${listing.listedDateText || 'onbekend'} is ouder dan ${config.maxNotificationListingAgeDays} dagen.`,
+      );
+      continue;
+    }
+
+    if (notifiedCount >= config.maxNewListingsPerRun) {
+      runLimitSkippedCount += 1;
+      state.seenListings[listing.id].notificationSkipped = 'run-limit';
+      continue;
+    }
 
     if (autoAnalysesLeft > 0) {
       listing.analysis = await getListingAnalysis(config, state, listing, { mode: 'short' });
@@ -139,10 +162,40 @@ async function runOnce(config) {
     }
 
     await notifyNewListing(config, listing);
+    state.seenListings[listing.id].notifiedAt = new Date().toISOString();
+    notifiedCount += 1;
     await sleep(900);
   }
 
+  if (notifiedCount === 0) {
+    await maybeNotifyNoNewListings(config, state, {
+      checkedCount: listingUrls.length,
+      oldSkippedCount,
+      runLimitSkippedCount,
+    });
+  }
+
   await saveState(config, state);
+}
+
+async function maybeNotifyNoNewListings(config, state, { checkedCount, oldSkippedCount = 0, runLimitSkippedCount = 0 } = {}) {
+  if (!config.notifyNoNewListings) return;
+  if (state.lastNoNewNotificationAt && minutesAgo(state.lastNoNewNotificationAt) < config.noNewNotificationMinutes) return;
+
+  const lines = [
+    'Funda check',
+    '====================',
+    'Geen nieuwe woningen gevonden.',
+    '',
+    `Gecheckt: ${checkedCount || 0} woning(en) op de eerste pagina.`,
+  ];
+
+  if (oldSkippedCount) lines.push(`Genegeerd als oud: ${oldSkippedCount} woning(en).`);
+  if (runLimitSkippedCount) lines.push(`Niet gemeld door runlimiet: ${runLimitSkippedCount} woning(en).`);
+  lines.push('', `Volgende check over ongeveer ${config.pollIntervalMinutes} minuten.`);
+
+  await sendTelegramText(config, lines.join('\n'));
+  state.lastNoNewNotificationAt = new Date().toISOString();
 }
 
 async function sleepWithCallbackPolling(config, durationMs) {
@@ -763,6 +816,7 @@ async function fetchListingDetails(url, config) {
     'Energielabel',
     'Bouwjaar',
     'Aanvaarding',
+    'Aangeboden sinds',
     'Soort appartement',
     'Servicekosten',
     'Ligging',
@@ -786,6 +840,8 @@ async function fetchListingDetails(url, config) {
   const energyLabel = cleanEnergyLabel(features.Energielabel);
   const photos = extractPhotos(jsonLd).slice(0, 12);
   const readiness = estimateReadiness({ description, features, photos });
+  const listedDateText = features['Aangeboden sinds'] || extractListedDateText(html);
+  const listedAt = parseDutchNumericDate(listedDateText);
 
   return {
     id: listingIdFromUrl(url),
@@ -800,6 +856,8 @@ async function fetchListingDetails(url, config) {
     energyLabel,
     buildYear: numberFromValue(features.Bouwjaar),
     acceptance: features.Aanvaarding || '',
+    listedAt,
+    listedDateText,
     apartmentType: features['Soort appartement'] || '',
     serviceCosts: features.Servicekosten || '',
     location: features.Ligging || '',
@@ -1174,6 +1232,7 @@ function formatListingMessage(listing, heading) {
     listing.rooms ? `Kamers: ${listing.rooms}` : '',
     listing.energyLabel ? `Energielabel: ${listing.energyLabel}` : '',
     listing.buildYear ? `Bouwjaar: ${listing.buildYear}` : '',
+    listing.listedDateText ? `Op Funda: ${listing.listedDateText}` : '',
     listing.serviceCosts ? `Servicekosten: ${listing.serviceCosts}` : '',
     listing.readinessScore ? `Instapklaar: ${scoreBar(listing.readinessScore)} ${listing.readinessScore}/100` : '',
     listing.analysis ? `AI-score: ${scoreBar(listing.analysis.score)} ${listing.analysis.score}/100` : '',
@@ -1314,6 +1373,11 @@ async function loadConfig() {
   config.maxTop10Listings = Number(process.env.MAX_TOP10_LISTINGS || config.maxTop10Listings);
   config.maxAnalysisPhotos = Number(process.env.MAX_ANALYSIS_PHOTOS || config.maxAnalysisPhotos);
   config.top10CacheMinutes = Number(process.env.TOP10_CACHE_MINUTES || config.top10CacheMinutes);
+  config.notifyNoNewListings = boolFromEnv('NOTIFY_NO_NEW_LISTINGS', config.notifyNoNewListings);
+  config.noNewNotificationMinutes = Number(process.env.NO_NEW_NOTIFICATION_MINUTES || config.noNewNotificationMinutes);
+  config.maxNotificationListingAgeDays = Number(
+    process.env.MAX_NOTIFICATION_LISTING_AGE_DAYS || config.maxNotificationListingAgeDays,
+  );
   config.stateFile = process.env.STATE_FILE || config.stateFile;
   config.userAgent = process.env.USER_AGENT || config.userAgent;
 
@@ -1363,6 +1427,7 @@ async function loadState(config) {
     top10Cache: state.top10Cache || null,
     lastCheckAt: state.lastCheckAt || null,
     lastSearchCount: state.lastSearchCount || 0,
+    lastNoNewNotificationAt: state.lastNoNewNotificationAt || null,
     telegramUpdateOffset: state.telegramUpdateOffset || 0,
   };
 }
@@ -1454,6 +1519,25 @@ function extractFeature(html, label) {
   const match = html.match(re);
   if (!match) return '';
   return cleanText(stripTags(match[1]));
+}
+
+function extractListedDateText(html) {
+  const match = html.match(/<p[^>]*>(\d{1,2}-\d{1,2}-\d{4})<\/p>\s*<p[^>]*>\s*Op Funda\s*<\/p>/i);
+  return match ? match[1] : '';
+}
+
+function parseDutchNumericDate(value) {
+  const match = String(value || '').match(/\b(\d{1,2})-(\d{1,2})-(\d{4})\b/);
+  if (!match) return null;
+  const [, day, month, year] = match;
+  return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}T12:00:00.000Z`;
+}
+
+function isRecentEnoughForNewNotification(config, listing) {
+  const maxAgeDays = Number(config.maxNotificationListingAgeDays);
+  if (!Number.isFinite(maxAgeDays) || maxAgeDays <= 0) return true;
+  if (!listing.listedAt) return true;
+  return Date.now() - new Date(listing.listedAt).getTime() <= maxAgeDays * 24 * 60 * 60 * 1000;
 }
 
 function extractMetaContent(html, name) {

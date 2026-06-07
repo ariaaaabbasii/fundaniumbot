@@ -8,6 +8,9 @@
   "maxTop10Listings": 60,
   "maxAnalysisPhotos": 3,
   "top10CacheMinutes": 120,
+  "notifyNoNewListings": false,
+  "noNewNotificationMinutes": 60,
+  "maxNotificationListingAgeDays": 3,
   "stateFile": "data/state.json",
   "userAgent": "Mozilla/5.0 (compatible; personal-funda-home-alert/0.1; +local-personal-use)",
   "telegram": {

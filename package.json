@@ -8,6 +8,7 @@
     "start": "node src/funda-monitor.mjs",
     "once": "node src/funda-monitor.mjs --once",
     "dry-run": "node src/funda-monitor.mjs --once --dry-run",
+    "local": "node src/funda-monitor.mjs",
     "top": "node src/funda-monitor.mjs --top",
     "top10": "node src/funda-monitor.mjs --top10",
     "actions": "node src/funda-monitor.mjs --send-actions",

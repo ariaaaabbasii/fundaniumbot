@@ -117,6 +117,30 @@ Nadeel:
 - Lange acties zoals `/top10` tonen daarna een voortgangsbericht dat wordt bijgewerkt tijdens zoeken, details ophalen, ranken en versturen.
 - Voor directe reacties kan Cloudflare later alsnog als webhooklaag worden gebruikt.
 
+## Lokale Laptop Monitor
+
+Status: ook actief naast GitHub.
+
+De laptopvariant draait met `config.json` en `data/state.json`. Start hem handmatig met:
+
+```powershell
+npm run local
+```
+
+Of gebruik het startscript:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\start-local-monitor.ps1
+```
+
+Het script voorkomt dubbele lokale monitors en schrijft naar `logs/local-monitor.log`. Er staat ook een persoonlijke Windows Startup-koppeling klaar, zodat de monitor start wanneer je op deze laptop inlogt.
+
+Belangrijke lokale instellingen:
+
+- `notifyNoNewListings`: stuurt ook een Telegram-bericht als er niets nieuws is.
+- `noNewNotificationMinutes`: voorkomt dat zulke “geen nieuwe woningen”-berichten vaker dan dit interval komen.
+- `maxNotificationListingAgeDays`: voorkomt dat oude Funda-woningen als nieuwe match worden gemeld; onbekende woningen ouder dan deze grens worden alleen opgeslagen.
+
 ## Data Opslag
 
 We gebruiken nu `state/github-state.json` als kleine state-file in GitHub.
