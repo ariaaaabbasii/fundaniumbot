@@ -90,19 +90,20 @@ Status: gepauzeerd voor scraping, omdat Funda Worker-verkeer reCAPTCHA geeft.
 
 ## GitHub Actions Actieplan
 
-Status: workflowbestand is aangemaakt in `.github/workflows/funda-monitor.yml`.
+Status: actief in `.github/workflows/funda-monitor.yml`.
 
 1. Project naar GitHub repo zetten.
 2. GitHub secrets instellen:
    - `TELEGRAM_BOT_TOKEN`
    - `TELEGRAM_CHAT_ID`
-   - later `OPENAI_API_KEY`
+   - `OPENAI_API_KEY`
 3. Repository Actions aanzetten.
 4. Workflow handmatig starten met `workflow_dispatch`.
 5. Eerste run seadt `state/github-state.json` en meldt bestaande woningen niet.
 6. Daarna draait GitHub elke 5 minuten.
 7. Bij nieuwe woningen stuurt de workflow Telegram-meldingen.
-8. Workflow commit de bijgewerkte state terug naar de repo.
+8. De workflow verwerkt Telegram commands en inline knoppen via `getUpdates`.
+9. Workflow commit de bijgewerkte state terug naar de repo.
 
 Voordeel:
 
@@ -112,12 +113,12 @@ Voordeel:
 
 Nadeel:
 
-- Telegram commands zoals `/top10` zijn niet direct interactief vanuit GitHub Actions.
-- Voor `/top10` op verzoek hebben we later een command-laag nodig, bijvoorbeeld Cloudflare webhook die een GitHub workflow triggert.
+- Telegram commands reageren niet instant; ze worden bij de volgende 5-minuten-run verwerkt.
+- Voor directe reacties kan Cloudflare later alsnog als webhooklaag worden gebruikt.
 
 ## Data Opslag
 
-We gebruiken waarschijnlijk D1 als kleine database.
+We gebruiken nu `state/github-state.json` als kleine state-file in GitHub.
 
 Tabellen/gegevens die we nodig hebben:
 
@@ -128,25 +129,30 @@ Tabellen/gegevens die we nodig hebben:
 - Jouw beslissingen: interessant, niet interessant, later bekijken.
 - Ranking-resultaten voor `/top10`.
 
-KV is simpeler, D1 is netter voor zoeken, sorteren en historie. Voor jouw `/top10` wens is D1 waarschijnlijk de betere keuze.
+Voor nu is GitHub-state simpel en voldoende. Cloudflare D1 kan later alsnog als database als de bot groter wordt.
 
 ## Telegram Commands
 
-Geplande commands:
+Beschikbare commands:
 
 - `/start`: korte uitleg.
-- `/status`: laatste check, aantal bekende woningen, laatste nieuwe match.
+- `/help` of `/actions`: alle acties tonen.
+- `/status`: laatste check en cache-status.
 - `/top`: haalt de bovenste woning uit de actuele Funda-resultaten.
 - `/top10`: haalt alle woningen onder jouw filter op en maakt een top 10.
-- `/analyse <id of link>`: uitgebreide analyse van 1 woning.
-- `/deep <id of link>`: extra diepe analyse met meer foto's van 1 woning.
-- `/reset`: gezien-lijst of cache resetten, alleen na bevestiging.
+- `/list`: toont de actuele woningen op de eerste Funda-pagina.
+- `/stats`: marktstats van alle huidige filterresultaten.
+- `/saved`: jouw gemarkeerde woningen.
 
-Status:
+Inline acties per woning:
 
-- Nieuwe-woningmeldingen via Telegram bestaan lokaal al.
-- GitHub Actions kan nieuwe-woningmeldingen sturen.
-- Directe Telegram commands vragen later nog een always-on webhooklaag.
+- `Bekijk / reageer`
+- `Interessant`
+- `Twijfel`
+- `Nee`
+- `Analyse`
+- `Stats`
+- `Foto's`
 
 Bij nieuwe woningen sturen we:
 
@@ -156,7 +162,7 @@ Bij nieuwe woningen sturen we:
 - Prijs per m2.
 - Belangrijkste stats.
 - Korte OpenAI-analyse.
-- Knoppen: `Bekijk / reageer`, `Interessant`, `Niet interessant`, `Analyse`.
+- Knoppen: `Bekijk / reageer`, `Interessant`, `Twijfel`, `Nee`, `Analyse`, `Stats`, `Foto's`.
 
 ## Top 10 Eisen
 
@@ -174,7 +180,7 @@ Aanpak:
 
 Voor jouw filter waren er eerder ongeveer 135 resultaten. Dat betekent dat `/top10` waarschijnlijk meerdere pagina's en veel detailpagina's ophaalt. Daarom moet dit rustig, gecachet en niet bij elke 5-minuten-check automatisch gebeuren.
 
-Voor GitHub Actions bouwen we `/top10` later waarschijnlijk als handmatige workflow of als Telegram-command dat een workflow dispatch triggert.
+`/top10` is nu ingebouwd. Omdat GitHub Actions elke 5 minuten draait, wordt het command verwerkt bij de volgende run. Resultaten worden gecachet zodat dezelfde analyse niet onnodig vaak wordt gemaakt.
 
 ## Stats Voor Ranking
 

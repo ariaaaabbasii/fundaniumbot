@@ -8,6 +8,9 @@ on:
 permissions:
   contents: write
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 concurrency:
   group: funda-monitor
   cancel-in-progress: false
@@ -35,6 +38,13 @@ jobs:
           STATE_FILE: "state/github-state.json"
           FIRST_RUN_NOTIFY: "false"
           MAX_NEW_LISTINGS_PER_RUN: "5"
+          MAX_SEARCH_PAGES: "8"
+          MAX_TOP10_LISTINGS: "60"
+          MAX_ANALYSIS_PHOTOS: "3"
+          OPENAI_ENABLED: "true"
+          OPENAI_MODEL: "gpt-4.1-mini"
+          OPENAI_AUTO_ANALYZE_NEW_LISTINGS: "true"
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           TELEGRAM_ENABLED: "true"
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}

@@ -4,6 +4,10 @@
   "firstRunNotify": false,
   "maxNewListingsPerRun": 5,
   "maxPhotos": 4,
+  "maxSearchPages": 8,
+  "maxTop10Listings": 60,
+  "maxAnalysisPhotos": 3,
+  "top10CacheMinutes": 120,
   "stateFile": "data/state.json",
   "userAgent": "Mozilla/5.0 (compatible; personal-funda-home-alert/0.1; +local-personal-use)",
   "telegram": {
@@ -11,6 +15,12 @@
     "chatId": "",
     "enabled": false,
     "callbackPollSeconds": 15
+  },
+  "openai": {
+    "apiKey": "",
+    "enabled": false,
+    "model": "gpt-4.1-mini",
+    "autoAnalyzeNewListings": true
   },
   "ntfy": {
     "server": "https://ntfy.sh",
