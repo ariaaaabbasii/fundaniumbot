@@ -1,0 +1,81 @@
+{
+  "seenListings": {
+    "44461994": {
+      "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-langswater-430/44461994/",
+      "firstSeenAt": "2026-06-07T21:33:53.336Z",
+      "seeded": true
+    },
+    "44462812": {
+      "url": "https://www.funda.nl/detail/koop/heemskerk/appartement-jan-ligthartstraat-749/44462812/",
+      "firstSeenAt": "2026-06-07T21:33:53.336Z",
+      "seeded": true
+    },
+    "44463593": {
+      "url": "https://www.funda.nl/detail/koop/zaandijk/appartement-morgenstarstraat-65/44463593/",
+      "firstSeenAt": "2026-06-07T21:33:53.336Z",
+      "seeded": true
+    },
+    "44465767": {
+      "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-bullerlaan-48/44465767/",
+      "firstSeenAt": "2026-06-07T21:33:53.336Z",
+      "seeded": true
+    },
+    "44468872": {
+      "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-kloosterstraat-17/44468872/",
+      "firstSeenAt": "2026-06-07T21:33:53.336Z",
+      "seeded": true
+    },
+    "44468938": {
+      "url": "https://www.funda.nl/detail/koop/zaandam/appartement-fluitekruidweg-131/44468938/",
+      "firstSeenAt": "2026-06-07T21:33:53.336Z",
+      "seeded": true
+    },
+    "44471592": {
+      "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-kennemerlaan-173-a/44471592/",
+      "firstSeenAt": "2026-06-07T21:33:53.336Z",
+      "seeded": true
+    },
+    "44473979": {
+      "url": "https://www.funda.nl/detail/koop/zaandam/appartement-oost-dorsch-89/44473979/",
+      "firstSeenAt": "2026-06-07T21:33:53.336Z",
+      "seeded": true
+    },
+    "44475570": {
+      "url": "https://www.funda.nl/detail/koop/hoorn-nh/appartement-betje-wolffplein-17/44475570/",
+      "firstSeenAt": "2026-06-07T21:33:53.336Z",
+      "seeded": true
+    },
+    "44477689": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-judith-leysterstraat-143/44477689/",
+      "firstSeenAt": "2026-06-07T21:33:53.336Z",
+      "seeded": true
+    },
+    "44478125": {
+      "url": "https://www.funda.nl/detail/koop/wijk-aan-zee/appartement-voorstraat-38-b/44478125/",
+      "firstSeenAt": "2026-06-07T21:33:53.336Z",
+      "seeded": true
+    },
+    "44485278": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-winkelwaard-100/44485278/",
+      "firstSeenAt": "2026-06-07T21:33:53.336Z",
+      "seeded": true
+    },
+    "44485295": {
+      "url": "https://www.funda.nl/detail/koop/velsen-noord/appartement-stratingplantsoen-87/44485295/",
+      "firstSeenAt": "2026-06-07T21:33:53.336Z",
+      "seeded": true
+    },
+    "80837331": {
+      "url": "https://www.funda.nl/detail/koop/oudkarspel-gem-dijk-en-waard/appartement-waterlelie-61/80837331/",
+      "firstSeenAt": "2026-06-07T21:33:53.336Z",
+      "seeded": true
+    },
+    "80849634": {
+      "url": "https://www.funda.nl/detail/koop/zaandam/appartement-poelenburg-17/80849634/",
+      "firstSeenAt": "2026-06-07T21:33:53.336Z",
+      "seeded": true
+    }
+  },
+  "decisions": {},
+  "telegramUpdateOffset": 0
+}
