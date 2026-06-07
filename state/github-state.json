@@ -1,5 +1,10 @@
 {
   "seenListings": {
+    "44451054": {
+      "url": "https://www.funda.nl/detail/koop/zaandam/appartement-poelenburg-40/44451054/",
+      "title": "Poelenburg 40, Zaandam",
+      "firstSeenAt": "2026-06-07T22:13:13.110Z"
+    },
     "44461994": {
       "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-langswater-430/44461994/",
       "firstSeenAt": "2026-06-07T21:33:53.336Z",
@@ -77,10 +82,102 @@
     }
   },
   "decisions": {},
-  "listingCache": {},
-  "analyses": {},
+  "listingCache": {
+    "44451054": {
+      "fetchedAt": "2026-06-07T22:13:13.110Z",
+      "listing": {
+        "id": "44451054",
+        "url": "https://www.funda.nl/detail/koop/zaandam/appartement-poelenburg-40/44451054/",
+        "title": "Poelenburg 40, Zaandam",
+        "price": 300000,
+        "priceText": "€ 300.000 kosten koper",
+        "pricePerM2": 4412,
+        "livingArea": 68,
+        "rooms": "3 kamers (2 slaapkamers)",
+        "bedrooms": 2,
+        "energyLabel": "E",
+        "buildYear": 1964,
+        "acceptance": "In overleg",
+        "apartmentType": "Portiekflat (appartement)",
+        "serviceCosts": "",
+        "location": "In woonwijk en vrij uitzicht",
+        "outdoor": "",
+        "storage": "Inpandig",
+        "vve": "",
+        "features": {
+          "Vraagprijs": "€ 300.000 kosten koper",
+          "Vraagprijs per m²": "€ 4.412",
+          "Wonen": "68 m²",
+          "Aantal kamers": "3 kamers (2 slaapkamers)",
+          "Energielabel": "E",
+          "Bouwjaar": "1964",
+          "Aanvaarding": "In overleg",
+          "Soort appartement": "Portiekflat (appartement)",
+          "Ligging": "In woonwijk en vrij uitzicht",
+          "Schuur/berging": "Inpandig"
+        },
+        "description": "Aan de Poelenburg 40 in Zaandam bevindt zich dit nette en goed onderhouden 3-kamerappartement (ca. 68 m²) op de vierde verdieping. Een ideale woning voor wie comfortabel wil wonen met ruimte, licht en mogelijkheden om het geheel naar eigen smaak verder te personaliseren.",
+        "photos": [
+          "https://cloud.funda.nl/valentina_media/229/041/047_1440x960.jpg",
+          "https://cloud.funda.nl/valentina_media/229/041/265_1440x960.jpg",
+          "https://cloud.funda.nl/valentina_media/229/041/255_1440x960.jpg",
+          "https://cloud.funda.nl/valentina_media/229/040/990_1440x960.jpg",
+          "https://cloud.funda.nl/valentina_media/229/041/057_1440x960.jpg",
+          "https://cloud.funda.nl/valentina_media/229/040/966_1440x960.jpg"
+        ],
+        "readinessScore": 63,
+        "readinessReason": "positief: goed onderhouden",
+        "summary": "Poelenburg 40, Zaandam: € 300.000 kosten koper, € 4.412/m2, 68 m², 3 kamers (2 slaapkamers), energielabel E, bouwjaar 1964, aanvaarding In overleg.\n\nAan de Poelenburg 40 in Zaandam bevindt zich dit nette en goed onderhouden 3-kamerappartement (ca. 68 m²) op de vierde verdieping. Een ideale woning voor wie comfortabel wil wonen met ruimte, licht en mogelijkheden om het geheel naar eigen smaak verder te personaliseren.",
+        "analysis": {
+          "score": 65,
+          "readiness": 60,
+          "summary": "Nette portiekflat uit 1964 met 2 slaapkamers en 68 m2 woonoppervlak. Instapklaar interieur met moderne keuken en lichte woonkamer. Energielabel E is matig. Ligging in woonwijk met vrij uitzicht is pluspunt. Servicekosten en buitenruimte onduidelijkheid.",
+          "pros": [
+            "Instapklaar en goed onderhouden interieur",
+            "Moderne, strakke keuken",
+            "Lichte woonkamer met vrij uitzicht",
+            "Ruim 2-slaapkamer appartement (68 m2)"
+          ],
+          "cons": [
+            "Energielabel E, mogelijk hogere energiekosten",
+            "Bouwjaar 1964, oudere flat met mogelijk onderhoudskosten",
+            "Onbekende servicekosten, mogelijk extra lasten",
+            "Onbekend of er buitenruimte is, wat een minpunt kan zijn"
+          ],
+          "interior": "Het appartement is leeg en strak afgewerkt met een moderne zwarte keuken en lichte wanden. De vloer lijkt een betonlook, wat onderhoudsvriendelijk is. De ruimte oogt licht en neutraal, weinig tot geen kluswerk nodig.",
+          "action": "Controleer servicekosten en vraag naar eventuele VvE-onderhoudsplannen. Bezoek om de staat van het appartement en het gebouw te beoordelen. Overweeg energiebesparende maatregelen vanwege label E. Weeg prijs per m2 af tegen locatie en staat."
+        }
+      }
+    }
+  },
+  "analyses": {
+    "44451054": {
+      "short": {
+        "createdAt": "2026-06-07T22:13:20.215Z",
+        "analysis": {
+          "score": 65,
+          "readiness": 60,
+          "summary": "Nette portiekflat uit 1964 met 2 slaapkamers en 68 m2 woonoppervlak. Instapklaar interieur met moderne keuken en lichte woonkamer. Energielabel E is matig. Ligging in woonwijk met vrij uitzicht is pluspunt. Servicekosten en buitenruimte onduidelijkheid.",
+          "pros": [
+            "Instapklaar en goed onderhouden interieur",
+            "Moderne, strakke keuken",
+            "Lichte woonkamer met vrij uitzicht",
+            "Ruim 2-slaapkamer appartement (68 m2)"
+          ],
+          "cons": [
+            "Energielabel E, mogelijk hogere energiekosten",
+            "Bouwjaar 1964, oudere flat met mogelijk onderhoudskosten",
+            "Onbekende servicekosten, mogelijk extra lasten",
+            "Onbekend of er buitenruimte is, wat een minpunt kan zijn"
+          ],
+          "interior": "Het appartement is leeg en strak afgewerkt met een moderne zwarte keuken en lichte wanden. De vloer lijkt een betonlook, wat onderhoudsvriendelijk is. De ruimte oogt licht en neutraal, weinig tot geen kluswerk nodig.",
+          "action": "Controleer servicekosten en vraag naar eventuele VvE-onderhoudsplannen. Bezoek om de staat van het appartement en het gebouw te beoordelen. Overweeg energiebesparende maatregelen vanwege label E. Weeg prijs per m2 af tegen locatie en staat."
+        }
+      }
+    }
+  },
   "top10Cache": null,
-  "lastCheckAt": "2026-06-07T21:58:34.016Z",
+  "lastCheckAt": "2026-06-07T22:13:12.493Z",
   "lastSearchCount": 15,
   "telegramUpdateOffset": 0
 }
