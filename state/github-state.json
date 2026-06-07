@@ -1,9 +1,309 @@
 {
   "seenListings": {
+    "43032663": {
+      "url": "https://www.funda.nl/detail/koop/zaandam/appartement-oost-dorsch-42/43032663/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43033464": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-achterdam-24/43033464/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43036818": {
+      "url": "https://www.funda.nl/detail/koop/zaandam/appartement-spaansgroenstraat-52/43036818/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43252984": {
+      "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-kennemerhof-6-b/43252984/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43270475": {
+      "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-bullerlaan-16/43270475/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43287661": {
+      "url": "https://www.funda.nl/detail/koop/purmerend/appartement-suze-groenewegstraat-173/43287661/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43302559": {
+      "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-langswater-502/43302559/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43303114": {
+      "url": "https://www.funda.nl/detail/koop/wijk-aan-zee/appartement-voorstraat-34-b/43303114/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43303323": {
+      "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-bullerlaan-18/43303323/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43303997": {
+      "url": "https://www.funda.nl/detail/koop/castricum/appartement-cf-smeetslaan-128/43303997/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43304609": {
+      "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-langswater-338/43304609/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43304869": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-aert-de-gelderlaan-240/43304869/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43306835": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-augustijnsteeg-2-a/43306835/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43307987": {
+      "url": "https://www.funda.nl/detail/koop/zaandam/appartement-linnaeusstraat-148/43307987/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43311733": {
+      "url": "https://www.funda.nl/detail/koop/wormerveer/appartement-merelstraat-50/43311733/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43311844": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-porcellishof-32/43311844/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43312369": {
+      "url": "https://www.funda.nl/detail/koop/haarlem/appartement-zandvoorter-allee-156/43312369/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43316186": {
+      "url": "https://www.funda.nl/detail/koop/zaandam/appartement-oost-dorsch-38/43316186/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43316431": {
+      "url": "https://www.funda.nl/detail/koop/heemskerk/appartement-europaplein-30/43316431/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43319812": {
+      "url": "https://www.funda.nl/detail/koop/wormerveer/appartement-de-zetter-36/43319812/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43321870": {
+      "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-burgemeester-roellstraat-30-3/43321870/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43322823": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-reviusstraat-26/43322823/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43322844": {
+      "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-wijckermolen-130/43322844/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43323865": {
+      "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-linnaeusstraat-129/43323865/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43325471": {
+      "url": "https://www.funda.nl/detail/koop/haarlem/appartement-zandvoorter-allee-50/43325471/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43325779": {
+      "url": "https://www.funda.nl/detail/koop/haarlem/appartement-sandenburg-207/43325779/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43325970": {
+      "url": "https://www.funda.nl/detail/koop/heiloo/appartement-kennemerstraatweg-524/43325970/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43327986": {
+      "url": "https://www.funda.nl/detail/koop/zaandam/appartement-fluitekruidweg-222/43327986/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43328898": {
+      "url": "https://www.funda.nl/detail/koop/purmerend/appartement-oostervenne-426/43328898/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43331352": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-ransuilstraat-14/43331352/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43333522": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-honthorstlaan-206/43333522/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43334338": {
+      "url": "https://www.funda.nl/detail/koop/purmerend/appartement-lekstraat-33/43334338/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43334906": {
+      "url": "https://www.funda.nl/detail/koop/zaandijk/appartement-morgenstarstraat-48/43334906/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43335390": {
+      "url": "https://www.funda.nl/detail/koop/haarlem/appartement-robert-kochlaan-390/43335390/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43336544": {
+      "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-zeestraat-50/43336544/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43338812": {
+      "url": "https://www.funda.nl/detail/koop/zaandam/appartement-pinksterbloemweg-271/43338812/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43338934": {
+      "url": "https://www.funda.nl/detail/koop/heiloo/appartement-zeeweg-406/43338934/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43339739": {
+      "url": "https://www.funda.nl/detail/koop/zaandam/appartement-oost-dorsch-153/43339739/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43340061": {
+      "url": "https://www.funda.nl/detail/koop/zaandam/appartement-oostzijde-92-a/43340061/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43342207": {
+      "url": "https://www.funda.nl/detail/koop/zaandam/appartement-leverkruidweg-185/43342207/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43342637": {
+      "url": "https://www.funda.nl/detail/koop/wormerveer/appartement-vestaplein-18/43342637/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43343951": {
+      "url": "https://www.funda.nl/detail/koop/haarlem/appartement-texelhof-87/43343951/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43345041": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-asselijnstraat-56/43345041/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43345528": {
+      "url": "https://www.funda.nl/detail/koop/purmerend/appartement-sportlaan-101/43345528/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43346810": {
+      "url": "https://www.funda.nl/detail/koop/purmerend/appartement-burgemeester-d-kooimanweg-227/43346810/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43347060": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-huibert-pootlaan-160/43347060/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43349056": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-stalpaertstraat-127/43349056/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43355285": {
+      "url": "https://www.funda.nl/detail/koop/zaandam/appartement-spitsbergen-26/43355285/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43361202": {
+      "url": "https://www.funda.nl/detail/koop/zaandam/appartement-de-weer-23-b/43361202/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43361215": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-amelandstraat-76/43361215/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43367140": {
+      "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-wijk-aan-duinerweg-145/43367140/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43367826": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-jan-van-goyenstraat-146/43367826/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43370869": {
+      "url": "https://www.funda.nl/detail/koop/haarlem/appartement-engelenburg-465/43370869/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43371487": {
+      "url": "https://www.funda.nl/detail/koop/zaandam/appartement-peperstraat-2/43371487/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43373117": {
+      "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-3e-industriedwarsstraat-27/43373117/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43374863": {
+      "url": "https://www.funda.nl/detail/koop/zaandam/appartement-leverkruidweg-151/43374863/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43375991": {
+      "url": "https://www.funda.nl/detail/koop/wormerveer/appartement-de-zetter-18/43375991/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43377194": {
+      "url": "https://www.funda.nl/detail/koop/purmerend/appartement-westervenne-394/43377194/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43388467": {
+      "url": "https://www.funda.nl/detail/koop/zaandam/appartement-leverkruidweg-127/43388467/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43390406": {
+      "url": "https://www.funda.nl/detail/koop/purmerend/appartement-kanaalkade-15-c/43390406/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43392922": {
+      "url": "https://www.funda.nl/detail/koop/haarlem/appartement-zandvoorter-allee-84/43392922/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43394937": {
+      "url": "https://www.funda.nl/detail/koop/wormerveer/appartement-wandelweg-46/43394937/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43395339": {
+      "url": "https://www.funda.nl/detail/koop/velsen-noord/appartement-schulpweg-33-d/43395339/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43395731": {
+      "url": "https://www.funda.nl/detail/koop/purmerend/appartement-burgemeester-d-kooimanweg-507/43395731/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "43396594": {
+      "url": "https://www.funda.nl/detail/koop/zaandam/appartement-linnaeusstraat-232/43396594/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "44450183": {
+      "url": "https://www.funda.nl/detail/koop/krommenie/appartement-lisdoddelaan-44/44450183/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
     "44451054": {
       "url": "https://www.funda.nl/detail/koop/zaandam/appartement-poelenburg-40/44451054/",
       "title": "Poelenburg 40, Zaandam",
       "firstSeenAt": "2026-06-07T22:13:13.110Z"
+    },
+    "44454048": {
+      "url": "https://www.funda.nl/detail/koop/haarlem/appartement-engelenburg-481/44454048/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "44454498": {
+      "url": "https://www.funda.nl/detail/koop/haarlem/appartement-professor-van-der-scheerstraat-227/44454498/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "44455201": {
+      "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-ruysdaelstraat-7-a/44455201/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "44455288": {
+      "url": "https://www.funda.nl/detail/koop/oudkarspel-gem-dijk-en-waard/appartement-moerasandoorn-9/44455288/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "44458849": {
+      "url": "https://www.funda.nl/detail/koop/zaandam/appartement-leverkruidweg-97/44458849/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "44459025": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-honthorstlaan-186/44459025/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "44459161": {
+      "url": "https://www.funda.nl/detail/koop/hoorn-nh/appartement-moerbalk-83/44459161/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "44459380": {
+      "url": "https://www.funda.nl/detail/koop/haarlem/appartement-engelandlaan-454/44459380/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "44459587": {
+      "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-langswater-608/44459587/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
     },
     "44461994": {
       "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-langswater-430/44461994/",
@@ -15,15 +315,27 @@
       "firstSeenAt": "2026-06-07T21:33:53.336Z",
       "seeded": true
     },
+    "44462885": {
+      "url": "https://www.funda.nl/detail/koop/zaandam/appartement-leverkruidweg-35/44462885/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
     "44463593": {
       "url": "https://www.funda.nl/detail/koop/zaandijk/appartement-morgenstarstraat-65/44463593/",
       "firstSeenAt": "2026-06-07T21:33:53.336Z",
       "seeded": true
     },
+    "44465651": {
+      "url": "https://www.funda.nl/detail/koop/heemskerk/appartement-ingen-houszstraat-57/44465651/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
     "44465767": {
       "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-bullerlaan-48/44465767/",
       "firstSeenAt": "2026-06-07T21:33:53.336Z",
       "seeded": true
+    },
+    "44467172": {
+      "url": "https://www.funda.nl/detail/koop/haarlem/appartement-zandvoorter-allee-118/44467172/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
     },
     "44468872": {
       "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-kloosterstraat-17/44468872/",
@@ -35,15 +347,31 @@
       "firstSeenAt": "2026-06-07T21:33:53.336Z",
       "seeded": true
     },
+    "44468945": {
+      "url": "https://www.funda.nl/detail/koop/krommenie/appartement-kervelstraat-134/44468945/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "44470580": {
+      "url": "https://www.funda.nl/detail/koop/haarlem/appartement-schotlandstraat-210/44470580/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
     "44471592": {
       "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-kennemerlaan-173-a/44471592/",
       "firstSeenAt": "2026-06-07T21:33:53.336Z",
       "seeded": true
     },
+    "44473219": {
+      "url": "https://www.funda.nl/detail/koop/wormerveer/appartement-lijsterstraat-23/44473219/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
     "44473979": {
       "url": "https://www.funda.nl/detail/koop/zaandam/appartement-oost-dorsch-89/44473979/",
       "firstSeenAt": "2026-06-07T21:33:53.336Z",
       "seeded": true
+    },
+    "44475048": {
+      "url": "https://www.funda.nl/detail/koop/haarlem/appartement-zandvoorter-allee-244/44475048/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
     },
     "44475570": {
       "url": "https://www.funda.nl/detail/koop/hoorn-nh/appartement-betje-wolffplein-17/44475570/",
@@ -70,6 +398,18 @@
       "firstSeenAt": "2026-06-07T21:33:53.336Z",
       "seeded": true
     },
+    "80811219": {
+      "url": "https://www.funda.nl/detail/koop/haarlem/appartement-engelenburg-217/80811219/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "80813050": {
+      "url": "https://www.funda.nl/detail/koop/oudkarspel-gem-dijk-en-waard/appartement-dorpsstraat-837-b/80813050/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "80832788": {
+      "url": "https://www.funda.nl/detail/koop/zaandam/appartement-fluitekruidweg-97/80832788/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
     "80837331": {
       "url": "https://www.funda.nl/detail/koop/oudkarspel-gem-dijk-en-waard/appartement-waterlelie-61/80837331/",
       "firstSeenAt": "2026-06-07T21:33:53.336Z",
@@ -79,6 +419,82 @@
       "url": "https://www.funda.nl/detail/koop/zaandam/appartement-poelenburg-17/80849634/",
       "firstSeenAt": "2026-06-07T21:33:53.336Z",
       "seeded": true
+    },
+    "89608072": {
+      "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-vechtstraat-106/89608072/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "89700460": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-stalpaertstraat-111/89700460/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "89700514": {
+      "url": "https://www.funda.nl/detail/koop/zaandam/appartement-fluitekruidweg-48/89700514/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "89700542": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-van-ostadelaan-346/89700542/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "89701502": {
+      "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-eastonstraat-8/89701502/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "89718488": {
+      "url": "https://www.funda.nl/detail/koop/wieringerwerf/appartement-hoeker-10/89718488/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "89718502": {
+      "url": "https://www.funda.nl/detail/koop/wieringerwerf/appartement-hoeker-17/89718502/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "89718503": {
+      "url": "https://www.funda.nl/detail/koop/wieringerwerf/appartement-hoeker-16/89718503/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "89750386": {
+      "url": "https://www.funda.nl/detail/koop/heerhugowaard/appartement-dolomiet-100/89750386/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "89760183": {
+      "url": "https://www.funda.nl/detail/koop/medemblik/appartement-achterom-37-a/89760183/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "89763574": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-reviusstraat-72/89763574/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "89770434": {
+      "url": "https://www.funda.nl/detail/koop/noord-scharwoude/appartement-de-nederlanden-7-d/89770434/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "89775807": {
+      "url": "https://www.funda.nl/detail/koop/anna-paulowna/appartement-molengang-122/89775807/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "89785984": {
+      "url": "https://www.funda.nl/detail/koop/zaandam/appartement-linnaeusstraat-212/89785984/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "89788574": {
+      "url": "https://www.funda.nl/detail/koop/zaandam/appartement-thijssestraat-205/89788574/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "89793948": {
+      "url": "https://www.funda.nl/detail/koop/hoorn-nh/appartement-betje-wolffplein-10/89793948/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "89796936": {
+      "url": "https://www.funda.nl/detail/koop/anna-paulowna/appartement-molengang-222/89796936/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "89797973": {
+      "url": "https://www.funda.nl/detail/koop/zaandam/appartement-thijssestraat-177/89797973/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
+    },
+    "89798243": {
+      "url": "https://www.funda.nl/detail/koop/medemblik/appartement-schuitevoerderslaan-2-b/89798243/",
+      "firstSeenAt": "2026-06-07T23:32:02.253Z"
     }
   },
   "decisions": {},
@@ -177,7 +593,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-06-07T22:13:12.493Z",
-  "lastSearchCount": 15,
+  "lastCheckAt": "2026-06-07T23:32:02.252Z",
+  "lastSearchCount": 120,
+  "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
