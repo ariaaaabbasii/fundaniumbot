@@ -172,11 +172,21 @@ async function handleTelegramUpdates(config, state) {
     state.telegramUpdateOffset = Math.max(state.telegramUpdateOffset || 0, update.update_id + 1);
 
     if (update.message?.text) {
-      await handleTelegramCommand(config, state, update.message);
+      try {
+        await handleTelegramCommand(config, state, update.message);
+      } catch (error) {
+        console.error(`[telegram] Command mislukt: ${error.stack || error.message}`);
+        await sendTelegramText(config, `Actie mislukt: ${truncate(error.message, 700)}\n\nGebruik /status om te kijken of de bot verder draait.`);
+      }
     }
 
     if (update.callback_query) {
-      await handleTelegramCallback(config, state, update.callback_query);
+      try {
+        await handleTelegramCallback(config, state, update.callback_query);
+      } catch (error) {
+        console.error(`[telegram] Callback mislukt: ${error.stack || error.message}`);
+        await sendTelegramText(config, `Knopactie mislukt: ${truncate(error.message, 700)}\n\nGebruik /actions om het opnieuw te proberen.`);
+      }
     }
   }
 }
@@ -210,8 +220,11 @@ async function handleTelegramCommand(config, state, message) {
   }
 
   if (command === '/top10') {
-    await sendTelegramText(config, 'Ik haal nu alle woningen onder je filter op en maak een top 10. Dit kan even duren.');
-    await sendTop10(config, state);
+    const progress = await createProgressReporter(config, 'Top 10 gestart', [
+      'Telegram command is opgepakt door de GitHub-run.',
+      'Ik haal nu alle woningen onder je filter op.',
+    ]);
+    await sendTop10(config, state, { progress });
     return;
   }
 
@@ -237,11 +250,7 @@ async function handleTelegramCallback(config, state, callback) {
   if (!callback?.data) return;
 
   const [action, listingId] = callback.data.split(':');
-  await telegramApi(config, 'answerCallbackQuery', {
-    callback_query_id: callback.id,
-    text: callbackText(action),
-    show_alert: false,
-  });
+  await safeAnswerCallbackQuery(config, callback.id, callbackText(action));
 
   if (['interest', 'ignore', 'maybe'].includes(action) && listingId) {
     const decision = action === 'interest' ? 'interessant' : action === 'maybe' ? 'twijfel' : 'niet interessant';
@@ -291,8 +300,11 @@ async function handleTelegramCallback(config, state, callback) {
   }
 
   if (action === 'top10') {
-    await sendTelegramText(config, 'Ik maak de top 10 opnieuw. Even geduld.');
-    await sendTop10(config, state, { forceRefresh: true });
+    const progress = await createProgressReporter(config, 'Top 10 gestart', [
+      'Je knopdruk is opgepakt door de GitHub-run.',
+      'Ik ververs de ranking en stuur zo updates.',
+    ]);
+    await sendTop10(config, state, { forceRefresh: true, progress });
     return;
   }
 
@@ -321,6 +333,18 @@ async function handleTelegramCallback(config, state, callback) {
   }
 }
 
+async function safeAnswerCallbackQuery(config, callbackQueryId, text) {
+  try {
+    await telegramApi(config, 'answerCallbackQuery', {
+      callback_query_id: callbackQueryId,
+      text,
+      show_alert: false,
+    });
+  } catch (error) {
+    console.warn(`[warn] Callback acknowledgement overgeslagen: ${error.message}`);
+  }
+}
+
 function callbackText(action) {
   const labels = {
     interest: 'Opgeslagen als interessant.',
@@ -346,7 +370,10 @@ async function sendActionsMenu(config) {
   const openaiStatus = openaiEnabled(config) ? 'aan' : 'uit';
   const text = [
     'Funda bot acties',
+    '====================',
     '',
+    'Snelle acties',
+    '------------',
     '/status - laatste check en cache-status',
     '/top - haal de bovenste woning op',
     '/top10 - analyseer alle woningen onder je filter en stuur de top 10',
@@ -355,8 +382,12 @@ async function sendActionsMenu(config) {
     '/saved - jouw interessante/twijfel/niet-interessante keuzes',
     '/actions - dit menu opnieuw',
     '',
+    'Werking',
+    '-------',
     `OpenAI analyse: ${openaiStatus}`,
     'Nieuwe woningen krijgen knoppen voor bekijken, interesse, twijfel, afwijzen, stats, foto\'s en analyse.',
+    '',
+    'Let op: knoppen worden verwerkt bij de volgende GitHub-run. Meestal is dat binnen 5 minuten. Zodra de run je actie ziet, krijg je een voortgangsbericht.',
   ].join('\n');
 
   await sendTelegramText(config, text, {
@@ -368,12 +399,78 @@ async function sendActionsMenu(config) {
   });
 }
 
+async function createProgressReporter(config, title, initialLines = []) {
+  if (DRY_RUN) {
+    console.log(`[dry-run] Progress: ${title}\n${initialLines.join('\n')}`);
+    return {
+      async update(lines) {
+        console.log(`[dry-run] Progress update:\n${lines.join('\n')}`);
+      },
+      async done(lines) {
+        console.log(`[dry-run] Progress done:\n${lines.join('\n')}`);
+      },
+    };
+  }
+
+  const startedAt = Date.now();
+  let lastEditAt = 0;
+  const message = await sendTelegramText(config, formatProgressMessage(title, initialLines, startedAt), undefined, {
+    returnLastMessage: true,
+  });
+  const messageId = message?.message_id;
+
+  async function edit(lines) {
+    if (!messageId) {
+      await sendTelegramText(config, formatProgressMessage(title, lines, startedAt));
+      return;
+    }
+
+    try {
+      await telegramApi(config, 'editMessageText', {
+        chat_id: config.telegram.chatId,
+        message_id: messageId,
+        text: formatProgressMessage(title, lines, startedAt),
+        reply_markup: {
+          inline_keyboard: [[{ text: 'Status', callback_data: 'status' }]],
+        },
+        disable_web_page_preview: true,
+      });
+    } catch (error) {
+      if (!String(error.message).includes('message is not modified')) throw error;
+    }
+  }
+
+  return {
+    async update(lines, { force = false } = {}) {
+      if (!force && Date.now() - lastEditAt < 2_500) return;
+      lastEditAt = Date.now();
+      await edit(lines);
+    },
+    async done(lines) {
+      await edit(lines);
+    },
+  };
+}
+
+function formatProgressMessage(title, lines, startedAt) {
+  const seconds = Math.max(0, Math.round((Date.now() - startedAt) / 1000));
+  return [
+    title,
+    '',
+    ...lines,
+    '',
+    `Looptijd: ${seconds}s`,
+    'Deze status wordt bijgewerkt zolang de GitHub-run bezig is.',
+  ].join('\n');
+}
+
 async function sendStatus(config, state) {
   const lastCheck = state.lastCheckAt
     ? new Date(state.lastCheckAt).toLocaleString('nl-NL', { timeZone: 'Europe/Amsterdam' })
     : 'nog niet bekend';
   const text = [
     'Botstatus',
+    '====================',
     '',
     `Laatste check: ${lastCheck}`,
     `Woningen gezien: ${Object.keys(state.seenListings || {}).length}`,
@@ -434,7 +531,11 @@ async function sendCurrentList(config, state) {
 }
 
 async function sendMarketStats(config, state) {
-  const listings = await getAllCurrentListings(config, state);
+  const progress = await createProgressReporter(config, 'Marktstats gestart', [
+    'Ik haal de huidige filterresultaten op.',
+    'Daarna bereken ik prijs, m2 en instapklaar-signalen.',
+  ]);
+  const listings = await getAllCurrentListings(config, state, { progress });
   if (listings.length === 0) {
     await sendTelegramText(config, 'Geen woningen gevonden onder je filter.');
     return;
@@ -463,21 +564,30 @@ async function sendMarketStats(config, state) {
   await sendTelegramText(config, text, {
     inline_keyboard: [[{ text: 'Top 10 analyse', callback_data: 'top10' }, { text: 'Actuele lijst', callback_data: 'list' }]],
   });
+  await progress.done(['Marktstats zijn verstuurd.']);
 }
 
 async function sendTop10(config, state, options = {}) {
+  const progress = options.progress || (await createProgressReporter(config, 'Top 10 gestart', ['Ik zet de analyse klaar.']));
   const cached = state.top10Cache;
   if (!options.forceRefresh && cached && minutesAgo(cached.createdAt) < config.top10CacheMinutes) {
+    await progress.update(['Ik gebruik de bestaande top10-cache.', 'Resultaten worden nu verstuurd.'], { force: true });
     await sendTop10Result(config, state, cached.result, { cached: true });
+    await progress.done(['Top 10 uit cache is verstuurd.']);
     return;
   }
 
-  const listings = await getAllCurrentListings(config, state);
+  await progress.update(['Stap 1/4: zoekresultaatpagina\'s ophalen.'], { force: true });
+  const listings = await getAllCurrentListings(config, state, { progress });
   if (listings.length === 0) {
     await sendTelegramText(config, 'Geen woningen gevonden onder je filter.');
+    await progress.done(['Geen woningen gevonden onder je filter.']);
     return;
   }
 
+  await progress.update([`Stap 3/4: ${listings.length} woningen ranken met ${openaiEnabled(config) ? 'OpenAI' : 'lokale score'}.`], {
+    force: true,
+  });
   const result = openaiEnabled(config)
     ? await rankListingsWithOpenAi(config, listings)
     : rankListingsFallback(listings).slice(0, 10).map((item) => ({
@@ -492,18 +602,20 @@ async function sendTop10(config, state, options = {}) {
     result,
   };
 
+  await progress.update(['Stap 4/4: top 10 versturen naar Telegram.'], { force: true });
   await sendTop10Result(config, state, result, { cached: false });
+  await progress.done(['Top 10 is klaar en verstuurd.', 'Je krijgt ook woningkaarten van de top 3.']);
 }
 
 async function sendTop10Result(config, state, result, { cached }) {
   const cacheLabel = cached ? ' (cache)' : '';
-  const lines = [`Top 10 Funda-filter${cacheLabel}`, ''];
+  const lines = [`Top 10 Funda-filter${cacheLabel}`, '====================', ''];
 
   for (const [index, item] of result.slice(0, 10).entries()) {
     const listing = await getListingById(config, state, item.id);
     if (!listing) continue;
     lines.push(`${index + 1}. ${compactListingLine(listing)}`);
-    lines.push(`Score: ${item.score}/100`);
+    lines.push(`Score: ${scoreBar(item.score)} ${item.score}/100`);
     if (item.reason) lines.push(`Waarom: ${truncate(item.reason, 260)}`);
     if (item.risks) lines.push(`Let op: ${truncate(item.risks, 220)}`);
     lines.push('');
@@ -546,13 +658,20 @@ async function sendSavedListings(config, state) {
   await sendTelegramText(config, lines.join('\n').trim());
 }
 
-async function getAllCurrentListings(config, state) {
-  const urls = await fetchSearchListingUrls(config, { allPages: true });
+async function getAllCurrentListings(config, state, { progress } = {}) {
+  const urls = await fetchSearchListingUrls(config, { allPages: true, progress });
   const limitedUrls = urls.slice(0, config.maxTop10Listings);
   const listings = [];
 
   for (const [index, url] of limitedUrls.entries()) {
     console.log(`[detail] ${index + 1}/${limitedUrls.length}: ${url}`);
+    if (progress && (index === 0 || (index + 1) % 5 === 0 || index + 1 === limitedUrls.length)) {
+      await progress.update([
+        `Stap 2/4: woningdetails ophalen.`,
+        `Details: ${index + 1}/${limitedUrls.length}`,
+        `Gevonden URLs: ${urls.length}`,
+      ]);
+    }
     listings.push(await getListingDetails(config, state, url));
     await sleep(500);
   }
@@ -560,12 +679,19 @@ async function getAllCurrentListings(config, state) {
   return listings;
 }
 
-async function fetchSearchListingUrls(config, { allPages }) {
+async function fetchSearchListingUrls(config, { allPages, progress } = {}) {
   const urls = [];
   const seen = new Set();
   const maxPages = allPages ? config.maxSearchPages : 1;
 
   for (let page = 1; page <= maxPages; page += 1) {
+    if (progress) {
+      await progress.update([
+        'Stap 1/4: zoekresultaatpagina\'s ophalen.',
+        `Pagina: ${page}/${maxPages}`,
+        `Woningen gevonden tot nu toe: ${urls.length}`,
+      ]);
+    }
     const pageUrl = page === 1 ? config.searchUrl : withSearchParam(config.searchUrl, 'page', String(page));
     const html = await fetchText(pageUrl, config);
     const pageUrls = extractListingUrls(html);
@@ -1022,7 +1148,10 @@ function inlineKeyboardForListing(listing) {
 
 function formatListingMessage(listing, heading) {
   const lines = [
-    `${heading}: ${listing.title}`,
+    `${heading}`,
+    '====================',
+    listing.title,
+    '',
     listing.priceText ? `Prijs: ${listing.priceText}` : '',
     listing.pricePerM2 ? `Prijs per m2: ${formatEuro(listing.pricePerM2)}` : '',
     listing.livingArea ? `Wonen: ${listing.livingArea} m2` : '',
@@ -1030,9 +1159,11 @@ function formatListingMessage(listing, heading) {
     listing.energyLabel ? `Energielabel: ${listing.energyLabel}` : '',
     listing.buildYear ? `Bouwjaar: ${listing.buildYear}` : '',
     listing.serviceCosts ? `Servicekosten: ${listing.serviceCosts}` : '',
-    listing.readinessScore ? `Instapklaar-score: ${listing.readinessScore}/100` : '',
-    listing.analysis ? `AI-score: ${listing.analysis.score}/100` : '',
+    listing.readinessScore ? `Instapklaar: ${scoreBar(listing.readinessScore)} ${listing.readinessScore}/100` : '',
+    listing.analysis ? `AI-score: ${scoreBar(listing.analysis.score)} ${listing.analysis.score}/100` : '',
     '',
+    'Samenvatting',
+    '------------',
     listing.analysis?.summary || listing.summary,
     listing.analysis?.interior ? `Interieur: ${listing.analysis.interior}` : '',
     '',
@@ -1043,10 +1174,12 @@ function formatListingMessage(listing, heading) {
 
 function formatAnalysisMessage(listing, analysis) {
   return [
-    `Analyse: ${listing.title}`,
+    'Analyse',
+    '====================',
+    listing.title,
     '',
-    `AI-score: ${analysis.score}/100`,
-    `Instapklaar: ${analysis.readiness}/100`,
+    `AI-score: ${scoreBar(analysis.score)} ${analysis.score}/100`,
+    `Instapklaar: ${scoreBar(analysis.readiness)} ${analysis.readiness}/100`,
     '',
     analysis.summary,
     '',
@@ -1063,7 +1196,9 @@ function formatAnalysisMessage(listing, analysis) {
 
 function formatListingStats(listing) {
   return [
-    `Stats: ${listing.title}`,
+    'Stats',
+    '====================',
+    listing.title,
     '',
     listing.priceText ? `Prijs: ${listing.priceText}` : '',
     listing.pricePerM2 ? `Prijs per m2: ${formatEuro(listing.pricePerM2)}` : '',
@@ -1078,7 +1213,7 @@ function formatListingStats(listing) {
     listing.location ? `Ligging: ${listing.location}` : '',
     listing.outdoor ? `Buitenruimte: ${listing.outdoor}` : '',
     listing.storage ? `Berging: ${listing.storage}` : '',
-    `Instapklaar-score: ${listing.readinessScore}/100`,
+    `Instapklaar: ${scoreBar(listing.readinessScore)} ${listing.readinessScore}/100`,
     `Reden: ${listing.readinessReason}`,
   ]
     .filter((line) => line !== '')
@@ -1097,24 +1232,33 @@ function compactListingLine(listing) {
   return bits.join(' - ');
 }
 
-async function sendTelegramText(config, text, replyMarkup = undefined) {
+function scoreBar(score) {
+  const normalized = clamp(Math.round(Number(score) || 0), 0, 100);
+  const filled = Math.round(normalized / 10);
+  return `[${'#'.repeat(filled)}${'-'.repeat(10 - filled)}]`;
+}
+
+async function sendTelegramText(config, text, replyMarkup = undefined, options = {}) {
   if (DRY_RUN) {
     console.log(`[dry-run] Telegram tekst:\n${text}`);
     if (replyMarkup) console.log(`[dry-run] Reply markup: ${JSON.stringify(replyMarkup)}`);
-    return;
+    return { message_id: 0 };
   }
 
   requireTelegramConfig(config);
   const parts = splitTelegramText(text);
+  let lastMessage = null;
   for (const [index, part] of parts.entries()) {
-    await telegramApi(config, 'sendMessage', {
+    const data = await telegramApi(config, 'sendMessage', {
       chat_id: config.telegram.chatId,
       text: part,
       reply_markup: index === parts.length - 1 ? replyMarkup : undefined,
       disable_web_page_preview: false,
     });
+    lastMessage = data.result;
     await sleep(250);
   }
+  return options.returnLastMessage ? lastMessage : undefined;
 }
 
 async function sendNtfyListing(config, listing) {

@@ -114,6 +114,7 @@ Voordeel:
 Nadeel:
 
 - Telegram commands reageren niet instant; ze worden bij de volgende 5-minuten-run verwerkt.
+- Lange acties zoals `/top10` tonen daarna een voortgangsbericht dat wordt bijgewerkt tijdens zoeken, details ophalen, ranken en versturen.
 - Voor directe reacties kan Cloudflare later alsnog als webhooklaag worden gebruikt.
 
 ## Data Opslag
@@ -181,6 +182,13 @@ Aanpak:
 Voor jouw filter waren er eerder ongeveer 135 resultaten. Dat betekent dat `/top10` waarschijnlijk meerdere pagina's en veel detailpagina's ophaalt. Daarom moet dit rustig, gecachet en niet bij elke 5-minuten-check automatisch gebeuren.
 
 `/top10` is nu ingebouwd. Omdat GitHub Actions elke 5 minuten draait, wordt het command verwerkt bij de volgende run. Resultaten worden gecachet zodat dezelfde analyse niet onnodig vaak wordt gemaakt.
+
+Tijdens `/top10` stuurt de bot een voortgangsbericht met:
+
+- zoekpagina's ophalen;
+- woningdetails ophalen;
+- ranken met OpenAI of lokale score;
+- top 10 versturen.
 
 ## Stats Voor Ranking
 
