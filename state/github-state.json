@@ -77,5 +77,10 @@
     }
   },
   "decisions": {},
+  "listingCache": {},
+  "analyses": {},
+  "top10Cache": null,
+  "lastCheckAt": "2026-06-07T21:49:49.847Z",
+  "lastSearchCount": 15,
   "telegramUpdateOffset": 0
 }
