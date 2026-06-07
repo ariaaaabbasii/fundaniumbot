@@ -162,13 +162,18 @@ async function sleepWithCallbackPolling(config, durationMs) {
 async function handleTelegramUpdates(config, state) {
   if (!config.telegram.enabled || !config.telegram.botToken) return;
 
+  await ensureTelegramPollingMode(config);
+
   const data = await telegramApi(config, 'getUpdates', {
     offset: state.telegramUpdateOffset || 0,
     timeout: 0,
     allowed_updates: ['message', 'callback_query'],
   });
 
-  for (const update of data.result || []) {
+  const updates = data.result || [];
+  console.log(`[telegram] ${updates.length} update(s) opgehaald via polling.`);
+
+  for (const update of updates) {
     state.telegramUpdateOffset = Math.max(state.telegramUpdateOffset || 0, update.update_id + 1);
 
     if (update.message?.text) {
@@ -191,6 +196,15 @@ async function handleTelegramUpdates(config, state) {
   }
 }
 
+async function ensureTelegramPollingMode(config) {
+  const info = await telegramApi(config, 'getWebhookInfo', {});
+  const webhookUrl = info.result?.url || '';
+  if (!webhookUrl) return;
+
+  await telegramApi(config, 'deleteWebhook', { drop_pending_updates: false });
+  console.log('[telegram] Actieve webhook verwijderd zodat GitHub Actions getUpdates kan pollen.');
+}
+
 async function handleTelegramCommand(config, state, message) {
   const chatId = String(message.chat?.id || '');
   if (config.telegram.chatId && chatId !== String(config.telegram.chatId)) {
@@ -203,6 +217,7 @@ async function handleTelegramCommand(config, state, message) {
 
   const [rawCommand] = message.text.trim().split(/\s+/);
   const command = rawCommand.toLowerCase().split('@')[0];
+  console.log(`[telegram] Command ontvangen: ${command}`);
 
   if (['/start', '/help', '/actions'].includes(command)) {
     await sendActionsMenu(config);
@@ -250,6 +265,7 @@ async function handleTelegramCallback(config, state, callback) {
   if (!callback?.data) return;
 
   const [action, listingId] = callback.data.split(':');
+  console.log(`[telegram] Knopactie ontvangen: ${action}${listingId ? ` voor ${listingId}` : ''}`);
   await safeAnswerCallbackQuery(config, callback.id, callbackText(action));
 
   if (['interest', 'ignore', 'maybe'].includes(action) && listingId) {
