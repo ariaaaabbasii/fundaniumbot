@@ -140,6 +140,7 @@ Belangrijke lokale instellingen:
 - `notifyNoNewListings`: stuurt ook een Telegram-bericht als er niets nieuws is.
 - `noNewNotificationMinutes`: voorkomt dat zulke “geen nieuwe woningen”-berichten vaker dan dit interval komen.
 - `maxNotificationListingAgeDays`: voorkomt dat oude Funda-woningen als nieuwe match worden gemeld; onbekende woningen ouder dan deze grens worden alleen opgeslagen.
+- `currentListingsSnapshotFile`: bewaart bij elke succesvolle check het volledige actuele Funda-resultaat; dit bestand wordt steeds vervangen en wordt gebruikt om nieuwe woningen tussen twee checks te herkennen, ook als meerdere woningen dezelfde datum hebben.
 
 ## Waar Dit Straks Het Beste Kan Draaien
 

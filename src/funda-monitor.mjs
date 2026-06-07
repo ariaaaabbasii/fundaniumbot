@@ -11,6 +11,7 @@ const DEFAULT_CONFIG = {
   firstRunNotify: false,
   maxNewListingsPerRun: 5,
   maxPhotos: 4,
+  currentListingsSnapshotFile: 'data/current-listings.json',
   maxSearchPages: 8,
   maxTop10Listings: 60,
   maxAnalysisPhotos: 3,
@@ -89,6 +90,7 @@ async function main() {
 
 async function runOnce(config) {
   const state = await loadState(config);
+  const previousSnapshot = await loadCurrentListingsSnapshot(config);
 
   await handleTelegramUpdates(config, state);
 
@@ -102,24 +104,23 @@ async function runOnce(config) {
   }
 
   const knownIds = new Set(Object.keys(state.seenListings || {}));
-  const newUrls = listingUrls.filter((url) => !knownIds.has(listingIdFromUrl(url)));
+  const previousSnapshotIds = new Set((previousSnapshot.listings || []).map((listing) => listing.id));
+  const snapshotMissing = previousSnapshotIds.size === 0;
   const firstRun = knownIds.size === 0;
 
-  if (firstRun && !config.firstRunNotify) {
-    for (const url of listingUrls) {
-      state.seenListings[listingIdFromUrl(url)] = {
-        url,
-        firstSeenAt: new Date().toISOString(),
-        seeded: true,
-      };
-    }
+  if (snapshotMissing) {
+    seedSeenListingsFromUrls(state, listingUrls, { seeded: firstRun && !config.firstRunNotify });
+    await saveCurrentListingsSnapshot(config, buildCurrentListingsSnapshot(listingUrls, state));
     await saveState(config, state);
-    console.log(`[seed] ${listingUrls.length} bestaande listings opgeslagen. Nieuwe listings melden we vanaf de volgende run.`);
+    console.log(`[seed] ${listingUrls.length} huidige listings als startsnapshot opgeslagen. Nieuwe listings melden we vanaf de volgende run.`);
     return;
   }
 
+  const newUrls = listingUrls.filter((url) => !previousSnapshotIds.has(listingIdFromUrl(url)));
+
   if (newUrls.length === 0) {
     await maybeNotifyNoNewListings(config, state, { checkedCount: listingUrls.length });
+    await saveCurrentListingsSnapshot(config, buildCurrentListingsSnapshot(listingUrls, state));
     await saveState(config, state);
     console.log(`[ok] Geen nieuwe woningen. Gezien in huidig filterresultaat: ${listingUrls.length}.`);
     return;
@@ -133,7 +134,7 @@ async function runOnce(config) {
     candidateListings.push(listing);
   }
 
-  const sortedCandidates = sortByNewestListedAt(candidateListings);
+  const sortedCandidates = sortByNewestListedAt(candidateListings, { previousSnapshotIds });
   console.log(
     `[new] ${sortedCandidates.length} kandidaat-woning(en) gesorteerd op Funda-datum${sortedCandidates[0]?.listedDateText ? `, nieuwste: ${sortedCandidates[0].listedDateText}` : ''}.`,
   );
@@ -185,6 +186,7 @@ async function runOnce(config) {
     });
   }
 
+  await saveCurrentListingsSnapshot(config, buildCurrentListingsSnapshot(listingUrls, state));
   await saveState(config, state);
 }
 
@@ -586,6 +588,8 @@ async function sendTopListing(config, state) {
 }
 
 async function sendCurrentList(config, state) {
+  const previousSnapshot = await loadCurrentListingsSnapshot(config);
+  const previousSnapshotIds = new Set((previousSnapshot.listings || []).map((listing) => listing.id));
   const listings = await getAllCurrentListings(config, state);
   if (listings.length === 0) {
     await sendTelegramText(config, 'Geen woningen gevonden onder je filter.');
@@ -593,7 +597,7 @@ async function sendCurrentList(config, state) {
   }
 
   const market = marketSnapshot(listings);
-  const sorted = sortByNewestListedAt(listings).slice(0, 10);
+  const sorted = sortByNewestListedAt(listings, { previousSnapshotIds }).slice(0, 10);
   const text = [
     '<b>🏠 Actuele woningen</b>',
     '<i>Gesorteerd op Funda-datum, niet op positie op de website.</i>',
@@ -758,15 +762,22 @@ async function getAllCurrentListings(config, state, { progress } = {}) {
 }
 
 async function getMostRecentListing(config, state) {
+  const previousSnapshot = await loadCurrentListingsSnapshot(config);
+  const previousSnapshotIds = new Set((previousSnapshot.listings || []).map((listing) => listing.id));
   const listings = await getAllCurrentListings(config, state);
-  return sortByNewestListedAt(listings)[0] || null;
+  return sortByNewestListedAt(listings, { previousSnapshotIds })[0] || null;
 }
 
-function sortByNewestListedAt(listings) {
+function sortByNewestListedAt(listings, { previousSnapshotIds } = {}) {
   return [...listings].sort((a, b) => {
     const aTime = a.listedAt ? Date.parse(a.listedAt) : 0;
     const bTime = b.listedAt ? Date.parse(b.listedAt) : 0;
     if (aTime !== bTime) return bTime - aTime;
+    if (previousSnapshotIds) {
+      const aIsNew = !previousSnapshotIds.has(a.id);
+      const bIsNew = !previousSnapshotIds.has(b.id);
+      if (aIsNew !== bIsNew) return Number(bIsNew) - Number(aIsNew);
+    }
     return Number(b.id || 0) - Number(a.id || 0);
   });
 }
@@ -1505,6 +1516,7 @@ async function loadConfig() {
   config.maxNotificationListingAgeDays = Number(
     process.env.MAX_NOTIFICATION_LISTING_AGE_DAYS || config.maxNotificationListingAgeDays,
   );
+  config.currentListingsSnapshotFile = process.env.CURRENT_LISTINGS_SNAPSHOT_FILE || config.currentListingsSnapshotFile;
   config.stateFile = process.env.STATE_FILE || config.stateFile;
   config.userAgent = process.env.USER_AGENT || config.userAgent;
 
@@ -1557,6 +1569,54 @@ async function loadState(config) {
     lastNoNewNotificationAt: state.lastNoNewNotificationAt || null,
     telegramUpdateOffset: state.telegramUpdateOffset || 0,
   };
+}
+
+async function loadCurrentListingsSnapshot(config) {
+  const snapshotPath = resolveFromRoot(config.currentListingsSnapshotFile);
+  const snapshot = await readJsonIfExists(snapshotPath, {});
+  return {
+    recordedAt: snapshot.recordedAt || null,
+    total: snapshot.total || 0,
+    listings: Array.isArray(snapshot.listings) ? snapshot.listings : [],
+  };
+}
+
+async function saveCurrentListingsSnapshot(config, snapshot) {
+  const snapshotPath = resolveFromRoot(config.currentListingsSnapshotFile);
+  await fs.mkdir(path.dirname(snapshotPath), { recursive: true });
+  await fs.writeFile(snapshotPath, `${JSON.stringify(snapshot, null, 2)}\n`, 'utf8');
+}
+
+function buildCurrentListingsSnapshot(listingUrls, state) {
+  return {
+    recordedAt: new Date().toISOString(),
+    total: listingUrls.length,
+    listings: listingUrls.map((url, index) => {
+      const id = listingIdFromUrl(url);
+      const cached = state.listingCache?.[id]?.listing;
+      const seen = state.seenListings?.[id];
+      return {
+        id,
+        url,
+        position: index + 1,
+        title: cached?.title || seen?.title || null,
+        listedAt: cached?.listedAt || seen?.listedAt || null,
+        listedDateText: cached?.listedDateText || null,
+      };
+    }),
+  };
+}
+
+function seedSeenListingsFromUrls(state, listingUrls, { seeded } = {}) {
+  for (const url of listingUrls) {
+    const id = listingIdFromUrl(url);
+    if (state.seenListings[id]) continue;
+    state.seenListings[id] = {
+      url,
+      firstSeenAt: new Date().toISOString(),
+      ...(seeded ? { seeded: true } : {}),
+    };
+  }
 }
 
 async function saveState(config, state) {

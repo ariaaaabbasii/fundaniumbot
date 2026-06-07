@@ -1,9 +1,10 @@
 {
   "searchUrl": "https://www.funda.nl/zoeken/koop?selected_area=[%22alkmaar,30km%22]&price=%22100000-300000%22&object_type=[%22apartment%22]&floor_area=%2260-%22&bedrooms=%221-%22",
-  "pollIntervalMinutes": 10,
+  "pollIntervalMinutes": 5,
   "firstRunNotify": false,
   "maxNewListingsPerRun": 5,
   "maxPhotos": 4,
+  "currentListingsSnapshotFile": "data/current-listings.json",
   "maxSearchPages": 8,
   "maxTop10Listings": 60,
   "maxAnalysisPhotos": 3,
