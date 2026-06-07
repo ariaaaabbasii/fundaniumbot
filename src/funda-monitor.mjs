@@ -11,6 +11,7 @@ const DEFAULT_CONFIG = {
   firstRunNotify: false,
   maxNewListingsPerRun: 5,
   maxPhotos: 4,
+  recentSearchPages: 3,
   maxSearchPages: 8,
   maxTop10Listings: 60,
   maxAnalysisPhotos: 3,
@@ -93,7 +94,7 @@ async function runOnce(config) {
   await handleTelegramUpdates(config, state);
 
   console.log(`[check] Funda zoekresultaten ophalen: ${new Date().toLocaleString('nl-NL')}`);
-  const listingUrls = await fetchSearchListingUrls(config, { allPages: false });
+  const listingUrls = await fetchSearchListingUrls(config, { allPages: false, maxPages: config.recentSearchPages });
   state.lastCheckAt = new Date().toISOString();
   state.lastSearchCount = listingUrls.length;
 
@@ -183,18 +184,17 @@ async function maybeNotifyNoNewListings(config, state, { checkedCount, oldSkippe
   if (state.lastNoNewNotificationAt && minutesAgo(state.lastNoNewNotificationAt) < config.noNewNotificationMinutes) return;
 
   const lines = [
-    'Funda check',
-    '====================',
+    '<b>✅ Funda check</b>',
     'Geen nieuwe woningen gevonden.',
     '',
-    `Gecheckt: ${checkedCount || 0} woning(en) op de eerste pagina.`,
+    `🏠 <b>Gecheckt:</b> ${checkedCount || 0} woning(en).`,
   ];
 
-  if (oldSkippedCount) lines.push(`Genegeerd als oud: ${oldSkippedCount} woning(en).`);
-  if (runLimitSkippedCount) lines.push(`Niet gemeld door runlimiet: ${runLimitSkippedCount} woning(en).`);
-  lines.push('', `Volgende check over ongeveer ${config.pollIntervalMinutes} minuten.`);
+  if (oldSkippedCount) lines.push(`🗓️ <b>Genegeerd als oud:</b> ${oldSkippedCount} woning(en).`);
+  if (runLimitSkippedCount) lines.push(`⏳ <b>Niet gemeld door runlimiet:</b> ${runLimitSkippedCount} woning(en).`);
+  lines.push('', `Volgende check over ongeveer <b>${config.pollIntervalMinutes}</b> minuten.`);
 
-  await sendTelegramText(config, lines.join('\n'));
+  await sendTelegramText(config, lines.join('\n'), undefined, { parseMode: 'HTML' });
   state.lastNoNewNotificationAt = new Date().toISOString();
 }
 
@@ -339,7 +339,9 @@ async function handleTelegramCallback(config, state, callback) {
       return;
     }
     const analysis = await getListingAnalysis(config, state, listing, { mode: 'full', forceRefresh: true });
-    await sendTelegramText(config, formatAnalysisMessage(listing, analysis), inlineKeyboardForListing(listing));
+    await sendTelegramText(config, formatAnalysisMessage(listing, analysis), inlineKeyboardForListing(listing), {
+      parseMode: 'HTML',
+    });
     return;
   }
 
@@ -359,7 +361,13 @@ async function handleTelegramCallback(config, state, callback) {
       await sendTelegramText(config, 'Ik kan deze woning niet meer vinden in de cache.');
       return;
     }
-    await sendTelegramText(config, formatListingStats(listing), inlineKeyboardForListing(listing));
+    const marketListings = Object.values(state.listingCache || {}).map((entry) => entry.listing).filter(Boolean);
+    await sendTelegramText(
+      config,
+      formatListingStats(listing, marketSnapshot(marketListings)),
+      inlineKeyboardForListing(listing),
+      { parseMode: 'HTML' },
+    );
     return;
   }
 
@@ -422,7 +430,7 @@ function callbackText(action) {
     analysis: 'Analyse wordt gemaakt.',
     photos: 'Foto\'s worden opgehaald.',
     stats: 'Stats worden opgehaald.',
-    top: 'Bovenste woning wordt opgehaald.',
+    top: 'Meest recente woning wordt opgehaald.',
     top10: 'Top 10 wordt gemaakt.',
     list: 'Lijst wordt opgehaald.',
     statsall: 'Marktstats worden opgehaald.',
@@ -438,34 +446,31 @@ async function sendActionsMenu(config) {
 
   const openaiStatus = openaiEnabled(config) ? 'aan' : 'uit';
   const text = [
-    'Funda bot acties',
-    '====================',
+    '<b>🏠 Funda bot acties</b>',
     '',
-    'Snelle acties',
-    '------------',
-    '/status - laatste check en cache-status',
-    '/top - haal de bovenste woning op',
-    '/top10 - analyseer alle woningen onder je filter en stuur de top 10',
-    '/list - laat de actuele woningen zien',
-    '/stats - marktstats van alle huidige filterresultaten',
-    '/saved - jouw interessante/twijfel/niet-interessante keuzes',
-    '/actions - dit menu opnieuw',
+    '<b>Snelle acties</b>',
+    '📍 /status - laatste check en cache-status',
+    '🆕 /top - meest recente woning volgens Funda-datum',
+    '🏆 /top10 - uitgebreide top 10 met klikbare woningen',
+    '🏠 /list - actuele woningen, gesorteerd op Funda-datum',
+    '📊 /stats - marktstats met prijs/m² oordeel',
+    '⭐ /saved - jouw keuzes',
+    '🧭 /actions - dit menu opnieuw',
     '',
-    'Werking',
-    '-------',
-    `OpenAI analyse: ${openaiStatus}`,
-    'Nieuwe woningen krijgen knoppen voor bekijken, interesse, twijfel, afwijzen, stats, foto\'s en analyse.',
+    '<b>Werking</b>',
+    `🧠 OpenAI analyse: <b>${openaiStatus}</b>`,
+    'Nieuwe woningen krijgen knoppen voor Funda, interesse, twijfel, afwijzen, stats, foto\'s en analyse.',
     '',
-    'Let op: knoppen worden verwerkt bij de volgende GitHub-run. Meestal is dat binnen 5 minuten. Zodra de run je actie ziet, krijg je een voortgangsbericht.',
+    'Laptop-runner reageert zolang je laptop aan staat. GitHub blijft als cloud-fallback aanwezig, maar schedules bleken minder betrouwbaar.',
   ].join('\n');
 
   await sendTelegramText(config, text, {
     inline_keyboard: [
-      [{ text: 'Bovenste woning', callback_data: 'top' }, { text: 'Top 10 analyse', callback_data: 'top10' }],
-      [{ text: 'Actuele lijst', callback_data: 'list' }, { text: 'Marktstats', callback_data: 'statsall' }],
-      [{ text: 'Status', callback_data: 'status' }, { text: 'Bewaarde keuzes', callback_data: 'saved' }],
+      [{ text: '🆕 Meest recent', callback_data: 'top' }, { text: '🏆 Top 10 analyse', callback_data: 'top10' }],
+      [{ text: '🏠 Actuele lijst', callback_data: 'list' }, { text: '📊 Marktstats', callback_data: 'statsall' }],
+      [{ text: '📍 Status', callback_data: 'status' }, { text: '⭐ Bewaarde keuzes', callback_data: 'saved' }],
     ],
-  });
+  }, { parseMode: 'HTML' });
 }
 
 async function createProgressReporter(config, title, initialLines = []) {
@@ -538,43 +543,41 @@ async function sendStatus(config, state) {
     ? new Date(state.lastCheckAt).toLocaleString('nl-NL', { timeZone: 'Europe/Amsterdam' })
     : 'nog niet bekend';
   const text = [
-    'Botstatus',
-    '====================',
+    '<b>📍 Botstatus</b>',
     '',
-    `Laatste check: ${lastCheck}`,
-    `Woningen gezien: ${Object.keys(state.seenListings || {}).length}`,
-    `Listing-cache: ${Object.keys(state.listingCache || {}).length}`,
-    `Analyses-cache: ${Object.keys(state.analyses || {}).length}`,
-    `Laatste eerste-pagina aantal: ${state.lastSearchCount || 0}`,
-    `Top10-cache: ${state.top10Cache?.createdAt ? 'aanwezig' : 'leeg'}`,
-    `OpenAI: ${openaiEnabled(config) ? 'aan' : 'uit'}`,
+    `🕒 <b>Laatste check:</b> ${htmlEscape(lastCheck)}`,
+    `🏠 <b>Woningen gezien:</b> ${Object.keys(state.seenListings || {}).length}`,
+    `🧺 <b>Listing-cache:</b> ${Object.keys(state.listingCache || {}).length}`,
+    `🧠 <b>Analyses-cache:</b> ${Object.keys(state.analyses || {}).length}`,
+    `📄 <b>Laatste check-aantal:</b> ${state.lastSearchCount || 0}`,
+    `🏆 <b>Top10-cache:</b> ${state.top10Cache?.createdAt ? 'aanwezig' : 'leeg'}`,
+    `🤖 <b>OpenAI:</b> ${openaiEnabled(config) ? 'aan' : 'uit'}`,
     '',
     'Gebruik /actions voor alle acties.',
   ].join('\n');
 
   await sendTelegramText(config, text, {
     inline_keyboard: [
-      [{ text: 'Top 10 analyse', callback_data: 'top10' }, { text: 'Marktstats', callback_data: 'statsall' }],
-      [{ text: 'Actuele lijst', callback_data: 'list' }],
+      [{ text: '🏆 Top 10 analyse', callback_data: 'top10' }, { text: '📊 Marktstats', callback_data: 'statsall' }],
+      [{ text: '🏠 Actuele lijst', callback_data: 'list' }],
     ],
-  });
+  }, { parseMode: 'HTML' });
 }
 
 async function sendTopListing(config, state) {
-  const [url] = await fetchSearchListingUrls(config, { allPages: false });
-  if (!url) {
+  const listing = await getMostRecentListing(config, state);
+  if (!listing) {
     await sendTelegramText(config, 'Geen woningen gevonden onder je filter.');
     return;
   }
 
-  const listing = await getListingDetails(config, state, url);
   const analysis = openaiEnabled(config) ? await getListingAnalysis(config, state, listing, { mode: 'short' }) : null;
   listing.analysis = analysis;
-  await sendTelegramListing(config, listing, { heading: 'Bovenste Funda-woning' });
+  await sendTelegramListing(config, listing, { heading: 'Meest recente Funda-woning' });
 }
 
 async function sendCurrentList(config, state) {
-  const urls = await fetchSearchListingUrls(config, { allPages: false });
+  const urls = await fetchSearchListingUrls(config, { allPages: false, maxPages: config.recentSearchPages });
   if (urls.length === 0) {
     await sendTelegramText(config, 'Geen woningen gevonden onder je filter.');
     return;
@@ -586,17 +589,20 @@ async function sendCurrentList(config, state) {
     await sleep(350);
   }
 
+  const market = marketSnapshot(listings);
+  const sorted = sortByNewestListedAt(listings).slice(0, 10);
   const text = [
-    'Actuele woningen op de eerste Funda-pagina',
+    '<b>🏠 Actuele woningen</b>',
+    '<i>Gesorteerd op Funda-datum, niet op positie op de website.</i>',
     '',
-    ...listings.map((listing, index) => `${index + 1}. ${compactListingLine(listing)}`),
+    ...sorted.map((listing, index) => formatCompactListingLineHtml(listing, index + 1, market)),
     '',
-    'Gebruik /top10 voor de uitgebreide ranking over alle pagina\'s.',
+    'Gebruik <b>Top 10 analyse</b> voor de uitgebreide ranking.',
   ].join('\n');
 
   await sendTelegramText(config, text, {
-    inline_keyboard: [[{ text: 'Top 10 analyse', callback_data: 'top10' }, { text: 'Marktstats', callback_data: 'statsall' }]],
-  });
+    inline_keyboard: [[{ text: '🏆 Top 10 analyse', callback_data: 'top10' }, { text: '📊 Marktstats', callback_data: 'statsall' }]],
+  }, { parseMode: 'HTML' });
 }
 
 async function sendMarketStats(config, state) {
@@ -613,26 +619,29 @@ async function sendMarketStats(config, state) {
   const prices = listings.map((listing) => listing.price).filter(Number.isFinite);
   const ppm = listings.map((listing) => listing.pricePerM2).filter(Number.isFinite);
   const living = listings.map((listing) => listing.livingArea).filter(Number.isFinite);
+  const market = marketSnapshot(listings);
+  const best = rankListingsFallback(listings).slice(0, 5);
   const text = [
-    'Marktstats voor je huidige filter',
+    '<b>📊 Marktstats voor je huidige filter</b>',
+    '<i>Gebaseerd op de opgehaalde Funda-resultaten binnen jouw zoekfilter.</i>',
     '',
-    `Aantal woningen: ${listings.length}`,
-    prices.length ? `Prijs mediaan: ${formatEuro(median(prices))}` : '',
-    prices.length ? `Prijs gemiddeld: ${formatEuro(avg(prices))}` : '',
-    ppm.length ? `Prijs per m2 mediaan: ${formatEuro(median(ppm))}` : '',
-    living.length ? `Woonoppervlak mediaan: ${Math.round(median(living))} m2` : '',
-    `Instapklaar-kans hoog: ${listings.filter((listing) => listing.readinessScore >= 70).length}`,
-    `Energielabel A/B/C: ${listings.filter((listing) => ['A', 'A+', 'A++', 'A+++', 'A++++', 'B', 'C'].includes(listing.energyLabel)).length}`,
+    `🏘️ <b>Aantal:</b> ${listings.length} woningen`,
+    prices.length ? `💰 <b>Vraagprijs mediaan:</b> ${formatEuro(median(prices))}` : '',
+    prices.length ? `⚖️ <b>Vraagprijs gemiddeld:</b> ${formatEuro(avg(prices))}` : '',
+    ppm.length ? `📐 <b>Prijs per m² mediaan:</b> ${formatEuro(market.medianPricePerM2)}` : '',
+    living.length ? `📏 <b>Woonoppervlak mediaan:</b> ${Math.round(median(living))} m²` : '',
+    `✨ <b>Instapklaar hoog:</b> ${listings.filter((listing) => listing.readinessScore >= 70).length}`,
+    `🌱 <b>Energielabel A/B/C:</b> ${listings.filter((listing) => ['A', 'A+', 'A++', 'A+++', 'A++++', 'B', 'C'].includes(listing.energyLabel)).length}`,
     '',
-    'Beste ruwe matches:',
-    ...rankListingsFallback(listings).slice(0, 5).map((item, index) => `${index + 1}. ${compactListingLine(item.listing)} - score ${item.score}`),
+    '<b>🏅 Beste matches</b>',
+    ...best.map((item, index) => formatCompactListingLineHtml(item.listing, index + 1, market, item.score)),
   ]
     .filter((line) => line !== '')
     .join('\n');
 
   await sendTelegramText(config, text, {
-    inline_keyboard: [[{ text: 'Top 10 analyse', callback_data: 'top10' }, { text: 'Actuele lijst', callback_data: 'list' }]],
-  });
+    inline_keyboard: [[{ text: '🏆 Top 10 analyse', callback_data: 'top10' }, { text: '🏠 Actuele lijst', callback_data: 'list' }]],
+  }, { parseMode: 'HTML' });
   await progress.done(['Marktstats zijn verstuurd.']);
 }
 
@@ -677,30 +686,28 @@ async function sendTop10(config, state, options = {}) {
 }
 
 async function sendTop10Result(config, state, result, { cached }) {
-  const cacheLabel = cached ? ' (cache)' : '';
-  const lines = [`Top 10 Funda-filter${cacheLabel}`, '====================', ''];
-
-  for (const [index, item] of result.slice(0, 10).entries()) {
+  const listings = [];
+  for (const item of result.slice(0, 10)) {
     const listing = await getListingById(config, state, item.id);
-    if (!listing) continue;
-    lines.push(`${index + 1}. ${compactListingLine(listing)}`);
-    lines.push(`Score: ${scoreBar(item.score)} ${item.score}/100`);
-    if (item.reason) lines.push(`Waarom: ${truncate(item.reason, 260)}`);
-    if (item.risks) lines.push(`Let op: ${truncate(item.risks, 220)}`);
+    if (listing) listings.push({ item, listing });
+  }
+
+  const market = marketSnapshot(Object.values(state.listingCache || {}).map((entry) => entry.listing).filter(Boolean));
+  const cacheLabel = cached ? ' <i>(cache)</i>' : '';
+  const lines = [`<b>🏆 Top 10 Funda-filter</b>${cacheLabel}`, '<i>Prijs, ruimte, instapklaar-signalen en analyse samengevat.</i>', ''];
+
+  for (const [index, { item, listing }] of listings.entries()) {
+    lines.push(formatTop10ItemHtml(listing, item, index + 1, market));
     lines.push('');
   }
 
   const text = splitTelegramText(lines.join('\n').trim());
   for (const part of text) {
-    await sendTelegramText(config, part);
+    await sendTelegramText(config, part, undefined, { parseMode: 'HTML' });
     await sleep(350);
   }
 
-  const topListings = [];
-  for (const item of result.slice(0, 3)) {
-    const listing = await getListingById(config, state, item.id);
-    if (listing) topListings.push(listing);
-  }
+  const topListings = listings.slice(0, 3).map(({ listing }) => listing);
 
   for (const [index, listing] of topListings.entries()) {
     await sendTelegramListing(config, listing, { heading: `Top ${index + 1}` });
@@ -715,16 +722,15 @@ async function sendSavedListings(config, state) {
     return;
   }
 
-  const lines = ['Jouw gemarkeerde woningen', ''];
+  const lines = ['<b>⭐ Jouw gemarkeerde woningen</b>', ''];
   for (const [id, decision] of entries.slice(-20).reverse()) {
     const listing = await getListingById(config, state, id);
-    const title = listing ? listing.title : `Woning ${id}`;
-    lines.push(`${decision.decision}: ${title}`);
-    if (listing) lines.push(listing.url);
+    const title = listing ? htmlLink(listing.title, listing.url) : `Woning ${htmlEscape(id)}`;
+    lines.push(`${decisionEmoji(decision.decision)} <b>${htmlEscape(decision.decision)}:</b> ${title}`);
     lines.push('');
   }
 
-  await sendTelegramText(config, lines.join('\n').trim());
+  await sendTelegramText(config, lines.join('\n').trim(), undefined, { parseMode: 'HTML' });
 }
 
 async function getAllCurrentListings(config, state, { progress } = {}) {
@@ -748,10 +754,31 @@ async function getAllCurrentListings(config, state, { progress } = {}) {
   return listings;
 }
 
-async function fetchSearchListingUrls(config, { allPages, progress } = {}) {
+async function getMostRecentListing(config, state) {
+  const urls = await fetchSearchListingUrls(config, { allPages: false, maxPages: config.recentSearchPages });
+  const listings = [];
+
+  for (const url of urls.slice(0, Math.max(10, config.recentSearchPages * 15))) {
+    listings.push(await getListingDetails(config, state, url));
+    await sleep(250);
+  }
+
+  return sortByNewestListedAt(listings)[0] || null;
+}
+
+function sortByNewestListedAt(listings) {
+  return [...listings].sort((a, b) => {
+    const aTime = a.listedAt ? Date.parse(a.listedAt) : 0;
+    const bTime = b.listedAt ? Date.parse(b.listedAt) : 0;
+    if (aTime !== bTime) return bTime - aTime;
+    return Number(b.id || 0) - Number(a.id || 0);
+  });
+}
+
+async function fetchSearchListingUrls(config, { allPages, progress, maxPages: requestedMaxPages } = {}) {
   const urls = [];
   const seen = new Set();
-  const maxPages = allPages ? config.maxSearchPages : 1;
+  const maxPages = requestedMaxPages || (allPages ? config.maxSearchPages : 1);
 
   for (let page = 1; page <= maxPages; page += 1) {
     if (progress) {
@@ -781,7 +808,9 @@ async function fetchSearchListingUrls(config, { allPages, progress } = {}) {
 async function getListingDetails(config, state, url, { refresh = false } = {}) {
   const id = listingIdFromUrl(url);
   const cached = state.listingCache?.[id];
-  if (!refresh && cached?.listing && minutesAgo(cached.fetchedAt) < 360) return cached.listing;
+  if (!refresh && cached?.listing && minutesAgo(cached.fetchedAt) < 360 && !hasInvalidListedDate(cached.listing)) {
+    return cached.listing;
+  }
 
   const listing = await fetchListingDetails(url, config);
   state.listingCache[id] = {
@@ -840,7 +869,7 @@ async function fetchListingDetails(url, config) {
   const energyLabel = cleanEnergyLabel(features.Energielabel);
   const photos = extractPhotos(jsonLd).slice(0, 12);
   const readiness = estimateReadiness({ description, features, photos });
-  const listedDateText = features['Aangeboden sinds'] || extractListedDateText(html);
+  const listedDateText = normalizeListedDateText(features['Aangeboden sinds']) || extractListedDateText(html);
   const listedAt = parseDutchNumericDate(listedDateText);
 
   return {
@@ -1166,7 +1195,7 @@ async function sendTelegramListing(config, listing, { heading }) {
 
   requireTelegramConfig(config);
 
-  const caption = truncate(formatListingMessage(listing, heading), 1000);
+  const caption = truncate(formatListingMessageHtml(listing, heading), 1000);
   const replyMarkup = inlineKeyboardForListing(listing);
 
   if (listing.photos[0]) {
@@ -1174,10 +1203,11 @@ async function sendTelegramListing(config, listing, { heading }) {
       chat_id: config.telegram.chatId,
       photo: listing.photos[0],
       caption,
+      parse_mode: 'HTML',
       reply_markup: replyMarkup,
     });
   } else {
-    await sendTelegramText(config, caption, replyMarkup);
+    await sendTelegramText(config, caption, replyMarkup, { parseMode: 'HTML' });
   }
 }
 
@@ -1205,19 +1235,46 @@ async function sendListingPhotos(config, listing) {
 function inlineKeyboardForListing(listing) {
   return {
     inline_keyboard: [
-      [{ text: 'Bekijk / reageer', url: listing.url }],
+      [{ text: '🔎 Bekijk op Funda', url: listing.url }],
       [
-        { text: 'Interessant', callback_data: `interest:${listing.id}` },
-        { text: 'Twijfel', callback_data: `maybe:${listing.id}` },
-        { text: 'Nee', callback_data: `ignore:${listing.id}` },
+        { text: '⭐ Interessant', callback_data: `interest:${listing.id}` },
+        { text: '🤔 Twijfel', callback_data: `maybe:${listing.id}` },
+        { text: '🚫 Nee', callback_data: `ignore:${listing.id}` },
       ],
       [
-        { text: 'Analyse', callback_data: `analysis:${listing.id}` },
-        { text: 'Stats', callback_data: `stats:${listing.id}` },
-        { text: 'Foto\'s', callback_data: `photos:${listing.id}` },
+        { text: '🧠 Analyse', callback_data: `analysis:${listing.id}` },
+        { text: '📊 Stats', callback_data: `stats:${listing.id}` },
+        { text: '📸 Foto\'s', callback_data: `photos:${listing.id}` },
       ],
     ],
   };
+}
+
+function formatListingMessageHtml(listing, heading, market = null) {
+  const score = listing.analysis?.score ?? fallbackScore(listing);
+  const priceLabel = pricePerM2Label(listing, market);
+  const lines = [
+    `<b>${htmlEscape(heading)}</b>`,
+    htmlLink(listing.title, listing.url),
+    '',
+    `${ratingEmoji(score)} <b>Eindrating:</b> ${formatRating(score)}`,
+    listing.analysis ? `🧠 <b>AI-score:</b> ${formatRating(listing.analysis.score)}` : '',
+    `✨ <b>Instapklaar:</b> ${formatRating(listing.analysis?.readiness ?? listing.readinessScore)}`,
+    '',
+    listing.priceText ? `💰 <b>Prijs:</b> ${htmlEscape(listing.priceText)}` : '',
+    listing.pricePerM2 ? `📐 <b>Prijs/m²:</b> ${formatEuro(listing.pricePerM2)} ${htmlEscape(priceLabel)}` : '',
+    listing.livingArea ? `📏 <b>Wonen:</b> ${listing.livingArea} m²` : '',
+    listing.rooms ? `🛏️ <b>Kamers:</b> ${htmlEscape(listing.rooms)}` : '',
+    listing.energyLabel ? `🌱 <b>Energielabel:</b> ${htmlEscape(listing.energyLabel)}` : '',
+    listing.buildYear ? `🏗️ <b>Bouwjaar:</b> ${listing.buildYear}` : '',
+    listing.listedDateText ? `🗓️ <b>Op Funda:</b> ${htmlEscape(listing.listedDateText)}` : '',
+    listing.serviceCosts ? `🏢 <b>Servicekosten:</b> ${htmlEscape(listing.serviceCosts)}` : '',
+    '',
+    '<b>Samenvatting</b>',
+    htmlEscape(truncate(listing.analysis?.summary || listing.summary, 650)),
+    listing.analysis?.interior ? `\n🛋️ <b>Interieur:</b> ${htmlEscape(listing.analysis.interior)}` : '',
+  ];
+  return lines.filter((line) => line !== '').join('\n');
 }
 
 function formatListingMessage(listing, heading) {
@@ -1248,48 +1305,51 @@ function formatListingMessage(listing, heading) {
 }
 
 function formatAnalysisMessage(listing, analysis) {
+  const score = analysis.score;
   return [
-    'Analyse',
-    '====================',
-    listing.title,
+    '<b>🧠 Analyse</b>',
+    htmlLink(listing.title, listing.url),
     '',
-    `AI-score: ${scoreBar(analysis.score)} ${analysis.score}/100`,
-    `Instapklaar: ${scoreBar(analysis.readiness)} ${analysis.readiness}/100`,
+    `${ratingEmoji(score)} <b>Eindrating:</b> ${formatRating(score)}`,
+    `✨ <b>Instapklaar:</b> ${formatRating(analysis.readiness)}`,
     '',
-    analysis.summary,
+    htmlEscape(analysis.summary),
     '',
-    analysis.pros.length ? `Plus: ${analysis.pros.join('; ')}` : '',
-    analysis.cons.length ? `Min: ${analysis.cons.join('; ')}` : '',
-    analysis.interior ? `Interieur: ${analysis.interior}` : '',
-    analysis.action ? `Actie: ${analysis.action}` : '',
+    analysis.pros.length ? `✅ <b>Plus:</b> ${htmlEscape(analysis.pros.join('; '))}` : '',
+    analysis.cons.length ? `⚠️ <b>Let op:</b> ${htmlEscape(analysis.cons.join('; '))}` : '',
+    analysis.interior ? `🛋️ <b>Interieur:</b> ${htmlEscape(analysis.interior)}` : '',
+    analysis.action ? `🎯 <b>Actie:</b> ${htmlEscape(analysis.action)}` : '',
     '',
-    listing.url,
+    htmlLink('Open woning op Funda', listing.url),
   ]
     .filter((line) => line !== '')
     .join('\n');
 }
 
-function formatListingStats(listing) {
+function formatListingStats(listing, market = null) {
+  const score = fallbackScore(listing);
   return [
-    'Stats',
-    '====================',
-    listing.title,
+    '<b>📊 Woningstats</b>',
+    htmlLink(listing.title, listing.url),
     '',
-    listing.priceText ? `Prijs: ${listing.priceText}` : '',
-    listing.pricePerM2 ? `Prijs per m2: ${formatEuro(listing.pricePerM2)}` : '',
-    listing.livingArea ? `Wonen: ${listing.livingArea} m2` : '',
-    listing.rooms ? `Kamers: ${listing.rooms}` : '',
-    listing.bedrooms ? `Slaapkamers: ${listing.bedrooms}` : '',
-    listing.energyLabel ? `Energielabel: ${listing.energyLabel}` : '',
-    listing.buildYear ? `Bouwjaar: ${listing.buildYear}` : '',
-    listing.acceptance ? `Aanvaarding: ${listing.acceptance}` : '',
-    listing.apartmentType ? `Type: ${listing.apartmentType}` : '',
-    listing.serviceCosts ? `Servicekosten: ${listing.serviceCosts}` : '',
-    listing.location ? `Ligging: ${listing.location}` : '',
-    listing.outdoor ? `Buitenruimte: ${listing.outdoor}` : '',
-    listing.storage ? `Berging: ${listing.storage}` : '',
-    `Instapklaar: ${scoreBar(listing.readinessScore)} ${listing.readinessScore}/100`,
-    `Reden: ${listing.readinessReason}`,
+    `${ratingEmoji(score)} <b>Eindrating:</b> ${formatRating(score)}`,
+    listing.priceText ? `💰 <b>Prijs:</b> ${htmlEscape(listing.priceText)}` : '',
+    listing.pricePerM2 ? `📐 <b>Prijs/m²:</b> ${formatEuro(listing.pricePerM2)} ${htmlEscape(pricePerM2Label(listing, market))}` : '',
+    market?.medianPricePerM2 ? `📍 <b>Filtermediaan:</b> ${formatEuro(market.medianPricePerM2)}/m²` : '',
+    listing.livingArea ? `📏 <b>Wonen:</b> ${listing.livingArea} m²` : '',
+    listing.rooms ? `🛏️ <b>Kamers:</b> ${htmlEscape(listing.rooms)}` : '',
+    listing.bedrooms ? `🚪 <b>Slaapkamers:</b> ${listing.bedrooms}` : '',
+    listing.energyLabel ? `🌱 <b>Energielabel:</b> ${htmlEscape(listing.energyLabel)}` : '',
+    listing.buildYear ? `🏗️ <b>Bouwjaar:</b> ${listing.buildYear}` : '',
+    listing.listedDateText ? `🗓️ <b>Op Funda:</b> ${htmlEscape(listing.listedDateText)}` : '',
+    listing.acceptance ? `🔑 <b>Aanvaarding:</b> ${htmlEscape(listing.acceptance)}` : '',
+    listing.apartmentType ? `🏢 <b>Type:</b> ${htmlEscape(listing.apartmentType)}` : '',
+    listing.serviceCosts ? `🧾 <b>Servicekosten:</b> ${htmlEscape(listing.serviceCosts)}` : '',
+    listing.location ? `📍 <b>Ligging:</b> ${htmlEscape(listing.location)}` : '',
+    listing.outdoor ? `🌤️ <b>Buitenruimte:</b> ${htmlEscape(listing.outdoor)}` : '',
+    listing.storage ? `📦 <b>Berging:</b> ${htmlEscape(listing.storage)}` : '',
+    `✨ <b>Instapklaar:</b> ${formatRating(listing.readinessScore)}`,
+    `📝 <b>Samenvatting:</b> ${htmlEscape(listing.readinessReason)}`,
   ]
     .filter((line) => line !== '')
     .join('\n');
@@ -1305,6 +1365,76 @@ function compactListingLine(listing) {
     `ready ${listing.readinessScore}/100`,
   ].filter(Boolean);
   return bits.join(' - ');
+}
+
+function formatCompactListingLineHtml(listing, index, market = null, score = fallbackScore(listing)) {
+  const bits = [
+    `${index}. ${htmlLink(listing.title, listing.url)}`,
+    `${ratingEmoji(score)} ${formatRating(score)}`,
+    listing.priceText ? `💰 ${htmlEscape(listing.priceText)}` : '',
+    listing.pricePerM2 ? `📐 ${formatEuro(listing.pricePerM2)}/m² ${htmlEscape(pricePerM2Label(listing, market))}` : '',
+    listing.livingArea ? `📏 ${listing.livingArea} m²` : '',
+    listing.listedDateText ? `🗓️ ${htmlEscape(listing.listedDateText)}` : '',
+  ].filter(Boolean);
+  return bits.join('\n');
+}
+
+function formatTop10ItemHtml(listing, item, index, market) {
+  const score = clamp(Math.round(Number(item.score) || fallbackScore(listing)), 0, 100);
+  const lines = [
+    `<b>${index}.</b> ${htmlLink(listing.title, listing.url)}`,
+    `${ratingEmoji(score)} <b>Rating:</b> ${formatRating(score)}`,
+    listing.priceText ? `💰 ${htmlEscape(listing.priceText)}` : '',
+    listing.pricePerM2 ? `📐 ${formatEuro(listing.pricePerM2)}/m² ${htmlEscape(pricePerM2Label(listing, market))}` : '',
+    listing.livingArea ? `📏 ${listing.livingArea} m²` : '',
+    listing.energyLabel ? `🌱 Label ${htmlEscape(listing.energyLabel)}` : '',
+    listing.listedDateText ? `🗓️ Op Funda: ${htmlEscape(listing.listedDateText)}` : '',
+    item.reason ? `✅ ${htmlEscape(truncate(item.reason, 230))}` : '',
+    item.risks ? `⚠️ ${htmlEscape(truncate(item.risks, 190))}` : '',
+  ];
+  return lines.filter(Boolean).join('\n');
+}
+
+function marketSnapshot(listings) {
+  const pricePerM2Values = listings.map((listing) => listing?.pricePerM2).filter(Number.isFinite);
+  return {
+    medianPricePerM2: pricePerM2Values.length ? Math.round(median(pricePerM2Values)) : null,
+  };
+}
+
+function pricePerM2Label(listing, market = null) {
+  if (!listing.pricePerM2) return '';
+  const medianPricePerM2 = market?.medianPricePerM2;
+  if (medianPricePerM2) {
+    const ratio = listing.pricePerM2 / medianPricePerM2;
+    if (ratio <= 0.9) return '(goedkoop voor dit filter)';
+    if (ratio >= 1.12) return '(duur voor dit filter)';
+    return '(marktconform)';
+  }
+  if (listing.pricePerM2 < 3800) return '(goedkoop)';
+  if (listing.pricePerM2 > 5200) return '(duur)';
+  return '(marktconform)';
+}
+
+function formatRating(score) {
+  const normalized = clamp(Math.round(Number(score) || 0), 0, 100);
+  const label = normalized >= 85 ? 'uitstekend' : normalized >= 75 ? 'sterk' : normalized >= 65 ? 'goed' : normalized >= 50 ? 'twijfel' : 'zwak';
+  return `${scoreBar(normalized)} ${normalized}/100 - ${label}`;
+}
+
+function ratingEmoji(score) {
+  const normalized = clamp(Math.round(Number(score) || 0), 0, 100);
+  if (normalized >= 85) return '🔥';
+  if (normalized >= 75) return '⭐';
+  if (normalized >= 65) return '✅';
+  if (normalized >= 50) return '🤔';
+  return '⚠️';
+}
+
+function decisionEmoji(decision) {
+  if (decision === 'interessant') return '⭐';
+  if (decision === 'twijfel') return '🤔';
+  return '🚫';
 }
 
 function scoreBar(score) {
@@ -1329,6 +1459,7 @@ async function sendTelegramText(config, text, replyMarkup = undefined, options =
       text: part,
       reply_markup: index === parts.length - 1 ? replyMarkup : undefined,
       disable_web_page_preview: false,
+      parse_mode: options.parseMode,
     });
     lastMessage = data.result;
     await sleep(250);
@@ -1369,6 +1500,7 @@ async function loadConfig() {
   config.firstRunNotify = boolFromEnv('FIRST_RUN_NOTIFY', config.firstRunNotify);
   config.maxNewListingsPerRun = Number(process.env.MAX_NEW_LISTINGS_PER_RUN || config.maxNewListingsPerRun);
   config.maxPhotos = Number(process.env.MAX_PHOTOS || config.maxPhotos);
+  config.recentSearchPages = Number(process.env.RECENT_SEARCH_PAGES || config.recentSearchPages);
   config.maxSearchPages = Number(process.env.MAX_SEARCH_PAGES || config.maxSearchPages);
   config.maxTop10Listings = Number(process.env.MAX_TOP10_LISTINGS || config.maxTop10Listings);
   config.maxAnalysisPhotos = Number(process.env.MAX_ANALYSIS_PHOTOS || config.maxAnalysisPhotos);
@@ -1526,6 +1658,11 @@ function extractListedDateText(html) {
   return match ? match[1] : '';
 }
 
+function normalizeListedDateText(value) {
+  const text = cleanText(value || '');
+  return /\d{1,2}-\d{1,2}-\d{4}/.test(text) ? text : '';
+}
+
 function parseDutchNumericDate(value) {
   const match = String(value || '').match(/\b(\d{1,2})-(\d{1,2})-(\d{4})\b/);
   if (!match) return null;
@@ -1538,6 +1675,10 @@ function isRecentEnoughForNewNotification(config, listing) {
   if (!Number.isFinite(maxAgeDays) || maxAgeDays <= 0) return true;
   if (!listing.listedAt) return true;
   return Date.now() - new Date(listing.listedAt).getTime() <= maxAgeDays * 24 * 60 * 60 * 1000;
+}
+
+function hasInvalidListedDate(listing) {
+  return /log in/i.test(String(listing?.listedDateText || ''));
 }
 
 function extractMetaContent(html, name) {
@@ -1755,6 +1896,18 @@ function splitTelegramText(text) {
 function truncate(value, maxLength) {
   if (!value || value.length <= maxLength) return value || '';
   return `${value.slice(0, maxLength - 3).trim()}...`;
+}
+
+function htmlEscape(value) {
+  return String(value || '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;');
+}
+
+function htmlLink(label, url) {
+  return `<a href="${htmlEscape(url)}">${htmlEscape(label)}</a>`;
 }
 
 function stripTags(value) {

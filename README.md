@@ -141,6 +141,30 @@ Belangrijke lokale instellingen:
 - `noNewNotificationMinutes`: voorkomt dat zulke “geen nieuwe woningen”-berichten vaker dan dit interval komen.
 - `maxNotificationListingAgeDays`: voorkomt dat oude Funda-woningen als nieuwe match worden gemeld; onbekende woningen ouder dan deze grens worden alleen opgeslagen.
 
+## Waar Dit Straks Het Beste Kan Draaien
+
+De laptop-runner is handig als snelle, betrouwbare fallback zolang je laptop aan staat. Voor permanent draaien zonder laptop zijn dit de beste richtingen:
+
+1. Kleine VPS of mini-server
+   - Beste match voor deze bot.
+   - Draait 24/7 met gewone Node.js, dus dezelfde code kan blijven.
+   - Gebruik bijvoorbeeld een goedkope Linux VPS of een mini-pc thuis.
+   - Start met `npm run local` onder een process manager zoals `pm2` of een systemd service.
+
+2. Raspberry Pi of andere always-on computer thuis
+   - Goedkoop en simpel als je thuis internet stabiel is.
+   - Zelfde voordeel: geen Cloudflare Worker-verkeer richting Funda.
+
+3. GitHub Actions als fallback
+   - Staat nog aan en kan handmatig of via schedule draaien.
+   - Minder geschikt als enige runner, omdat scheduled runs niet altijd direct of betrouwbaar lijken te starten in deze repo.
+
+4. Externe cron-service die GitHub workflow_dispatch aanroept
+   - Kan GitHub Actions betrouwbaarder triggeren dan alleen de ingebouwde schedule.
+   - Vereist wel een GitHub token met Actions write-permissie.
+
+Cloudflare Worker blijft minder geschikt voor de scraper zelf, omdat Funda Worker-verkeer eerder een reCAPTCHA/Akamai-pagina gaf.
+
 ## Data Opslag
 
 We gebruiken nu `state/github-state.json` als kleine state-file in GitHub.
