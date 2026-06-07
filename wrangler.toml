@@ -1,0 +1,21 @@
+name = "funda-home-alert"
+main = "worker/index.mjs"
+compatibility_date = "2026-06-07"
+
+[triggers]
+crons = ["*/5 * * * *"]
+
+[vars]
+FUNDA_SEARCH_URL = "https://www.funda.nl/zoeken/koop?selected_area=[%22alkmaar,30km%22]&price=%22100000-300000%22&object_type=[%22apartment%22]&floor_area=%2260-%22&bedrooms=%221-%22"
+OPENAI_MODEL = "gpt-5.4-mini"
+MAX_NEW_LISTINGS_PER_RUN = "5"
+FIRST_RUN_NOTIFY = "false"
+TOP10_DETAIL_BATCH_SIZE = "30"
+TOP10_ANALYSIS_BATCH_SIZE = "8"
+TOP10_PHOTOS_PER_HOME = "4"
+TELEGRAM_CHAT_ID = ""
+
+[[d1_databases]]
+binding = "DB"
+database_name = "funda-home-alert"
+database_id = "REPLACE_WITH_CLOUDFLARE_D1_DATABASE_ID"

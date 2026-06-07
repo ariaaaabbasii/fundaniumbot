@@ -1,0 +1,24 @@
+{
+  "name": "funda-home-alert",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Personal Funda listing monitor with phone notifications.",
+  "scripts": {
+    "start": "node src/funda-monitor.mjs",
+    "once": "node src/funda-monitor.mjs --once",
+    "dry-run": "node src/funda-monitor.mjs --once --dry-run",
+    "top": "node src/funda-top.mjs",
+    "cf:dev": "wrangler dev",
+    "cf:deploy": "wrangler deploy",
+    "cf:d1:create": "wrangler d1 create funda-home-alert",
+    "cf:d1:migrate:local": "wrangler d1 migrations apply funda-home-alert --local",
+    "cf:d1:migrate:remote": "wrangler d1 migrations apply funda-home-alert --remote"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
