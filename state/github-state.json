@@ -388,6 +388,10 @@
       "firstSeenAt": "2026-06-07T21:33:53.336Z",
       "seeded": true
     },
+    "44480160": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-reviusstraat-68/44480160/",
+      "firstSeenAt": "2026-06-08T22:14:25.543Z"
+    },
     "44485278": {
       "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-winkelwaard-100/44485278/",
       "firstSeenAt": "2026-06-07T21:33:53.336Z",
@@ -597,7 +601,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-06-08T20:34:36.286Z",
+  "lastCheckAt": "2026-06-08T22:14:25.543Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
