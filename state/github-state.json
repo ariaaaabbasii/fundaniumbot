@@ -396,6 +396,10 @@
       "url": "https://www.funda.nl/detail/koop/haarlem/appartement-engelandlaan-1094/44480632/",
       "firstSeenAt": "2026-06-09T05:50:44.643Z"
     },
+    "44481512": {
+      "url": "https://www.funda.nl/detail/koop/hoorn-nh/appartement-boogschutter-60/44481512/",
+      "firstSeenAt": "2026-06-09T12:08:32.493Z"
+    },
     "44485278": {
       "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-winkelwaard-100/44485278/",
       "firstSeenAt": "2026-06-07T21:33:53.336Z",
@@ -605,7 +609,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-06-09T08:56:34.147Z",
+  "lastCheckAt": "2026-06-09T12:08:32.493Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
