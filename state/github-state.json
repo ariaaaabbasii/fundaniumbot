@@ -404,6 +404,10 @@
       "url": "https://www.funda.nl/detail/koop/hoorn-nh/appartement-boogschutter-60/44481512/",
       "firstSeenAt": "2026-06-09T12:08:32.493Z"
     },
+    "44483042": {
+      "url": "https://www.funda.nl/detail/koop/heemskerk/appartement-jan-ligthartstraat-209/44483042/",
+      "firstSeenAt": "2026-06-11T00:26:02.645Z"
+    },
     "44483334": {
       "url": "https://www.funda.nl/detail/koop/heemskerk/appartement-bachstraat-96/44483334/",
       "firstSeenAt": "2026-06-10T16:08:54.707Z"
@@ -621,8 +625,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-06-10T23:00:18.804Z",
-  "lastSearchCount": 119,
+  "lastCheckAt": "2026-06-11T00:26:02.644Z",
+  "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
