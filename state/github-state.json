@@ -426,6 +426,14 @@
       "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-langswater-165/44489947/",
       "firstSeenAt": "2026-06-10T23:00:18.804Z"
     },
+    "44495962": {
+      "url": "https://www.funda.nl/detail/koop/heemstede/appartement-meijerslaan-36/44495962/",
+      "firstSeenAt": "2026-06-11T17:28:33.734Z"
+    },
+    "44495985": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-honthorstlaan-336/44495985/",
+      "firstSeenAt": "2026-06-11T17:28:33.734Z"
+    },
     "80811219": {
       "url": "https://www.funda.nl/detail/koop/haarlem/appartement-engelenburg-217/80811219/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -625,7 +633,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-06-11T13:45:30.690Z",
+  "lastCheckAt": "2026-06-11T17:28:33.733Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
