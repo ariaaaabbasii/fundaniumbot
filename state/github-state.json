@@ -455,6 +455,10 @@
       "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-mient-4-c/80843592/",
       "firstSeenAt": "2026-06-08T11:48:01.320Z"
     },
+    "80848687": {
+      "url": "https://www.funda.nl/detail/koop/purmerend/appartement-de-roerdomp-77/80848687/",
+      "firstSeenAt": "2026-06-12T11:53:51.504Z"
+    },
     "80849634": {
       "url": "https://www.funda.nl/detail/koop/zaandam/appartement-poelenburg-17/80849634/",
       "firstSeenAt": "2026-06-07T21:33:53.336Z",
@@ -633,7 +637,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-06-12T08:11:40.013Z",
+  "lastCheckAt": "2026-06-12T11:53:51.504Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
