@@ -446,6 +446,10 @@
       "url": "https://www.funda.nl/detail/koop/zaandam/appartement-glanerbeek-2/44498643/",
       "firstSeenAt": "2026-06-13T14:32:36.281Z"
     },
+    "44499083": {
+      "url": "https://www.funda.nl/detail/koop/haarlem/appartement-landschot-102/44499083/",
+      "firstSeenAt": "2026-06-16T07:39:16.248Z"
+    },
     "80811219": {
       "url": "https://www.funda.nl/detail/koop/haarlem/appartement-engelenburg-217/80811219/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -657,7 +661,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-06-16T02:04:01.007Z",
+  "lastCheckAt": "2026-06-16T07:39:16.248Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
