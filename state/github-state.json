@@ -434,6 +434,10 @@
       "url": "https://www.funda.nl/detail/koop/haarlem/appartement-texelhof-111/44491558/",
       "firstSeenAt": "2026-06-15T23:20:24.483Z"
     },
+    "44493188": {
+      "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-langswater-621/44493188/",
+      "firstSeenAt": "2026-06-17T10:02:23.863Z"
+    },
     "44495962": {
       "url": "https://www.funda.nl/detail/koop/heemstede/appartement-meijerslaan-36/44495962/",
       "firstSeenAt": "2026-06-11T17:28:33.734Z"
@@ -665,7 +669,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-06-17T05:07:19.149Z",
+  "lastCheckAt": "2026-06-17T10:02:23.863Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
