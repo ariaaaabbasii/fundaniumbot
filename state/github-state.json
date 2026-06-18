@@ -264,6 +264,18 @@
       "url": "https://www.funda.nl/detail/koop/noord-scharwoude/appartement-dorpsstraat-572/44405973/",
       "firstSeenAt": "2026-06-18T10:55:22.346Z"
     },
+    "44406535": {
+      "url": "https://www.funda.nl/detail/koop/purmerend/appartement-oostervenne-411/44406535/",
+      "firstSeenAt": "2026-06-18T14:11:21.432Z"
+    },
+    "44406679": {
+      "url": "https://www.funda.nl/detail/koop/krommenie/appartement-kervelstraat-68/44406679/",
+      "firstSeenAt": "2026-06-18T14:11:21.432Z"
+    },
+    "44406913": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-asselijnstraat-60/44406913/",
+      "firstSeenAt": "2026-06-18T14:11:21.432Z"
+    },
     "44450183": {
       "url": "https://www.funda.nl/detail/koop/krommenie/appartement-lisdoddelaan-44/44450183/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -500,6 +512,10 @@
       "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-asselijnstraat-72/80856273/",
       "firstSeenAt": "2026-06-16T17:36:01.000Z"
     },
+    "80860561": {
+      "url": "https://www.funda.nl/detail/koop/hoogkarspel/appartement-de-landbouw-22/80860561/",
+      "firstSeenAt": "2026-06-18T14:11:21.432Z"
+    },
     "80869431": {
       "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-langswater-745/80869431/",
       "firstSeenAt": "2026-06-18T10:55:22.346Z"
@@ -677,8 +693,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-06-18T10:55:22.346Z",
-  "lastSearchCount": 119,
+  "lastCheckAt": "2026-06-18T14:11:21.431Z",
+  "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
