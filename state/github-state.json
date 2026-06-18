@@ -264,6 +264,10 @@
       "url": "https://www.funda.nl/detail/koop/noord-scharwoude/appartement-dorpsstraat-572/44405973/",
       "firstSeenAt": "2026-06-18T10:55:22.346Z"
     },
+    "44406391": {
+      "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-linnaeusstraat-167/44406391/",
+      "firstSeenAt": "2026-06-18T17:31:01.629Z"
+    },
     "44406535": {
       "url": "https://www.funda.nl/detail/koop/purmerend/appartement-oostervenne-411/44406535/",
       "firstSeenAt": "2026-06-18T14:11:21.432Z"
@@ -693,7 +697,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-06-18T14:11:21.431Z",
+  "lastCheckAt": "2026-06-18T17:31:01.629Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
