@@ -264,6 +264,10 @@
       "url": "https://www.funda.nl/detail/koop/noord-scharwoude/appartement-dorpsstraat-572/44405973/",
       "firstSeenAt": "2026-06-18T10:55:22.346Z"
     },
+    "44406155": {
+      "url": "https://www.funda.nl/detail/koop/zaandam/appartement-fluitekruidweg-139/44406155/",
+      "firstSeenAt": "2026-06-19T08:17:45.139Z"
+    },
     "44406391": {
       "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-linnaeusstraat-167/44406391/",
       "firstSeenAt": "2026-06-18T17:31:01.629Z"
@@ -520,6 +524,10 @@
       "url": "https://www.funda.nl/detail/koop/hoogkarspel/appartement-de-landbouw-22/80860561/",
       "firstSeenAt": "2026-06-18T14:11:21.432Z"
     },
+    "80861393": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-reviusstraat-24/80861393/",
+      "firstSeenAt": "2026-06-19T08:17:45.139Z"
+    },
     "80869431": {
       "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-langswater-745/80869431/",
       "firstSeenAt": "2026-06-18T10:55:22.346Z"
@@ -697,7 +705,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-06-19T02:34:04.968Z",
+  "lastCheckAt": "2026-06-19T08:17:45.139Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
