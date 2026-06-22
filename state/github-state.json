@@ -264,6 +264,10 @@
       "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-oranjestraat-39/44400617/",
       "firstSeenAt": "2026-06-22T11:18:52.936Z"
     },
+    "44401665": {
+      "url": "https://www.funda.nl/detail/koop/heemskerk/appartement-bachstraat-90/44401665/",
+      "firstSeenAt": "2026-06-22T16:05:58.201Z"
+    },
     "44405973": {
       "url": "https://www.funda.nl/detail/koop/noord-scharwoude/appartement-dorpsstraat-572/44405973/",
       "firstSeenAt": "2026-06-18T10:55:22.346Z"
@@ -721,7 +725,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-06-22T11:18:52.935Z",
+  "lastCheckAt": "2026-06-22T16:05:58.201Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
