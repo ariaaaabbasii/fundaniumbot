@@ -260,6 +260,10 @@
       "url": "https://www.funda.nl/detail/koop/zaandam/appartement-linnaeusstraat-232/43396594/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
     },
+    "44400617": {
+      "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-oranjestraat-39/44400617/",
+      "firstSeenAt": "2026-06-22T11:18:52.936Z"
+    },
     "44405973": {
       "url": "https://www.funda.nl/detail/koop/noord-scharwoude/appartement-dorpsstraat-572/44405973/",
       "firstSeenAt": "2026-06-18T10:55:22.346Z"
@@ -717,7 +721,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-06-22T05:34:01.175Z",
+  "lastCheckAt": "2026-06-22T11:18:52.935Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
