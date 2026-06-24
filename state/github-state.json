@@ -272,6 +272,14 @@
       "url": "https://www.funda.nl/detail/koop/heemskerk/appartement-bachstraat-90/44401665/",
       "firstSeenAt": "2026-06-22T16:05:58.201Z"
     },
+    "44403154": {
+      "url": "https://www.funda.nl/detail/koop/heemstede/appartement-meijerslaan-174/44403154/",
+      "firstSeenAt": "2026-06-24T11:26:45.103Z"
+    },
+    "44403280": {
+      "url": "https://www.funda.nl/detail/koop/haarlem/appartement-sandenburg-166/44403280/",
+      "firstSeenAt": "2026-06-24T11:26:45.103Z"
+    },
     "44405973": {
       "url": "https://www.funda.nl/detail/koop/noord-scharwoude/appartement-dorpsstraat-572/44405973/",
       "firstSeenAt": "2026-06-18T10:55:22.346Z"
@@ -729,7 +737,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-06-24T08:35:28.273Z",
+  "lastCheckAt": "2026-06-24T11:26:45.103Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
