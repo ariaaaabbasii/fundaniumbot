@@ -280,6 +280,10 @@
       "url": "https://www.funda.nl/detail/koop/haarlem/appartement-sandenburg-166/44403280/",
       "firstSeenAt": "2026-06-24T11:26:45.103Z"
     },
+    "44404564": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-huibert-pootlaan-8/44404564/",
+      "firstSeenAt": "2026-06-24T13:37:14.624Z"
+    },
     "44405973": {
       "url": "https://www.funda.nl/detail/koop/noord-scharwoude/appartement-dorpsstraat-572/44405973/",
       "firstSeenAt": "2026-06-18T10:55:22.346Z"
@@ -737,7 +741,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-06-24T11:26:45.103Z",
+  "lastCheckAt": "2026-06-24T13:37:14.623Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
