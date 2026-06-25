@@ -324,6 +324,10 @@
       "url": "https://www.funda.nl/detail/koop/oudkarspel-gem-dijk-en-waard/appartement-waterlelie-55/44409766/",
       "firstSeenAt": "2026-06-19T17:45:35.827Z"
     },
+    "44415263": {
+      "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-breestraat-166/44415263/",
+      "firstSeenAt": "2026-06-25T13:08:55.023Z"
+    },
     "44450183": {
       "url": "https://www.funda.nl/detail/koop/krommenie/appartement-lisdoddelaan-44/44450183/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -749,7 +753,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-06-25T10:50:12.793Z",
+  "lastCheckAt": "2026-06-25T13:08:55.022Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
