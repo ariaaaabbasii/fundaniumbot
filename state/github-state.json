@@ -328,6 +328,10 @@
       "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-breestraat-166/44415263/",
       "firstSeenAt": "2026-06-25T13:08:55.023Z"
     },
+    "44416401": {
+      "url": "https://www.funda.nl/detail/koop/haarlem/appartement-zandvoorter-allee-60/44416401/",
+      "firstSeenAt": "2026-06-25T15:45:32.150Z"
+    },
     "44450183": {
       "url": "https://www.funda.nl/detail/koop/krommenie/appartement-lisdoddelaan-44/44450183/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -753,7 +757,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-06-25T13:08:55.022Z",
+  "lastCheckAt": "2026-06-25T15:45:32.150Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
