@@ -340,6 +340,10 @@
       "url": "https://www.funda.nl/detail/koop/hoorn-nh/appartement-het-gangwerk-49/44418797/",
       "firstSeenAt": "2026-06-26T22:49:27.942Z"
     },
+    "44419947": {
+      "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-laan-van-meerestein-2-a/44419947/",
+      "firstSeenAt": "2026-06-29T11:35:45.432Z"
+    },
     "44450183": {
       "url": "https://www.funda.nl/detail/koop/krommenie/appartement-lisdoddelaan-44/44450183/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -765,7 +769,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-06-29T06:41:18.807Z",
+  "lastCheckAt": "2026-06-29T11:35:45.432Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
