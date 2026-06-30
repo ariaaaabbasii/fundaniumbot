@@ -332,6 +332,10 @@
       "url": "https://www.funda.nl/detail/koop/heerhugowaard/appartement-bergmolen-50/44411558/",
       "firstSeenAt": "2026-06-30T11:49:08.462Z"
     },
+    "44411816": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-stalpaertstraat-127/44411816/",
+      "firstSeenAt": "2026-06-30T16:10:00.243Z"
+    },
     "44415263": {
       "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-breestraat-166/44415263/",
       "firstSeenAt": "2026-06-25T13:08:55.023Z"
@@ -777,7 +781,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-06-30T13:31:20.502Z",
+  "lastCheckAt": "2026-06-30T16:10:00.243Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
