@@ -320,6 +320,10 @@
       "url": "https://www.funda.nl/detail/koop/zaandam/appartement-klingelbeek-8/44407147/",
       "firstSeenAt": "2026-06-19T12:27:39.386Z"
     },
+    "44409402": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-zevenhuizen-40/44409402/",
+      "firstSeenAt": "2026-07-01T08:53:43.668Z"
+    },
     "44409766": {
       "url": "https://www.funda.nl/detail/koop/oudkarspel-gem-dijk-en-waard/appartement-waterlelie-55/44409766/",
       "firstSeenAt": "2026-06-19T17:45:35.827Z"
@@ -781,7 +785,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-07-01T04:59:28.532Z",
+  "lastCheckAt": "2026-07-01T08:53:43.668Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
