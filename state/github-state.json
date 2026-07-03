@@ -368,6 +368,10 @@
       "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-laan-van-meerestein-2-a/44419947/",
       "firstSeenAt": "2026-06-29T11:35:45.432Z"
     },
+    "44425225": {
+      "url": "https://www.funda.nl/detail/koop/castricum/appartement-sans-souci-103/44425225/",
+      "firstSeenAt": "2026-07-03T15:27:12.084Z"
+    },
     "44450183": {
       "url": "https://www.funda.nl/detail/koop/krommenie/appartement-lisdoddelaan-44/44450183/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -620,6 +624,10 @@
       "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-langswater-745/80869431/",
       "firstSeenAt": "2026-06-18T10:55:22.346Z"
     },
+    "80880673": {
+      "url": "https://www.funda.nl/detail/koop/heerhugowaard/appartement-plutolaan-15/80880673/",
+      "firstSeenAt": "2026-07-03T15:27:12.084Z"
+    },
     "89608072": {
       "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-vechtstraat-106/89608072/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -793,7 +801,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-07-03T13:13:14.600Z",
+  "lastCheckAt": "2026-07-03T15:27:12.084Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
