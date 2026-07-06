@@ -372,6 +372,10 @@
       "url": "https://www.funda.nl/detail/koop/castricum/appartement-sans-souci-103/44425225/",
       "firstSeenAt": "2026-07-03T15:27:12.084Z"
     },
+    "44428505": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-kanaalkade-20-b/44428505/",
+      "firstSeenAt": "2026-07-06T14:33:35.232Z"
+    },
     "44450183": {
       "url": "https://www.funda.nl/detail/koop/krommenie/appartement-lisdoddelaan-44/44450183/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -801,7 +805,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-07-06T11:00:34.563Z",
+  "lastCheckAt": "2026-07-06T14:33:35.231Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
