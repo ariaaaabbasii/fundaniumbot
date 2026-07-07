@@ -384,6 +384,10 @@
       "url": "https://www.funda.nl/detail/koop/zaandam/appartement-oost-dorsch-42/44429217/",
       "firstSeenAt": "2026-07-07T13:54:52.305Z"
     },
+    "44429331": {
+      "url": "https://www.funda.nl/detail/koop/krommenie/appartement-kervelstraat-27/44429331/",
+      "firstSeenAt": "2026-07-07T16:30:02.404Z"
+    },
     "44450183": {
       "url": "https://www.funda.nl/detail/koop/krommenie/appartement-lisdoddelaan-44/44450183/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -813,7 +817,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-07-07T13:54:52.304Z",
+  "lastCheckAt": "2026-07-07T16:30:02.404Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
