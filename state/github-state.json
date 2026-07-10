@@ -384,6 +384,10 @@
       "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-aert-de-gelderlaan-328/44422985/",
       "firstSeenAt": "2026-07-10T13:30:40.300Z"
     },
+    "44424246": {
+      "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-uiverhof-2/44424246/",
+      "firstSeenAt": "2026-07-10T15:59:14.484Z"
+    },
     "44425225": {
       "url": "https://www.funda.nl/detail/koop/castricum/appartement-sans-souci-103/44425225/",
       "firstSeenAt": "2026-07-03T15:27:12.084Z"
@@ -837,7 +841,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-07-10T13:30:40.300Z",
+  "lastCheckAt": "2026-07-10T15:59:14.483Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
