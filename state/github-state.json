@@ -388,6 +388,10 @@
       "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-uiverhof-2/44424246/",
       "firstSeenAt": "2026-07-10T15:59:14.484Z"
     },
+    "44424858": {
+      "url": "https://www.funda.nl/detail/koop/wormerveer/appartement-leeuwerikstraat-55/44424858/",
+      "firstSeenAt": "2026-07-11T04:28:42.683Z"
+    },
     "44425225": {
       "url": "https://www.funda.nl/detail/koop/castricum/appartement-sans-souci-103/44425225/",
       "firstSeenAt": "2026-07-03T15:27:12.084Z"
@@ -841,7 +845,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-07-11T01:10:23.664Z",
+  "lastCheckAt": "2026-07-11T04:28:42.682Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
