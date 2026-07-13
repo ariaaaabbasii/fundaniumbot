@@ -416,6 +416,10 @@
       "url": "https://www.funda.nl/detail/koop/krommenie/appartement-kervelstraat-27/44429331/",
       "firstSeenAt": "2026-07-07T16:30:02.404Z"
     },
+    "44435265": {
+      "url": "https://www.funda.nl/detail/koop/haarlem/appartement-zandvoorter-allee-120/44435265/",
+      "firstSeenAt": "2026-07-13T13:30:35.032Z"
+    },
     "44450183": {
       "url": "https://www.funda.nl/detail/koop/krommenie/appartement-lisdoddelaan-44/44450183/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -845,7 +849,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-07-13T11:14:21.770Z",
+  "lastCheckAt": "2026-07-13T13:30:35.032Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
