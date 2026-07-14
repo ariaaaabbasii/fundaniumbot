@@ -424,6 +424,14 @@
       "url": "https://www.funda.nl/detail/koop/zwaag/appartement-korenbloem-92/44435610/",
       "firstSeenAt": "2026-07-13T16:07:12.248Z"
     },
+    "44435858": {
+      "url": "https://www.funda.nl/detail/koop/haarlem/appartement-engelenburg-495/44435858/",
+      "firstSeenAt": "2026-07-14T04:10:42.985Z"
+    },
+    "44436490": {
+      "url": "https://www.funda.nl/detail/koop/haarlem/appartement-engelandlaan-666/44436490/",
+      "firstSeenAt": "2026-07-14T04:10:42.985Z"
+    },
     "44450183": {
       "url": "https://www.funda.nl/detail/koop/krommenie/appartement-lisdoddelaan-44/44450183/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -853,7 +861,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-07-14T00:59:52.336Z",
+  "lastCheckAt": "2026-07-14T04:10:42.984Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
