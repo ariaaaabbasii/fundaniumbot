@@ -432,6 +432,10 @@
       "url": "https://www.funda.nl/detail/koop/haarlem/appartement-engelandlaan-666/44436490/",
       "firstSeenAt": "2026-07-14T04:10:42.985Z"
     },
+    "44436883": {
+      "url": "https://www.funda.nl/detail/koop/zaandam/appartement-poelenburg-40/44436883/",
+      "firstSeenAt": "2026-07-14T15:03:59.114Z"
+    },
     "44450183": {
       "url": "https://www.funda.nl/detail/koop/krommenie/appartement-lisdoddelaan-44/44450183/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -861,7 +865,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-07-14T13:11:41.110Z",
+  "lastCheckAt": "2026-07-14T15:03:59.114Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
