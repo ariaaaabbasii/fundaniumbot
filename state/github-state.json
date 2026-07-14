@@ -436,6 +436,10 @@
       "url": "https://www.funda.nl/detail/koop/zaandam/appartement-poelenburg-40/44436883/",
       "firstSeenAt": "2026-07-14T15:03:59.114Z"
     },
+    "44437014": {
+      "url": "https://www.funda.nl/detail/koop/heemstede/appartement-provincienlaan-7-d25/44437014/",
+      "firstSeenAt": "2026-07-14T22:14:15.453Z"
+    },
     "44450183": {
       "url": "https://www.funda.nl/detail/koop/krommenie/appartement-lisdoddelaan-44/44450183/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -865,7 +869,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-07-14T21:12:43.031Z",
+  "lastCheckAt": "2026-07-14T22:14:15.453Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
