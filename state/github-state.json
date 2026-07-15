@@ -440,6 +440,10 @@
       "url": "https://www.funda.nl/detail/koop/heemstede/appartement-provincienlaan-7-d25/44437014/",
       "firstSeenAt": "2026-07-14T22:14:15.453Z"
     },
+    "44438482": {
+      "url": "https://www.funda.nl/detail/koop/hoorn-nh/appartement-de-huesmolen-138/44438482/",
+      "firstSeenAt": "2026-07-15T10:17:42.745Z"
+    },
     "44450183": {
       "url": "https://www.funda.nl/detail/koop/krommenie/appartement-lisdoddelaan-44/44450183/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -869,7 +873,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-07-15T08:19:24.495Z",
+  "lastCheckAt": "2026-07-15T10:17:42.745Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
