@@ -700,6 +700,10 @@
       "url": "https://www.funda.nl/detail/koop/heerhugowaard/appartement-plutolaan-15/80880673/",
       "firstSeenAt": "2026-07-03T15:27:12.084Z"
     },
+    "80892449": {
+      "url": "https://www.funda.nl/detail/koop/zaandam/appartement-spaansgroenstraat-46/80892449/",
+      "firstSeenAt": "2026-07-15T13:27:51.487Z"
+    },
     "89608072": {
       "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-vechtstraat-106/89608072/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -873,7 +877,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-07-15T11:53:39.423Z",
+  "lastCheckAt": "2026-07-15T13:27:51.487Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
