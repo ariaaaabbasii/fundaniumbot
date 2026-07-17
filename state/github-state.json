@@ -708,6 +708,10 @@
       "url": "https://www.funda.nl/detail/koop/zaandam/appartement-spaansgroenstraat-46/80892449/",
       "firstSeenAt": "2026-07-15T13:27:51.487Z"
     },
+    "80895271": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-reviusstraat-72/80895271/",
+      "firstSeenAt": "2026-07-17T12:07:56.154Z"
+    },
     "89608072": {
       "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-vechtstraat-106/89608072/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -881,7 +885,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-07-17T10:54:31.843Z",
+  "lastCheckAt": "2026-07-17T12:07:56.153Z",
   "lastSearchCount": 113,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
