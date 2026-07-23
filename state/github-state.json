@@ -464,6 +464,10 @@
       "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-honthorstlaan-186/44445660/",
       "firstSeenAt": "2026-07-22T12:13:43.474Z"
     },
+    "44446421": {
+      "url": "https://www.funda.nl/detail/koop/purmerend/appartement-scheldestraat-39/44446421/",
+      "firstSeenAt": "2026-07-23T13:08:06.549Z"
+    },
     "44450183": {
       "url": "https://www.funda.nl/detail/koop/krommenie/appartement-lisdoddelaan-44/44450183/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -905,8 +909,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-07-23T11:30:50.220Z",
-  "lastSearchCount": 108,
+  "lastCheckAt": "2026-07-23T13:08:06.549Z",
+  "lastSearchCount": 109,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
