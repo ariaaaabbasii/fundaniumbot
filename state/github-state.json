@@ -658,6 +658,10 @@
       "url": "https://www.funda.nl/detail/koop/haarlem/appartement-landschot-102/44499083/",
       "firstSeenAt": "2026-06-16T07:39:16.248Z"
     },
+    "80800030": {
+      "url": "https://www.funda.nl/detail/koop/haarlem/appartement-schotlandstraat-152/80800030/",
+      "firstSeenAt": "2026-07-23T09:37:13.458Z"
+    },
     "80811219": {
       "url": "https://www.funda.nl/detail/koop/haarlem/appartement-engelenburg-217/80811219/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -901,8 +905,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-07-23T07:11:25.977Z",
-  "lastSearchCount": 107,
+  "lastCheckAt": "2026-07-23T09:37:13.457Z",
+  "lastSearchCount": 108,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
