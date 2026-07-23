@@ -420,6 +420,10 @@
       "url": "https://www.funda.nl/detail/koop/breezand/appartement-ceresplein-43/44432954/",
       "firstSeenAt": "2026-07-20T15:12:04.037Z"
     },
+    "44434033": {
+      "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-grahamstraat-218/44434033/",
+      "firstSeenAt": "2026-07-23T04:30:13.075Z"
+    },
     "44434619": {
       "url": "https://www.funda.nl/detail/koop/heerhugowaard/appartement-raadhuisplein-16-b/44434619/",
       "firstSeenAt": "2026-07-21T15:11:05.059Z"
@@ -897,8 +901,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-07-23T01:06:29.686Z",
-  "lastSearchCount": 106,
+  "lastCheckAt": "2026-07-23T04:30:13.075Z",
+  "lastSearchCount": 107,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
