@@ -460,6 +460,10 @@
       "url": "https://www.funda.nl/detail/koop/hoorn-nh/appartement-de-huesmolen-138/44438482/",
       "firstSeenAt": "2026-07-15T10:17:42.745Z"
     },
+    "44445484": {
+      "url": "https://www.funda.nl/detail/koop/purmerend/appartement-burgemeester-d-kooimanweg-587/44445484/",
+      "firstSeenAt": "2026-07-24T04:34:03.654Z"
+    },
     "44445660": {
       "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-honthorstlaan-186/44445660/",
       "firstSeenAt": "2026-07-22T12:13:43.474Z"
@@ -909,8 +913,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-07-24T01:11:22.250Z",
-  "lastSearchCount": 109,
+  "lastCheckAt": "2026-07-24T04:34:03.653Z",
+  "lastSearchCount": 110,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
