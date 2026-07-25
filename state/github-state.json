@@ -674,6 +674,10 @@
       "url": "https://www.funda.nl/detail/koop/haarlem/appartement-schotlandstraat-152/80800030/",
       "firstSeenAt": "2026-07-23T09:37:13.458Z"
     },
+    "80802176": {
+      "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-koningstraat-28/80802176/",
+      "firstSeenAt": "2026-07-25T08:21:26.320Z"
+    },
     "80811219": {
       "url": "https://www.funda.nl/detail/koop/haarlem/appartement-engelenburg-217/80811219/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -917,8 +921,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-07-25T06:03:53.379Z",
-  "lastSearchCount": 109,
+  "lastCheckAt": "2026-07-25T08:21:26.320Z",
+  "lastSearchCount": 110,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
