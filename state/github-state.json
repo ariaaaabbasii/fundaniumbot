@@ -488,6 +488,10 @@
       "url": "https://www.funda.nl/detail/koop/julianadorp/appartement-drooghe-bol-2016/44448989/",
       "firstSeenAt": "2026-07-27T16:53:06.872Z"
     },
+    "44449336": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-judith-leysterstraat-25/44449336/",
+      "firstSeenAt": "2026-07-28T18:45:12.033Z"
+    },
     "44450183": {
       "url": "https://www.funda.nl/detail/koop/krommenie/appartement-lisdoddelaan-44/44450183/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -933,8 +937,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-07-28T17:09:36.494Z",
-  "lastSearchCount": 107,
+  "lastCheckAt": "2026-07-28T18:45:12.032Z",
+  "lastSearchCount": 108,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
