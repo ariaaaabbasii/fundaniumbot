@@ -480,6 +480,10 @@
       "url": "https://www.funda.nl/detail/koop/zaandam/appartement-zilverschoonplein-25/44447886/",
       "firstSeenAt": "2026-07-27T08:39:44.592Z"
     },
+    "44448004": {
+      "url": "https://www.funda.nl/detail/koop/haarlem/appartement-sandenburg-167/44448004/",
+      "firstSeenAt": "2026-07-28T09:46:32.356Z"
+    },
     "44448989": {
       "url": "https://www.funda.nl/detail/koop/julianadorp/appartement-drooghe-bol-2016/44448989/",
       "firstSeenAt": "2026-07-27T16:53:06.872Z"
@@ -929,8 +933,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-07-28T07:08:24.940Z",
-  "lastSearchCount": 110,
+  "lastCheckAt": "2026-07-28T09:46:32.356Z",
+  "lastSearchCount": 108,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
