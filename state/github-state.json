@@ -464,6 +464,10 @@
       "url": "https://www.funda.nl/detail/koop/zwaag/appartement-kosterstuin-96/44440141/",
       "firstSeenAt": "2026-07-29T17:34:33.177Z"
     },
+    "44444488": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-winkelwaard-104/44444488/",
+      "firstSeenAt": "2026-08-03T22:37:40.432Z"
+    },
     "44445484": {
       "url": "https://www.funda.nl/detail/koop/purmerend/appartement-burgemeester-d-kooimanweg-587/44445484/",
       "firstSeenAt": "2026-07-24T04:34:03.654Z"
@@ -941,8 +945,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-08-03T21:34:52.361Z",
-  "lastSearchCount": 96,
+  "lastCheckAt": "2026-08-03T22:37:40.432Z",
+  "lastSearchCount": 97,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
