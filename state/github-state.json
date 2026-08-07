@@ -702,6 +702,10 @@
       "url": "https://www.funda.nl/detail/koop/heerhugowaard/appartement-tjaarlingermeer-102/44556481/",
       "firstSeenAt": "2026-08-05T13:26:39.148Z"
     },
+    "44557328": {
+      "url": "https://www.funda.nl/detail/koop/castricum/appartement-cf-smeetslaan-144/44557328/",
+      "firstSeenAt": "2026-08-07T22:22:52.181Z"
+    },
     "80800030": {
       "url": "https://www.funda.nl/detail/koop/haarlem/appartement-schotlandstraat-152/80800030/",
       "firstSeenAt": "2026-07-23T09:37:13.458Z"
@@ -957,8 +961,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-08-07T21:47:59.418Z",
-  "lastSearchCount": 92,
+  "lastCheckAt": "2026-08-07T22:22:52.180Z",
+  "lastSearchCount": 93,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
