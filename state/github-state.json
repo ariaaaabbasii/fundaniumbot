@@ -706,6 +706,10 @@
       "url": "https://www.funda.nl/detail/koop/castricum/appartement-cf-smeetslaan-144/44557328/",
       "firstSeenAt": "2026-08-07T22:22:52.181Z"
     },
+    "44557390": {
+      "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-bullerlaan-48/44557390/",
+      "firstSeenAt": "2026-08-08T13:40:36.764Z"
+    },
     "80800030": {
       "url": "https://www.funda.nl/detail/koop/haarlem/appartement-schotlandstraat-152/80800030/",
       "firstSeenAt": "2026-07-23T09:37:13.458Z"
@@ -961,8 +965,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-08-08T12:53:03.611Z",
-  "lastSearchCount": 93,
+  "lastCheckAt": "2026-08-08T13:40:36.764Z",
+  "lastSearchCount": 94,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
