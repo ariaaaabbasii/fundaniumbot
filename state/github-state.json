@@ -710,6 +710,18 @@
       "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-bullerlaan-48/44557390/",
       "firstSeenAt": "2026-08-08T13:40:36.764Z"
     },
+    "44559120": {
+      "url": "https://www.funda.nl/detail/koop/breezand/appartement-lenteklokje-11/44559120/",
+      "firstSeenAt": "2026-08-10T22:39:45.443Z"
+    },
+    "44559169": {
+      "url": "https://www.funda.nl/detail/koop/velsen-noord/appartement-wijkeroogstraat-160/44559169/",
+      "firstSeenAt": "2026-08-10T22:39:45.443Z"
+    },
+    "44559274": {
+      "url": "https://www.funda.nl/detail/koop/castricum/appartement-admiraal-de-ruyterlaan-55/44559274/",
+      "firstSeenAt": "2026-08-10T22:39:45.443Z"
+    },
     "44559343": {
       "url": "https://www.funda.nl/detail/koop/zaandam/appartement-oost-dorsch-142/44559343/",
       "firstSeenAt": "2026-08-10T15:41:18.270Z"
@@ -969,8 +981,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-08-10T21:56:18.099Z",
-  "lastSearchCount": 91,
+  "lastCheckAt": "2026-08-10T22:39:45.442Z",
+  "lastSearchCount": 94,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
