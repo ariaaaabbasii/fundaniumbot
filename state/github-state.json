@@ -694,6 +694,10 @@
       "url": "https://www.funda.nl/detail/koop/haarlem/appartement-landschot-102/44499083/",
       "firstSeenAt": "2026-06-16T07:39:16.248Z"
     },
+    "44550575": {
+      "url": "https://www.funda.nl/detail/koop/purmerend/appartement-scheldestraat-39/44550575/",
+      "firstSeenAt": "2026-08-11T11:37:24.850Z"
+    },
     "44550831": {
       "url": "https://www.funda.nl/detail/koop/purmerend/appartement-lekstraat-11/44550831/",
       "firstSeenAt": "2026-08-11T10:52:13.775Z"
@@ -985,8 +989,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-08-11T10:52:13.775Z",
-  "lastSearchCount": 93,
+  "lastCheckAt": "2026-08-11T11:37:24.849Z",
+  "lastSearchCount": 94,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
