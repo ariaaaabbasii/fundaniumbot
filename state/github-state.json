@@ -714,6 +714,10 @@
       "url": "https://www.funda.nl/detail/koop/purmerend/appartement-burgemeester-d-kooimanweg-133/44553005/",
       "firstSeenAt": "2026-08-14T08:49:22.385Z"
     },
+    "44553055": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-willem-de-zwijgerlaan-212/44553055/",
+      "firstSeenAt": "2026-08-14T22:26:43.978Z"
+    },
     "44556313": {
       "url": "https://www.funda.nl/detail/koop/zaandam/appartement-leverkruidweg-321/44556313/",
       "firstSeenAt": "2026-08-06T14:38:08.001Z"
@@ -1009,8 +1013,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-08-14T21:56:37.780Z",
-  "lastSearchCount": 93,
+  "lastCheckAt": "2026-08-14T22:26:43.978Z",
+  "lastSearchCount": 94,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
