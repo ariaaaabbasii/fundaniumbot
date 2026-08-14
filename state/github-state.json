@@ -710,6 +710,10 @@
       "url": "https://www.funda.nl/detail/koop/purmerend/appartement-lekstraat-11/44550831/",
       "firstSeenAt": "2026-08-11T10:52:13.775Z"
     },
+    "44553005": {
+      "url": "https://www.funda.nl/detail/koop/purmerend/appartement-burgemeester-d-kooimanweg-133/44553005/",
+      "firstSeenAt": "2026-08-14T08:49:22.385Z"
+    },
     "44556313": {
       "url": "https://www.funda.nl/detail/koop/zaandam/appartement-leverkruidweg-321/44556313/",
       "firstSeenAt": "2026-08-06T14:38:08.001Z"
@@ -1001,8 +1005,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-08-14T07:44:02.053Z",
-  "lastSearchCount": 92,
+  "lastCheckAt": "2026-08-14T08:49:22.385Z",
+  "lastSearchCount": 93,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
