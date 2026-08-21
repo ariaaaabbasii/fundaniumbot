@@ -750,6 +750,10 @@
       "url": "https://www.funda.nl/detail/koop/zaandam/appartement-oost-dorsch-142/44559343/",
       "firstSeenAt": "2026-08-10T15:41:18.270Z"
     },
+    "44562561": {
+      "url": "https://www.funda.nl/detail/koop/castricum/appartement-sans-souci-44/44562561/",
+      "firstSeenAt": "2026-08-21T22:11:36.517Z"
+    },
     "44566280": {
       "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-wijk-aan-duinerweg-155/44566280/",
       "firstSeenAt": "2026-08-19T07:59:56.566Z"
@@ -1037,8 +1041,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-08-21T21:51:02.519Z",
-  "lastSearchCount": 88,
+  "lastCheckAt": "2026-08-21T22:11:36.517Z",
+  "lastSearchCount": 89,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
