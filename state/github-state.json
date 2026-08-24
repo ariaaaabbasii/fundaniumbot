@@ -860,6 +860,10 @@
       "url": "https://www.funda.nl/detail/koop/wieringerwerf/appartement-hoeker-41/80914814/",
       "firstSeenAt": "2026-08-11T15:09:54.956Z"
     },
+    "80920834": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-huibert-pootlaan-80/80920834/",
+      "firstSeenAt": "2026-08-24T05:01:01.149Z"
+    },
     "80923567": {
       "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-ruusbroechof-9/80923567/",
       "firstSeenAt": "2026-08-20T10:50:42.278Z"
@@ -1045,8 +1049,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-08-24T04:09:45.508Z",
-  "lastSearchCount": 90,
+  "lastCheckAt": "2026-08-24T05:01:01.149Z",
+  "lastSearchCount": 91,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
