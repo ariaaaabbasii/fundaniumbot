@@ -778,9 +778,17 @@
       "url": "https://www.funda.nl/detail/koop/krommenie/appartement-lisdoddelaan-44/44569570/",
       "firstSeenAt": "2026-08-19T16:14:56.736Z"
     },
+    "44575488": {
+      "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-grahamstraat-246/44575488/",
+      "firstSeenAt": "2026-08-25T22:03:06.198Z"
+    },
     "44575674": {
       "url": "https://www.funda.nl/detail/koop/hoorn-nh/appartement-houtzaagmolen-19/44575674/",
       "firstSeenAt": "2026-08-25T09:00:24.938Z"
+    },
+    "44575804": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-arkplein-55/44575804/",
+      "firstSeenAt": "2026-08-25T22:03:06.198Z"
     },
     "80800030": {
       "url": "https://www.funda.nl/detail/koop/haarlem/appartement-schotlandstraat-152/80800030/",
@@ -1057,8 +1065,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-08-25T21:45:39.698Z",
-  "lastSearchCount": 86,
+  "lastCheckAt": "2026-08-25T22:03:06.198Z",
+  "lastSearchCount": 88,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
