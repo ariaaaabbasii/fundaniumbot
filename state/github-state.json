@@ -798,6 +798,10 @@
       "url": "https://www.funda.nl/detail/koop/heiloo/appartement-zeeweg-406/44577417/",
       "firstSeenAt": "2026-08-26T11:00:45.772Z"
     },
+    "44577527": {
+      "url": "https://www.funda.nl/detail/koop/krommenie/appartement-kervelstraat-132/44577527/",
+      "firstSeenAt": "2026-08-26T11:38:28.780Z"
+    },
     "44577561": {
       "url": "https://www.funda.nl/detail/koop/krommenie/appartement-kervelstraat-24/44577561/",
       "firstSeenAt": "2026-08-26T11:00:45.772Z"
@@ -1077,8 +1081,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-08-26T11:00:45.772Z",
-  "lastSearchCount": 90,
+  "lastCheckAt": "2026-08-26T11:38:28.779Z",
+  "lastSearchCount": 91,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
