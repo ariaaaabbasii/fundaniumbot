@@ -794,6 +794,14 @@
       "url": "https://www.funda.nl/detail/koop/haarlem/appartement-soderblomstraat-24/44576464/",
       "firstSeenAt": "2026-08-26T09:51:39.849Z"
     },
+    "44577417": {
+      "url": "https://www.funda.nl/detail/koop/heiloo/appartement-zeeweg-406/44577417/",
+      "firstSeenAt": "2026-08-26T11:00:45.772Z"
+    },
+    "44577561": {
+      "url": "https://www.funda.nl/detail/koop/krommenie/appartement-kervelstraat-24/44577561/",
+      "firstSeenAt": "2026-08-26T11:00:45.772Z"
+    },
     "80800030": {
       "url": "https://www.funda.nl/detail/koop/haarlem/appartement-schotlandstraat-152/80800030/",
       "firstSeenAt": "2026-07-23T09:37:13.458Z"
@@ -1069,8 +1077,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-08-26T10:24:35.245Z",
-  "lastSearchCount": 88,
+  "lastCheckAt": "2026-08-26T11:00:45.772Z",
+  "lastSearchCount": 90,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
