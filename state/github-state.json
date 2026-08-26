@@ -790,6 +790,10 @@
       "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-arkplein-55/44575804/",
       "firstSeenAt": "2026-08-25T22:03:06.198Z"
     },
+    "44576464": {
+      "url": "https://www.funda.nl/detail/koop/haarlem/appartement-soderblomstraat-24/44576464/",
+      "firstSeenAt": "2026-08-26T09:51:39.849Z"
+    },
     "80800030": {
       "url": "https://www.funda.nl/detail/koop/haarlem/appartement-schotlandstraat-152/80800030/",
       "firstSeenAt": "2026-07-23T09:37:13.458Z"
@@ -1065,7 +1069,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-08-26T08:59:15.147Z",
+  "lastCheckAt": "2026-08-26T09:51:39.849Z",
   "lastSearchCount": 88,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
