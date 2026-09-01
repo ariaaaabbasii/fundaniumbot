@@ -786,6 +786,10 @@
       "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-langswater-711/44572742/",
       "firstSeenAt": "2026-08-30T17:06:37.879Z"
     },
+    "44574882": {
+      "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-zeewijkplein-66/44574882/",
+      "firstSeenAt": "2026-09-01T07:40:40.502Z"
+    },
     "44575488": {
       "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-grahamstraat-246/44575488/",
       "firstSeenAt": "2026-08-25T22:03:06.198Z"
@@ -1097,8 +1101,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-09-01T01:58:42.441Z",
-  "lastSearchCount": 88,
+  "lastCheckAt": "2026-09-01T07:40:40.502Z",
+  "lastSearchCount": 89,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
