@@ -928,6 +928,10 @@
       "url": "https://www.funda.nl/detail/koop/purmerend/appartement-suze-groenewegstraat-99/80929052/",
       "firstSeenAt": "2026-08-14T16:29:53.071Z"
     },
+    "80949448": {
+      "url": "https://www.funda.nl/detail/koop/medemblik/appartement-achterom-37/80949448/",
+      "firstSeenAt": "2026-09-01T22:09:04.999Z"
+    },
     "89608072": {
       "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-vechtstraat-106/89608072/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -1101,8 +1105,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-09-01T19:50:42.719Z",
-  "lastSearchCount": 85,
+  "lastCheckAt": "2026-09-01T22:09:04.998Z",
+  "lastSearchCount": 86,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
