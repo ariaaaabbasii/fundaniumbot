@@ -932,6 +932,10 @@
       "url": "https://www.funda.nl/detail/koop/medemblik/appartement-achterom-37/80949448/",
       "firstSeenAt": "2026-09-01T22:09:04.999Z"
     },
+    "80949565": {
+      "url": "https://www.funda.nl/detail/koop/zuid-scharwoude/appartement-tijmensgroet-5/80949565/",
+      "firstSeenAt": "2026-09-02T13:34:55.952Z"
+    },
     "89608072": {
       "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-vechtstraat-106/89608072/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -1105,8 +1109,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-09-02T09:03:29.933Z",
-  "lastSearchCount": 86,
+  "lastCheckAt": "2026-09-02T13:34:55.951Z",
+  "lastSearchCount": 87,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
