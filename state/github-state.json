@@ -936,6 +936,10 @@
       "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-huibert-pootlaan-196/80941940/",
       "firstSeenAt": "2026-09-02T17:18:48.857Z"
     },
+    "80943231": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-willem-de-zwijgerlaan-142/80943231/",
+      "firstSeenAt": "2026-09-03T13:37:57.176Z"
+    },
     "80949448": {
       "url": "https://www.funda.nl/detail/koop/medemblik/appartement-achterom-37/80949448/",
       "firstSeenAt": "2026-09-01T22:09:04.999Z"
@@ -1117,7 +1121,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-09-03T09:14:08.348Z",
+  "lastCheckAt": "2026-09-03T13:37:57.176Z",
   "lastSearchCount": 89,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
