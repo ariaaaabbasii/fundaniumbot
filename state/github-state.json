@@ -826,6 +826,10 @@
       "url": "https://www.funda.nl/detail/koop/haarlem/appartement-schotlandstraat-78/44577757/",
       "firstSeenAt": "2026-08-27T04:39:52.414Z"
     },
+    "44589983": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-pimpelmeesstraat-38/44589983/",
+      "firstSeenAt": "2026-09-03T22:17:45.111Z"
+    },
     "80800030": {
       "url": "https://www.funda.nl/detail/koop/haarlem/appartement-schotlandstraat-152/80800030/",
       "firstSeenAt": "2026-07-23T09:37:13.458Z"
@@ -1121,8 +1125,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-09-03T19:53:53.958Z",
-  "lastSearchCount": 89,
+  "lastCheckAt": "2026-09-03T22:17:45.111Z",
+  "lastSearchCount": 90,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
