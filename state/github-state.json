@@ -830,6 +830,10 @@
       "url": "https://www.funda.nl/detail/koop/velsen-noord/appartement-stratingplantsoen-95/44581663/",
       "firstSeenAt": "2026-09-04T13:25:29.116Z"
     },
+    "44581858": {
+      "url": "https://www.funda.nl/detail/koop/zaandam/appartement-oost-dorsch-137/44581858/",
+      "firstSeenAt": "2026-09-04T19:21:51.599Z"
+    },
     "44589646": {
       "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-langswater-648/44589646/",
       "firstSeenAt": "2026-09-04T16:57:20.529Z"
@@ -1141,8 +1145,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-09-04T16:57:20.529Z",
-  "lastSearchCount": 92,
+  "lastCheckAt": "2026-09-04T19:21:51.598Z",
+  "lastSearchCount": 93,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
