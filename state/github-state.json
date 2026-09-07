@@ -838,6 +838,10 @@
       "url": "https://www.funda.nl/detail/koop/velsen-noord/appartement-wijkeroogstraat-46/44582032/",
       "firstSeenAt": "2026-09-04T23:19:08.819Z"
     },
+    "44583305": {
+      "url": "https://www.funda.nl/detail/koop/purmerend/appartement-burgemeester-d-kooimanweg-655/44583305/",
+      "firstSeenAt": "2026-09-07T15:26:53.661Z"
+    },
     "44589646": {
       "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-langswater-648/44589646/",
       "firstSeenAt": "2026-09-04T16:57:20.529Z"
@@ -1149,8 +1153,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-09-07T09:53:13.736Z",
-  "lastSearchCount": 92,
+  "lastCheckAt": "2026-09-07T15:26:53.660Z",
+  "lastSearchCount": 91,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
