@@ -850,6 +850,10 @@
       "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-pimpelmeesstraat-38/44589983/",
       "firstSeenAt": "2026-09-03T22:17:45.111Z"
     },
+    "44595898": {
+      "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-jephtastraat-55-1/44595898/",
+      "firstSeenAt": "2026-09-08T22:44:17.377Z"
+    },
     "44596267": {
       "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-meijendel-18/44596267/",
       "firstSeenAt": "2026-09-08T17:35:40.279Z"
@@ -1165,7 +1169,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-09-08T20:15:12.130Z",
+  "lastCheckAt": "2026-09-08T22:44:17.376Z",
   "lastSearchCount": 93,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
