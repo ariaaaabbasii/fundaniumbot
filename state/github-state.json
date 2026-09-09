@@ -858,6 +858,10 @@
       "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-meijendel-18/44596267/",
       "firstSeenAt": "2026-09-08T17:35:40.279Z"
     },
+    "44596394": {
+      "url": "https://www.funda.nl/detail/koop/heerhugowaard/appartement-raadhuisplein-16-b/44596394/",
+      "firstSeenAt": "2026-09-09T09:54:56.322Z"
+    },
     "44596472": {
       "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-de-raep-21/44596472/",
       "firstSeenAt": "2026-09-08T13:49:05.125Z"
@@ -1169,7 +1173,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-09-09T05:19:46.331Z",
+  "lastCheckAt": "2026-09-09T09:54:56.322Z",
   "lastSearchCount": 93,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
