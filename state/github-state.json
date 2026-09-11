@@ -866,9 +866,17 @@
       "url": "https://www.funda.nl/detail/koop/zaandam/appartement-leverkruidweg-293/44590083/",
       "firstSeenAt": "2026-09-10T19:57:45.587Z"
     },
+    "44590917": {
+      "url": "https://www.funda.nl/detail/koop/castricum/appartement-sans-souci-56/44590917/",
+      "firstSeenAt": "2026-09-11T13:42:11.479Z"
+    },
     "44591499": {
       "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-stalpaertstraat-51/44591499/",
       "firstSeenAt": "2026-09-10T19:57:45.587Z"
+    },
+    "44592789": {
+      "url": "https://www.funda.nl/detail/koop/krommenie/appartement-kervelstraat-47/44592789/",
+      "firstSeenAt": "2026-09-11T13:42:11.479Z"
     },
     "44595898": {
       "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-jephtastraat-55-1/44595898/",
@@ -926,6 +934,10 @@
       "url": "https://www.funda.nl/detail/koop/oudkarspel-gem-dijk-en-waard/appartement-waterlelie-61/80837331/",
       "firstSeenAt": "2026-06-07T21:33:53.336Z",
       "seeded": true
+    },
+    "80840772": {
+      "url": "https://www.funda.nl/detail/koop/den-helder/appartement-torp-9/80840772/",
+      "firstSeenAt": "2026-09-11T13:42:11.479Z"
     },
     "80843592": {
       "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-mient-4-c/80843592/",
@@ -1221,8 +1233,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-09-11T09:23:34.552Z",
-  "lastSearchCount": 102,
+  "lastCheckAt": "2026-09-11T13:42:11.479Z",
+  "lastSearchCount": 105,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
