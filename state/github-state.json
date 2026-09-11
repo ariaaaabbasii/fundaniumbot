@@ -874,6 +874,14 @@
       "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-stalpaertstraat-51/44591499/",
       "firstSeenAt": "2026-09-10T19:57:45.587Z"
     },
+    "44592508": {
+      "url": "https://www.funda.nl/detail/koop/heemskerk/appartement-bachstraat-86/44592508/",
+      "firstSeenAt": "2026-09-11T22:03:31.028Z"
+    },
+    "44592514": {
+      "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-dellaertlaan-29/44592514/",
+      "firstSeenAt": "2026-09-11T22:03:31.028Z"
+    },
     "44592789": {
       "url": "https://www.funda.nl/detail/koop/krommenie/appartement-kervelstraat-47/44592789/",
       "firstSeenAt": "2026-09-11T13:42:11.479Z"
@@ -1233,8 +1241,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-09-11T19:50:34.894Z",
-  "lastSearchCount": 105,
+  "lastCheckAt": "2026-09-11T22:03:31.028Z",
+  "lastSearchCount": 107,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
