@@ -886,6 +886,10 @@
       "url": "https://www.funda.nl/detail/koop/krommenie/appartement-kervelstraat-47/44592789/",
       "firstSeenAt": "2026-09-11T13:42:11.479Z"
     },
+    "44593120": {
+      "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-langswater-426/44593120/",
+      "firstSeenAt": "2026-09-13T13:55:34.131Z"
+    },
     "44595898": {
       "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-jephtastraat-55-1/44595898/",
       "firstSeenAt": "2026-09-08T22:44:17.377Z"
@@ -1241,8 +1245,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-09-13T09:43:33.207Z",
-  "lastSearchCount": 107,
+  "lastCheckAt": "2026-09-13T13:55:34.130Z",
+  "lastSearchCount": 108,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
