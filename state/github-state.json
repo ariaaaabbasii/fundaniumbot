@@ -870,6 +870,10 @@
       "url": "https://www.funda.nl/detail/koop/castricum/appartement-sans-souci-56/44590917/",
       "firstSeenAt": "2026-09-11T13:42:11.479Z"
     },
+    "44591025": {
+      "url": "https://www.funda.nl/detail/koop/castricum/appartement-sans-souci-86/44591025/",
+      "firstSeenAt": "2026-09-13T23:31:46.601Z"
+    },
     "44591499": {
       "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-stalpaertstraat-51/44591499/",
       "firstSeenAt": "2026-09-10T19:57:45.587Z"
@@ -1245,8 +1249,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-09-13T21:39:09.574Z",
-  "lastSearchCount": 108,
+  "lastCheckAt": "2026-09-13T23:31:46.600Z",
+  "lastSearchCount": 109,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
