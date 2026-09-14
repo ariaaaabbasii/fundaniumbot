@@ -1080,6 +1080,10 @@
       "url": "https://www.funda.nl/detail/koop/den-helder/appartement-torp-71/80953708/",
       "firstSeenAt": "2026-09-10T13:53:02.727Z"
     },
+    "80958702": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-reviusstraat-24/80958702/",
+      "firstSeenAt": "2026-09-14T19:02:28.721Z"
+    },
     "89608072": {
       "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-vechtstraat-106/89608072/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -1253,8 +1257,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-09-14T13:54:58.968Z",
-  "lastSearchCount": 110,
+  "lastCheckAt": "2026-09-14T19:02:28.721Z",
+  "lastSearchCount": 111,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
