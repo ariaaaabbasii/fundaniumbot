@@ -710,6 +710,10 @@
       "url": "https://www.funda.nl/detail/koop/heerhugowaard/appartement-theodora-havertuin-3/44506417/",
       "firstSeenAt": "2026-09-15T10:23:14.752Z"
     },
+    "44506568": {
+      "url": "https://www.funda.nl/detail/koop/heemskerk/appartement-mascagnistraat-6/44506568/",
+      "firstSeenAt": "2026-09-15T22:06:28.381Z"
+    },
     "44506570": {
       "url": "https://www.funda.nl/detail/koop/heerhugowaard/appartement-bergmolen-102/44506570/",
       "firstSeenAt": "2026-09-15T10:23:14.752Z"
@@ -1277,8 +1281,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-09-15T18:59:32.079Z",
-  "lastSearchCount": 115,
+  "lastCheckAt": "2026-09-15T22:06:28.380Z",
+  "lastSearchCount": 116,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
