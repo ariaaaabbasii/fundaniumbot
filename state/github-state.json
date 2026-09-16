@@ -722,6 +722,10 @@
       "url": "https://www.funda.nl/detail/koop/wijk-aan-zee/appartement-rijckert-aertszweg-3/44506876/",
       "firstSeenAt": "2026-09-15T10:23:14.752Z"
     },
+    "44506902": {
+      "url": "https://www.funda.nl/detail/koop/heemskerk/appartement-luxemburglaan-897/44506902/",
+      "firstSeenAt": "2026-09-16T09:46:57.291Z"
+    },
     "44507768": {
       "url": "https://www.funda.nl/detail/koop/hoorn-nh/appartement-poolster-63/44507768/",
       "firstSeenAt": "2026-09-15T15:08:52.363Z"
@@ -1281,8 +1285,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-09-16T04:57:05.961Z",
-  "lastSearchCount": 116,
+  "lastCheckAt": "2026-09-16T09:46:57.290Z",
+  "lastSearchCount": 117,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
