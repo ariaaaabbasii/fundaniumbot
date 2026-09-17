@@ -702,6 +702,10 @@
       "url": "https://www.funda.nl/detail/koop/haarlem/appartement-landschot-102/44499083/",
       "firstSeenAt": "2026-06-16T07:39:16.248Z"
     },
+    "44500911": {
+      "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-koningstraat-3-a/44500911/",
+      "firstSeenAt": "2026-09-17T12:11:12.130Z"
+    },
     "44505380": {
       "url": "https://www.funda.nl/detail/koop/den-helder/appartement-marina-park-184/44505380/",
       "firstSeenAt": "2026-09-15T10:23:14.752Z"
@@ -1112,6 +1116,10 @@
       "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-reviusstraat-24/80958702/",
       "firstSeenAt": "2026-09-14T19:02:28.721Z"
     },
+    "80964366": {
+      "url": "https://www.funda.nl/detail/koop/zaandam/appartement-zuiderkerkstraat-25/80964366/",
+      "firstSeenAt": "2026-09-17T12:11:12.130Z"
+    },
     "89608072": {
       "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-vechtstraat-106/89608072/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -1285,8 +1293,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-09-17T06:44:34.192Z",
-  "lastSearchCount": 115,
+  "lastCheckAt": "2026-09-17T12:11:12.129Z",
+  "lastSearchCount": 117,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
