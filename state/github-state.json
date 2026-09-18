@@ -734,6 +734,10 @@
       "url": "https://www.funda.nl/detail/koop/hoorn-nh/appartement-poolster-63/44507768/",
       "firstSeenAt": "2026-09-15T15:08:52.363Z"
     },
+    "44509593": {
+      "url": "https://www.funda.nl/detail/koop/purmerend/appartement-burgemeester-d-kooimanweg-1083/44509593/",
+      "firstSeenAt": "2026-09-18T00:54:43.162Z"
+    },
     "44550243": {
       "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-van-ostadelaan-168/44550243/",
       "firstSeenAt": "2026-08-11T15:09:54.956Z"
@@ -1293,8 +1297,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-09-17T22:52:13.697Z",
-  "lastSearchCount": 117,
+  "lastCheckAt": "2026-09-18T00:54:43.161Z",
+  "lastSearchCount": 118,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
