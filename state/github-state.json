@@ -1124,6 +1124,10 @@
       "url": "https://www.funda.nl/detail/koop/zaandam/appartement-zuiderkerkstraat-25/80964366/",
       "firstSeenAt": "2026-09-17T12:11:12.130Z"
     },
+    "80966439": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-zevenhuizen-20/80966439/",
+      "firstSeenAt": "2026-09-18T10:01:31.881Z"
+    },
     "89608072": {
       "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-vechtstraat-106/89608072/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -1297,7 +1301,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-09-18T05:33:42.216Z",
+  "lastCheckAt": "2026-09-18T10:01:31.881Z",
   "lastSearchCount": 118,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
