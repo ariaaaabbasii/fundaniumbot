@@ -1132,6 +1132,10 @@
       "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-asselijnstraat-72/80968079/",
       "firstSeenAt": "2026-09-18T17:46:46.243Z"
     },
+    "80968237": {
+      "url": "https://www.funda.nl/detail/koop/slootdorp/appartement-prins-bernhardweg-2-a/80968237/",
+      "firstSeenAt": "2026-09-19T21:08:46.579Z"
+    },
     "89608072": {
       "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-vechtstraat-106/89608072/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -1305,8 +1309,8 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-09-19T18:50:34.735Z",
-  "lastSearchCount": 119,
+  "lastCheckAt": "2026-09-19T21:08:46.579Z",
+  "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
 }
