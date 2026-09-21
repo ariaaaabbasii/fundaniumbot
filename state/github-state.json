@@ -1136,6 +1136,10 @@
       "url": "https://www.funda.nl/detail/koop/slootdorp/appartement-prins-bernhardweg-2-a/80968237/",
       "firstSeenAt": "2026-09-19T21:08:46.579Z"
     },
+    "80968318": {
+      "url": "https://www.funda.nl/detail/koop/den-helder/appartement-willem-van-alcmadestraat-75/80968318/",
+      "firstSeenAt": "2026-09-21T09:17:09.366Z"
+    },
     "89608072": {
       "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-vechtstraat-106/89608072/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -1309,7 +1313,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-09-21T03:35:17.642Z",
+  "lastCheckAt": "2026-09-21T09:17:09.365Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
