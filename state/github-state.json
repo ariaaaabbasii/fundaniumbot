@@ -706,6 +706,10 @@
       "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-koningstraat-3-a/44500911/",
       "firstSeenAt": "2026-09-17T12:11:12.130Z"
     },
+    "44504239": {
+      "url": "https://www.funda.nl/detail/koop/haarlem/appartement-engelandlaan-964/44504239/",
+      "firstSeenAt": "2026-09-22T06:48:53.641Z"
+    },
     "44505380": {
       "url": "https://www.funda.nl/detail/koop/den-helder/appartement-marina-park-184/44505380/",
       "firstSeenAt": "2026-09-15T10:23:14.752Z"
@@ -1313,7 +1317,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-09-22T01:41:59.751Z",
+  "lastCheckAt": "2026-09-22T06:48:53.640Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
