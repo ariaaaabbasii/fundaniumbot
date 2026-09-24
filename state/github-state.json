@@ -80,6 +80,10 @@
       "url": "https://www.funda.nl/detail/koop/heemskerk/appartement-europaplein-30/43316431/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
     },
+    "43317043": {
+      "url": "https://www.funda.nl/detail/koop/heiloo/appartement-het-brugstuk-49/43317043/",
+      "firstSeenAt": "2026-09-24T15:15:28.791Z"
+    },
     "43319812": {
       "url": "https://www.funda.nl/detail/koop/wormerveer/appartement-de-zetter-36/43319812/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -419,6 +423,10 @@
     "44429331": {
       "url": "https://www.funda.nl/detail/koop/krommenie/appartement-kervelstraat-27/44429331/",
       "firstSeenAt": "2026-07-07T16:30:02.404Z"
+    },
+    "44431100": {
+      "url": "https://www.funda.nl/detail/koop/heiloo/appartement-de-sonneveld-90/44431100/",
+      "firstSeenAt": "2026-09-24T15:15:28.791Z"
     },
     "44432954": {
       "url": "https://www.funda.nl/detail/koop/breezand/appartement-ceresplein-43/44432954/",
@@ -1333,7 +1341,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-09-24T10:17:09.105Z",
+  "lastCheckAt": "2026-09-24T15:15:28.790Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
