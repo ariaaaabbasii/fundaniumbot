@@ -754,6 +754,14 @@
       "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-bergerweg-15/44510708/",
       "firstSeenAt": "2026-09-24T22:30:42.288Z"
     },
+    "44512177": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-honthorstlaan-98/44512177/",
+      "firstSeenAt": "2026-09-25T15:28:54.581Z"
+    },
+    "44512680": {
+      "url": "https://www.funda.nl/detail/koop/zaandam/appartement-oost-dorsch-42/44512680/",
+      "firstSeenAt": "2026-09-25T15:28:54.581Z"
+    },
     "44516080": {
       "url": "https://www.funda.nl/detail/koop/wormerveer/appartement-zwaanstraat-17/44516080/",
       "firstSeenAt": "2026-09-22T22:53:21.340Z"
@@ -1345,7 +1353,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-09-25T10:28:19.715Z",
+  "lastCheckAt": "2026-09-25T15:28:54.580Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
