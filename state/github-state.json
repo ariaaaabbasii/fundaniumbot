@@ -1188,6 +1188,14 @@
       "url": "https://www.funda.nl/detail/koop/den-helder/appartement-torp-23/80970898/",
       "firstSeenAt": "2026-09-22T16:54:11.579Z"
     },
+    "80976975": {
+      "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-langswater-277/80976975/",
+      "firstSeenAt": "2026-09-28T16:03:20.193Z"
+    },
+    "80978393": {
+      "url": "https://www.funda.nl/detail/koop/den-helder/appartement-marina-park-156/80978393/",
+      "firstSeenAt": "2026-09-28T16:03:20.193Z"
+    },
     "89608072": {
       "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-vechtstraat-106/89608072/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -1361,7 +1369,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-09-28T07:44:33.822Z",
+  "lastCheckAt": "2026-09-28T16:03:20.192Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
