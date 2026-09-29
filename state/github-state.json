@@ -786,6 +786,14 @@
       "url": "https://www.funda.nl/detail/koop/wormerveer/appartement-de-zetter-54/44525128/",
       "firstSeenAt": "2026-09-29T14:09:40.362Z"
     },
+    "44526576": {
+      "url": "https://www.funda.nl/detail/koop/heemskerk/appartement-laan-van-assumburg-31/44526576/",
+      "firstSeenAt": "2026-09-29T19:25:32.478Z"
+    },
+    "44526753": {
+      "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-wijk-aan-duinerweg-163/44526753/",
+      "firstSeenAt": "2026-09-29T19:25:32.478Z"
+    },
     "44550243": {
       "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-van-ostadelaan-168/44550243/",
       "firstSeenAt": "2026-08-11T15:09:54.956Z"
@@ -973,6 +981,10 @@
     "44592514": {
       "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-dellaertlaan-29/44592514/",
       "firstSeenAt": "2026-09-11T22:03:31.028Z"
+    },
+    "44592737": {
+      "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-laan-van-blois-88/44592737/",
+      "firstSeenAt": "2026-09-29T19:25:32.478Z"
     },
     "44592789": {
       "url": "https://www.funda.nl/detail/koop/krommenie/appartement-kervelstraat-47/44592789/",
@@ -1373,7 +1385,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-09-29T14:09:40.362Z",
+  "lastCheckAt": "2026-09-29T19:25:32.478Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
