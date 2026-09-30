@@ -1216,6 +1216,10 @@
       "url": "https://www.funda.nl/detail/koop/den-helder/appartement-marina-park-156/80978393/",
       "firstSeenAt": "2026-09-28T16:03:20.193Z"
     },
+    "80982077": {
+      "url": "https://www.funda.nl/detail/koop/wormerveer/appartement-kerkstraat-163/80982077/",
+      "firstSeenAt": "2026-09-30T20:00:52.543Z"
+    },
     "89608072": {
       "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-vechtstraat-106/89608072/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -1389,7 +1393,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-09-30T15:09:53.233Z",
+  "lastCheckAt": "2026-09-30T20:00:52.542Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
