@@ -1228,6 +1228,10 @@
       "url": "https://www.funda.nl/detail/koop/wormerveer/appartement-kerkstraat-163/80982077/",
       "firstSeenAt": "2026-09-30T20:00:52.543Z"
     },
+    "80984230": {
+      "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-langswater-159/80984230/",
+      "firstSeenAt": "2026-10-01T21:18:00.816Z"
+    },
     "89608072": {
       "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-vechtstraat-106/89608072/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -1401,7 +1405,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-10-01T16:33:36.565Z",
+  "lastCheckAt": "2026-10-01T21:18:00.815Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
