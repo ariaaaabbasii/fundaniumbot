@@ -802,6 +802,10 @@
       "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-winkelwaard-70/44528905/",
       "firstSeenAt": "2026-10-01T09:20:13.520Z"
     },
+    "44529570": {
+      "url": "https://www.funda.nl/detail/koop/purmerend/appartement-westervenne-222/44529570/",
+      "firstSeenAt": "2026-10-01T16:33:36.565Z"
+    },
     "44550243": {
       "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-van-ostadelaan-168/44550243/",
       "firstSeenAt": "2026-08-11T15:09:54.956Z"
@@ -1397,7 +1401,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-10-01T09:20:13.519Z",
+  "lastCheckAt": "2026-10-01T16:33:36.565Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
