@@ -806,6 +806,10 @@
       "url": "https://www.funda.nl/detail/koop/purmerend/appartement-westervenne-222/44529570/",
       "firstSeenAt": "2026-10-01T16:33:36.565Z"
     },
+    "44529865": {
+      "url": "https://www.funda.nl/detail/koop/haarlem/appartement-ierlandstraat-176/44529865/",
+      "firstSeenAt": "2026-10-02T06:44:47.534Z"
+    },
     "44550243": {
       "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-van-ostadelaan-168/44550243/",
       "firstSeenAt": "2026-08-11T15:09:54.956Z"
@@ -1405,7 +1409,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-10-02T00:55:40.254Z",
+  "lastCheckAt": "2026-10-02T06:44:47.533Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
