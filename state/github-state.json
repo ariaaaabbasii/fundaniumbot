@@ -782,6 +782,10 @@
       "url": "https://www.funda.nl/detail/koop/zaandam/appartement-hazepad-59/44517170/",
       "firstSeenAt": "2026-09-23T15:30:25.153Z"
     },
+    "44520113": {
+      "url": "https://www.funda.nl/detail/koop/schagen/appartement-zijperweg-9-e/44520113/",
+      "firstSeenAt": "2026-10-02T13:13:57.768Z"
+    },
     "44525128": {
       "url": "https://www.funda.nl/detail/koop/wormerveer/appartement-de-zetter-54/44525128/",
       "firstSeenAt": "2026-09-29T14:09:40.362Z"
@@ -801,6 +805,10 @@
     "44528905": {
       "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-winkelwaard-70/44528905/",
       "firstSeenAt": "2026-10-01T09:20:13.520Z"
+    },
+    "44529368": {
+      "url": "https://www.funda.nl/detail/koop/heiloo/appartement-zeeweg-303/44529368/",
+      "firstSeenAt": "2026-10-02T13:13:57.768Z"
     },
     "44529570": {
       "url": "https://www.funda.nl/detail/koop/purmerend/appartement-westervenne-222/44529570/",
@@ -1409,7 +1417,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-10-02T06:44:47.533Z",
+  "lastCheckAt": "2026-10-02T13:13:57.767Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
