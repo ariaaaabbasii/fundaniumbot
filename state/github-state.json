@@ -786,6 +786,10 @@
       "url": "https://www.funda.nl/detail/koop/schagen/appartement-zijperweg-9-e/44520113/",
       "firstSeenAt": "2026-10-02T13:13:57.768Z"
     },
+    "44521281": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-jan-van-goyenstraat-190/44521281/",
+      "firstSeenAt": "2026-10-02T18:28:46.798Z"
+    },
     "44525128": {
       "url": "https://www.funda.nl/detail/koop/wormerveer/appartement-de-zetter-54/44525128/",
       "firstSeenAt": "2026-09-29T14:09:40.362Z"
@@ -1417,7 +1421,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-10-02T13:13:57.767Z",
+  "lastCheckAt": "2026-10-02T18:28:46.797Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
