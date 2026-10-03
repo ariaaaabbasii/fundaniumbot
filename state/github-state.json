@@ -922,6 +922,10 @@
       "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-langswater-711/44572742/",
       "firstSeenAt": "2026-08-30T17:06:37.879Z"
     },
+    "44573647": {
+      "url": "https://www.funda.nl/detail/koop/castricum/appartement-cf-smeetslaan-52/44573647/",
+      "firstSeenAt": "2026-10-03T12:05:05.815Z"
+    },
     "44574318": {
       "url": "https://www.funda.nl/detail/koop/purmerend/appartement-de-roerdomp-162/44574318/",
       "firstSeenAt": "2026-09-14T13:54:58.968Z"
@@ -1256,6 +1260,10 @@
       "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-linnaeusstraat-171/80985124/",
       "firstSeenAt": "2026-10-03T06:44:12.056Z"
     },
+    "80986041": {
+      "url": "https://www.funda.nl/detail/koop/krommenie/appartement-zilverschoonlaan-114/80986041/",
+      "firstSeenAt": "2026-10-03T12:05:05.815Z"
+    },
     "89608072": {
       "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-vechtstraat-106/89608072/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -1429,7 +1437,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-10-03T06:44:12.055Z",
+  "lastCheckAt": "2026-10-03T12:05:05.814Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
