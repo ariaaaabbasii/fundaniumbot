@@ -790,6 +790,10 @@
       "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-jan-van-goyenstraat-190/44521281/",
       "firstSeenAt": "2026-10-02T18:28:46.798Z"
     },
+    "44521548": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-huibert-pootlaan-92/44521548/",
+      "firstSeenAt": "2026-10-03T06:44:12.056Z"
+    },
     "44525128": {
       "url": "https://www.funda.nl/detail/koop/wormerveer/appartement-de-zetter-54/44525128/",
       "firstSeenAt": "2026-09-29T14:09:40.362Z"
@@ -1248,6 +1252,10 @@
       "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-langswater-159/80984230/",
       "firstSeenAt": "2026-10-01T21:18:00.816Z"
     },
+    "80985124": {
+      "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-linnaeusstraat-171/80985124/",
+      "firstSeenAt": "2026-10-03T06:44:12.056Z"
+    },
     "89608072": {
       "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-vechtstraat-106/89608072/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -1421,7 +1429,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-10-03T01:22:35.174Z",
+  "lastCheckAt": "2026-10-03T06:44:12.055Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
