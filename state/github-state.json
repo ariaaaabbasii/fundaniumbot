@@ -1276,6 +1276,10 @@
       "url": "https://www.funda.nl/detail/koop/krommenie/appartement-zilverschoonlaan-114/80986041/",
       "firstSeenAt": "2026-10-03T12:05:05.815Z"
     },
+    "80990191": {
+      "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-laan-van-blois-78/80990191/",
+      "firstSeenAt": "2026-10-07T13:54:42.928Z"
+    },
     "89608072": {
       "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-vechtstraat-106/89608072/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -1449,7 +1453,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-10-07T06:39:17.049Z",
+  "lastCheckAt": "2026-10-07T13:54:42.927Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
