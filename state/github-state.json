@@ -794,6 +794,10 @@
       "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-huibert-pootlaan-92/44521548/",
       "firstSeenAt": "2026-10-03T06:44:12.056Z"
     },
+    "44524818": {
+      "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-snelliusstraat-1/44524818/",
+      "firstSeenAt": "2026-10-07T00:51:03.248Z"
+    },
     "44525128": {
       "url": "https://www.funda.nl/detail/koop/wormerveer/appartement-de-zetter-54/44525128/",
       "firstSeenAt": "2026-09-29T14:09:40.362Z"
@@ -1445,7 +1449,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-10-06T21:19:06.637Z",
+  "lastCheckAt": "2026-10-07T00:51:03.247Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
