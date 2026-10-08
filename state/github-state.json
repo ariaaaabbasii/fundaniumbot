@@ -846,6 +846,10 @@
       "url": "https://www.funda.nl/detail/koop/haarlem/appartement-pampus-178/44537503/",
       "firstSeenAt": "2026-10-07T19:44:38.303Z"
     },
+    "44538692": {
+      "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-langswater-772/44538692/",
+      "firstSeenAt": "2026-10-08T11:07:20.477Z"
+    },
     "44550243": {
       "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-van-ostadelaan-168/44550243/",
       "firstSeenAt": "2026-08-11T15:09:54.956Z"
@@ -1465,7 +1469,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-10-08T03:53:50.844Z",
+  "lastCheckAt": "2026-10-08T11:07:20.477Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
