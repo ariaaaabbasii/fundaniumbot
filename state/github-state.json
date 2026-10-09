@@ -846,6 +846,14 @@
       "url": "https://www.funda.nl/detail/koop/haarlem/appartement-pampus-178/44537503/",
       "firstSeenAt": "2026-10-07T19:44:38.303Z"
     },
+    "44538186": {
+      "url": "https://www.funda.nl/detail/koop/purmerend/appartement-oostervenne-327/44538186/",
+      "firstSeenAt": "2026-10-09T16:32:56.402Z"
+    },
+    "44538298": {
+      "url": "https://www.funda.nl/detail/koop/grootebroek/appartement-zesstedenweg-319/44538298/",
+      "firstSeenAt": "2026-10-09T16:32:56.402Z"
+    },
     "44538692": {
       "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-langswater-772/44538692/",
       "firstSeenAt": "2026-10-08T11:07:20.477Z"
@@ -1296,6 +1304,10 @@
       "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-laan-van-blois-78/80990191/",
       "firstSeenAt": "2026-10-07T13:54:42.928Z"
     },
+    "80993224": {
+      "url": "https://www.funda.nl/detail/koop/hippolytushoef/appartement-zonnebloemstraat-41/80993224/",
+      "firstSeenAt": "2026-10-09T16:32:56.402Z"
+    },
     "89608072": {
       "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-vechtstraat-106/89608072/",
       "firstSeenAt": "2026-06-07T23:32:02.253Z"
@@ -1469,7 +1481,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-10-09T09:35:56.777Z",
+  "lastCheckAt": "2026-10-09T16:32:56.401Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
