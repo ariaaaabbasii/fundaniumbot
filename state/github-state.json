@@ -830,6 +830,14 @@
       "url": "https://www.funda.nl/detail/koop/haarlem/appartement-ierlandstraat-176/44529865/",
       "firstSeenAt": "2026-10-02T06:44:47.534Z"
     },
+    "44530314": {
+      "url": "https://www.funda.nl/detail/koop/heiloo/appartement-kapellaan-96/44530314/",
+      "firstSeenAt": "2026-10-10T13:06:00.367Z"
+    },
+    "44530509": {
+      "url": "https://www.funda.nl/detail/koop/wormerveer/appartement-merelstraat-52/44530509/",
+      "firstSeenAt": "2026-10-10T13:06:00.367Z"
+    },
     "44535940": {
       "url": "https://www.funda.nl/detail/koop/purmerend/appartement-de-roerdomp-27/44535940/",
       "firstSeenAt": "2026-10-06T16:46:33.140Z"
@@ -1481,7 +1489,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-10-09T21:13:03.693Z",
+  "lastCheckAt": "2026-10-10T13:06:00.367Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
