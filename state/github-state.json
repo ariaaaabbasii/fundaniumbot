@@ -838,6 +838,22 @@
       "url": "https://www.funda.nl/detail/koop/wormerveer/appartement-merelstraat-52/44530509/",
       "firstSeenAt": "2026-10-10T13:06:00.367Z"
     },
+    "44531150": {
+      "url": "https://www.funda.nl/detail/koop/heemstede/appartement-provincienlaan-5-c5/44531150/",
+      "firstSeenAt": "2026-10-13T09:44:14.283Z"
+    },
+    "44532549": {
+      "url": "https://www.funda.nl/detail/koop/julianadorp/appartement-landbouwstraat-308/44532549/",
+      "firstSeenAt": "2026-10-13T09:44:14.283Z"
+    },
+    "44532845": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-boeierstraat-28/44532845/",
+      "firstSeenAt": "2026-10-13T09:44:14.283Z"
+    },
+    "44533886": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-cornelis-pronklaan-9/44533886/",
+      "firstSeenAt": "2026-10-13T09:44:14.283Z"
+    },
     "44535940": {
       "url": "https://www.funda.nl/detail/koop/purmerend/appartement-de-roerdomp-27/44535940/",
       "firstSeenAt": "2026-10-06T16:46:33.140Z"
@@ -1489,7 +1505,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-10-11T10:43:20.265Z",
+  "lastCheckAt": "2026-10-13T09:44:14.282Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
