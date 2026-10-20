@@ -1216,6 +1216,10 @@
       "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-reviusstraat-72/80895271/",
       "firstSeenAt": "2026-07-17T12:07:56.154Z"
     },
+    "80906500": {
+      "url": "https://www.funda.nl/detail/koop/den-helder/appartement-pieter-janssoonstraat-13/80906500/",
+      "firstSeenAt": "2026-10-20T12:52:47.704Z"
+    },
     "80912559": {
       "url": "https://www.funda.nl/detail/koop/purmerend/appartement-burgemeester-d-kooimanweg-185/80912559/",
       "firstSeenAt": "2026-08-07T14:42:29.376Z"
@@ -1517,7 +1521,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-10-20T02:02:57.505Z",
+  "lastCheckAt": "2026-10-20T12:52:47.704Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
