@@ -882,6 +882,14 @@
       "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-langswater-772/44538692/",
       "firstSeenAt": "2026-10-08T11:07:20.477Z"
     },
+    "44543390": {
+      "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-frans-naereboutstraat-9-a/44543390/",
+      "firstSeenAt": "2026-10-22T04:46:55.601Z"
+    },
+    "44544951": {
+      "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-romerkerkweg-4/44544951/",
+      "firstSeenAt": "2026-10-22T04:46:55.601Z"
+    },
     "44546168": {
       "url": "https://www.funda.nl/detail/koop/zaandam/appartement-oost-dorsch-17/44546168/",
       "firstSeenAt": "2026-10-15T14:59:31.720Z"
@@ -1521,7 +1529,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-10-21T21:34:26.624Z",
+  "lastCheckAt": "2026-10-22T04:46:55.600Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
