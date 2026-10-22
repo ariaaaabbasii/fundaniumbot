@@ -1150,6 +1150,10 @@
       "url": "https://www.funda.nl/detail/koop/zaandam/appartement-peperstraat-12/44655359/",
       "firstSeenAt": "2026-10-22T14:41:30.213Z"
     },
+    "44656605": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-honthorstlaan-130/44656605/",
+      "firstSeenAt": "2026-10-22T18:51:27.019Z"
+    },
     "80800030": {
       "url": "https://www.funda.nl/detail/koop/haarlem/appartement-schotlandstraat-152/80800030/",
       "firstSeenAt": "2026-07-23T09:37:13.458Z"
@@ -1537,7 +1541,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-10-22T14:41:30.213Z",
+  "lastCheckAt": "2026-10-22T18:51:27.018Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
