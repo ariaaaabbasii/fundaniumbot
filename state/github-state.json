@@ -1158,6 +1158,10 @@
       "url": "https://www.funda.nl/detail/koop/beverwijk/appartement-nieuwstraat-2-a9/44657046/",
       "firstSeenAt": "2026-10-24T05:06:10.499Z"
     },
+    "44659105": {
+      "url": "https://www.funda.nl/detail/koop/krommenie/appartement-kervelstraat-124/44659105/",
+      "firstSeenAt": "2026-10-26T19:58:21.454Z"
+    },
     "44659437": {
       "url": "https://www.funda.nl/detail/koop/purmerend/appartement-de-roerdomp-166/44659437/",
       "firstSeenAt": "2026-10-26T14:12:44.809Z"
@@ -1557,7 +1561,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-10-26T14:12:44.808Z",
+  "lastCheckAt": "2026-10-26T19:58:21.453Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
