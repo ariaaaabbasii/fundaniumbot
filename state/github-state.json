@@ -1170,9 +1170,25 @@
       "url": "https://www.funda.nl/detail/koop/haarlem/appartement-ierlandstraat-32/44659448/",
       "firstSeenAt": "2026-10-26T14:12:44.809Z"
     },
+    "44659517": {
+      "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-kennemerlaan-173/44659517/",
+      "firstSeenAt": "2026-10-29T23:00:35.012Z"
+    },
+    "44659621": {
+      "url": "https://www.funda.nl/detail/koop/heemskerk/appartement-ruysdaelstraat-52/44659621/",
+      "firstSeenAt": "2026-10-29T23:00:35.012Z"
+    },
     "44659847": {
       "url": "https://www.funda.nl/detail/koop/purmerend/appartement-westervenne-224/44659847/",
       "firstSeenAt": "2026-10-26T14:12:44.809Z"
+    },
+    "44659911": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-pimpelmeesstraat-49/44659911/",
+      "firstSeenAt": "2026-10-29T23:00:35.012Z"
+    },
+    "80014860": {
+      "url": "https://www.funda.nl/detail/koop/heemskerk/appartement-ingen-houszstraat-79/80014860/",
+      "firstSeenAt": "2026-10-29T23:00:35.012Z"
     },
     "80800030": {
       "url": "https://www.funda.nl/detail/koop/haarlem/appartement-schotlandstraat-152/80800030/",
@@ -1561,7 +1577,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-10-26T19:58:21.453Z",
+  "lastCheckAt": "2026-10-29T23:00:35.012Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
