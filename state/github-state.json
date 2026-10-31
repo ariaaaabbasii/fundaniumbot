@@ -1186,9 +1186,21 @@
       "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-pimpelmeesstraat-49/44659911/",
       "firstSeenAt": "2026-10-29T23:00:35.012Z"
     },
+    "44666095": {
+      "url": "https://www.funda.nl/detail/koop/zwaag/appartement-kosterstuin-92/44666095/",
+      "firstSeenAt": "2026-10-31T08:57:47.671Z"
+    },
+    "44666672": {
+      "url": "https://www.funda.nl/detail/koop/alkmaar/appartement-asselijnstraat-72/44666672/",
+      "firstSeenAt": "2026-10-31T08:57:47.671Z"
+    },
     "80014860": {
       "url": "https://www.funda.nl/detail/koop/heemskerk/appartement-ingen-houszstraat-79/80014860/",
       "firstSeenAt": "2026-10-29T23:00:35.012Z"
+    },
+    "80029260": {
+      "url": "https://www.funda.nl/detail/koop/ijmuiden/appartement-sparrenstraat-8/80029260/",
+      "firstSeenAt": "2026-10-31T08:57:47.671Z"
     },
     "80800030": {
       "url": "https://www.funda.nl/detail/koop/haarlem/appartement-schotlandstraat-152/80800030/",
@@ -1577,7 +1589,7 @@
     }
   },
   "top10Cache": null,
-  "lastCheckAt": "2026-10-29T23:00:35.012Z",
+  "lastCheckAt": "2026-10-31T08:57:47.670Z",
   "lastSearchCount": 120,
   "lastNoNewNotificationAt": null,
   "telegramUpdateOffset": 0
